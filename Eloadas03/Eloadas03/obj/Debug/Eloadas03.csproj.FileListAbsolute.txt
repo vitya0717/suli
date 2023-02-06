@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas03\Eloadas03\bin\Debug\Eloadas03.exe.config
+C:\Users\Tanulo\source\repos\Eloadas03\Eloadas03\bin\Debug\Eloadas03.exe
+C:\Users\Tanulo\source\repos\Eloadas03\Eloadas03\bin\Debug\Eloadas03.pdb
+C:\Users\Tanulo\source\repos\Eloadas03\Eloadas03\obj\Debug\Eloadas03.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas03\Eloadas03\obj\Debug\Eloadas03.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas03\Eloadas03\obj\Debug\Eloadas03.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas03\Eloadas03\obj\Debug\Eloadas03.exe
+C:\Users\Tanulo\source\repos\Eloadas03\Eloadas03\obj\Debug\Eloadas03.pdb

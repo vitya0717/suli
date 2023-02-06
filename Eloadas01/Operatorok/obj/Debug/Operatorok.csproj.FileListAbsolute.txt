@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas01\Operatorok\bin\Debug\Operatorok.exe.config
+C:\Users\Tanulo\source\repos\Eloadas01\Operatorok\bin\Debug\Operatorok.exe
+C:\Users\Tanulo\source\repos\Eloadas01\Operatorok\bin\Debug\Operatorok.pdb
+C:\Users\Tanulo\source\repos\Eloadas01\Operatorok\obj\Debug\Operatorok.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas01\Operatorok\obj\Debug\Operatorok.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas01\Operatorok\obj\Debug\Operatorok.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas01\Operatorok\obj\Debug\Operatorok.exe
+C:\Users\Tanulo\source\repos\Eloadas01\Operatorok\obj\Debug\Operatorok.pdb

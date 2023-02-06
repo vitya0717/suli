@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas04\TeglalapFuggveny\bin\Debug\TeglalapFuggveny.exe.config
+C:\Users\Tanulo\source\repos\Eloadas04\TeglalapFuggveny\bin\Debug\TeglalapFuggveny.exe
+C:\Users\Tanulo\source\repos\Eloadas04\TeglalapFuggveny\bin\Debug\TeglalapFuggveny.pdb
+C:\Users\Tanulo\source\repos\Eloadas04\TeglalapFuggveny\obj\Debug\TeglalapFuggveny.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas04\TeglalapFuggveny\obj\Debug\TeglalapFuggveny.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas04\TeglalapFuggveny\obj\Debug\TeglalapFuggveny.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas04\TeglalapFuggveny\obj\Debug\TeglalapFuggveny.exe
+C:\Users\Tanulo\source\repos\Eloadas04\TeglalapFuggveny\obj\Debug\TeglalapFuggveny.pdb

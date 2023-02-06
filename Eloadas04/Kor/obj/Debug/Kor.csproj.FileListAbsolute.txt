@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas04\Kor\bin\Debug\Kor.exe.config
+C:\Users\Tanulo\source\repos\Eloadas04\Kor\bin\Debug\Kor.exe
+C:\Users\Tanulo\source\repos\Eloadas04\Kor\bin\Debug\Kor.pdb
+C:\Users\Tanulo\source\repos\Eloadas04\Kor\obj\Debug\Kor.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas04\Kor\obj\Debug\Kor.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas04\Kor\obj\Debug\Kor.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas04\Kor\obj\Debug\Kor.exe
+C:\Users\Tanulo\source\repos\Eloadas04\Kor\obj\Debug\Kor.pdb

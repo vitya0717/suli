@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas01\Tipusok\bin\Debug\Tipusok.exe.config
+C:\Users\Tanulo\source\repos\Eloadas01\Tipusok\bin\Debug\Tipusok.exe
+C:\Users\Tanulo\source\repos\Eloadas01\Tipusok\bin\Debug\Tipusok.pdb
+C:\Users\Tanulo\source\repos\Eloadas01\Tipusok\obj\Debug\Tipusok.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas01\Tipusok\obj\Debug\Tipusok.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas01\Tipusok\obj\Debug\Tipusok.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas01\Tipusok\obj\Debug\Tipusok.exe
+C:\Users\Tanulo\source\repos\Eloadas01\Tipusok\obj\Debug\Tipusok.pdb

@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas05\EljarasokIsmetles\bin\Debug\EljarasokIsmetles.exe.config
+C:\Users\Tanulo\source\repos\Eloadas05\EljarasokIsmetles\bin\Debug\EljarasokIsmetles.exe
+C:\Users\Tanulo\source\repos\Eloadas05\EljarasokIsmetles\bin\Debug\EljarasokIsmetles.pdb
+C:\Users\Tanulo\source\repos\Eloadas05\EljarasokIsmetles\obj\Debug\EljarasokIsmetles.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas05\EljarasokIsmetles\obj\Debug\EljarasokIsmetles.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas05\EljarasokIsmetles\obj\Debug\EljarasokIsmetles.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas05\EljarasokIsmetles\obj\Debug\EljarasokIsmetles.exe
+C:\Users\Tanulo\source\repos\Eloadas05\EljarasokIsmetles\obj\Debug\EljarasokIsmetles.pdb

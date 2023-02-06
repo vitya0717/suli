@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas03\menu\bin\Debug\menu.exe.config
+C:\Users\Tanulo\source\repos\Eloadas03\menu\bin\Debug\menu.exe
+C:\Users\Tanulo\source\repos\Eloadas03\menu\bin\Debug\menu.pdb
+C:\Users\Tanulo\source\repos\Eloadas03\menu\obj\Debug\menu.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas03\menu\obj\Debug\menu.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas03\menu\obj\Debug\menu.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas03\menu\obj\Debug\menu.exe
+C:\Users\Tanulo\source\repos\Eloadas03\menu\obj\Debug\menu.pdb

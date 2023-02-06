@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eloadas03", "Eloadas03\Eloadas03.csproj", "{3E702077-859D-44B6-9ECB-BA909C8F6570}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "menu", "menu\menu.csproj", "{80E0BEB6-71BD-4D55-8106-14CCEDDD5CFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E702077-859D-44B6-9ECB-BA909C8F6570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E702077-859D-44B6-9ECB-BA909C8F6570}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E702077-859D-44B6-9ECB-BA909C8F6570}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E702077-859D-44B6-9ECB-BA909C8F6570}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80E0BEB6-71BD-4D55-8106-14CCEDDD5CFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80E0BEB6-71BD-4D55-8106-14CCEDDD5CFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80E0BEB6-71BD-4D55-8106-14CCEDDD5CFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80E0BEB6-71BD-4D55-8106-14CCEDDD5CFB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE6BBB1B-F150-40D8-B48B-CE53E5D2A609}
+	EndGlobalSection
+EndGlobal

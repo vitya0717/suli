@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas04\EljarasKorTerulete\bin\Debug\EljarasKorTerulete.exe.config
+C:\Users\Tanulo\source\repos\Eloadas04\EljarasKorTerulete\bin\Debug\EljarasKorTerulete.exe
+C:\Users\Tanulo\source\repos\Eloadas04\EljarasKorTerulete\bin\Debug\EljarasKorTerulete.pdb
+C:\Users\Tanulo\source\repos\Eloadas04\EljarasKorTerulete\obj\Debug\EljarasKorTerulete.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas04\EljarasKorTerulete\obj\Debug\EljarasKorTerulete.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas04\EljarasKorTerulete\obj\Debug\EljarasKorTerulete.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas04\EljarasKorTerulete\obj\Debug\EljarasKorTerulete.exe
+C:\Users\Tanulo\source\repos\Eloadas04\EljarasKorTerulete\obj\Debug\EljarasKorTerulete.pdb

@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas02\KisebbNagyobb\bin\Debug\KisebbNagyobb.exe.config
+C:\Users\Tanulo\source\repos\Eloadas02\KisebbNagyobb\bin\Debug\KisebbNagyobb.exe
+C:\Users\Tanulo\source\repos\Eloadas02\KisebbNagyobb\bin\Debug\KisebbNagyobb.pdb
+C:\Users\Tanulo\source\repos\Eloadas02\KisebbNagyobb\obj\Debug\KisebbNagyobb.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas02\KisebbNagyobb\obj\Debug\KisebbNagyobb.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas02\KisebbNagyobb\obj\Debug\KisebbNagyobb.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas02\KisebbNagyobb\obj\Debug\KisebbNagyobb.exe
+C:\Users\Tanulo\source\repos\Eloadas02\KisebbNagyobb\obj\Debug\KisebbNagyobb.pdb

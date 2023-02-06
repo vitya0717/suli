@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas05\FuggvenyekIsmetles\bin\Debug\FuggvenyekIsmetles.exe.config
+C:\Users\Tanulo\source\repos\Eloadas05\FuggvenyekIsmetles\bin\Debug\FuggvenyekIsmetles.exe
+C:\Users\Tanulo\source\repos\Eloadas05\FuggvenyekIsmetles\bin\Debug\FuggvenyekIsmetles.pdb
+C:\Users\Tanulo\source\repos\Eloadas05\FuggvenyekIsmetles\obj\Debug\FuggvenyekIsmetles.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas05\FuggvenyekIsmetles\obj\Debug\FuggvenyekIsmetles.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas05\FuggvenyekIsmetles\obj\Debug\FuggvenyekIsmetles.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas05\FuggvenyekIsmetles\obj\Debug\FuggvenyekIsmetles.exe
+C:\Users\Tanulo\source\repos\Eloadas05\FuggvenyekIsmetles\obj\Debug\FuggvenyekIsmetles.pdb
