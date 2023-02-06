@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas05\OtosLotto\bin\Debug\OtosLotto.exe.config
+C:\Users\Tanulo\source\repos\Eloadas05\OtosLotto\bin\Debug\OtosLotto.exe
+C:\Users\Tanulo\source\repos\Eloadas05\OtosLotto\bin\Debug\OtosLotto.pdb
+C:\Users\Tanulo\source\repos\Eloadas05\OtosLotto\obj\Debug\OtosLotto.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas05\OtosLotto\obj\Debug\OtosLotto.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas05\OtosLotto\obj\Debug\OtosLotto.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas05\OtosLotto\obj\Debug\OtosLotto.exe
+C:\Users\Tanulo\source\repos\Eloadas05\OtosLotto\obj\Debug\OtosLotto.pdb

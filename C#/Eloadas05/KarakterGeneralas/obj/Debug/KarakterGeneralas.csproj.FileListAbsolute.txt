@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas05\KarakterGeneralas\bin\Debug\KarakterGeneralas.exe.config
+C:\Users\Tanulo\source\repos\Eloadas05\KarakterGeneralas\bin\Debug\KarakterGeneralas.exe
+C:\Users\Tanulo\source\repos\Eloadas05\KarakterGeneralas\bin\Debug\KarakterGeneralas.pdb
+C:\Users\Tanulo\source\repos\Eloadas05\KarakterGeneralas\obj\Debug\KarakterGeneralas.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas05\KarakterGeneralas\obj\Debug\KarakterGeneralas.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas05\KarakterGeneralas\obj\Debug\KarakterGeneralas.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas05\KarakterGeneralas\obj\Debug\KarakterGeneralas.exe
+C:\Users\Tanulo\source\repos\Eloadas05\KarakterGeneralas\obj\Debug\KarakterGeneralas.pdb
