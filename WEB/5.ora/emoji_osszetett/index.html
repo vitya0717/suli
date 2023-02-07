@@ -7,16 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .box {
-            margin: 10px;
-        }
-
-        .box span {
-            background-color: gray;
-            display: block;
-            padding: 20px;
-        }
-
         .row {
             flex-direction: row;
             display: flex;
@@ -26,35 +16,107 @@
             flex-direction: column;
             display: flex;
         }
-
+        textarea {
+            display: block;
+        }
+        button {
+            display: block;
+        }
+        .container span {
+            background-color: gray;
+            display: block;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .box .btn {
+            margin-top: 10px;
+        }
+        .box {
+            padding: 20px;
+            margin-right: 5px;
+        }
+        .sbtn {
+            width: 40px;
+            height: 25px;
+        }
         .border {
             border: 1px solid black;
         }
-        .box textarea {
-            display: block;
+        .texta {
+            background-color: gray;
         }
-        .box button {
-            display: block;
+        .emojibox {
+            background-color: gray;
+            height: fit-content;
+            width: 400px;
+            visibility: hidden;
+        }
+        .mr {
+            margin-right: 10px;
         }
     </style>
+    <script>
+        function emojis() {
+            let emo = document.getElementById('eb');
+            emo.textContent = "";
+            for (let i = 128151; i < 128220; i++) {
+                emo.innerHTML += '<input type="button" onclick="writexd(this.value)" value="&#'+i+'">';
+            }
+            emo.style.visibility = "visible";
+            
+        }
+        function letters() {
+            let emo = document.getElementById('eb');
+            emo.textContent = "";
+            for (let i = 913; i < 929; i++) {
+                emo.innerHTML += '<input type="button" onclick="writexd(this.value)" value="&#'+i+'">';
+            }
+            emo.style.visibility = "visible";
+            
+        }
+        function currency() {
+            let emo = document.getElementById('eb');
+            emo.textContent = "";
+            for (let i = 8352; i < 8383; i++) {
+                emo.innerHTML += '<input type="button" onclick="writexd(this.value)" value="&#'+i+'">';
+            }
+            emo.style.visibility = "visible";
+            
+        }
+        function writexd(cucc) {
+            let ya = document.getElementById('area');
+            ya.value += cucc;
+        }
+        function sendMessage() {
+            let xd = document.getElementById('area')
+            alert(xd.value);
+        }
+    </script>
 </head>
 
 <body>
-    <div class="box">
+    <div class="container">
         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus beatae animi excepturi nisi, consectetur
             nemo illo vero modi numquam eaque veniam maxime aut voluptatibus sequi repellendus harum qui laborum
             dolorum! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo non eos sequi iste deserunt suscipit
             laudantium quam officiis? Accusantium, pariatur repellat in harum assumenda rem deleniti quaerat laborum
             doloribus quas, architecto esse eum consectetur fuga tempore quae modi eveniet dolor eaque libero unde
-            reprehenderit sed. Ullam praesentium unde quae sed!</span>
+            reprehenderit sed. Ullam praesentium unde quae sed!
+        </span>
     </div>
-    <div class="column">
-        <div class="box">
-            <div>
-                <textarea class="textbox" id="area" cols="30" rows="10"></textarea>
-                <button class="btn" onclick="sendMessage()">küldés</button>
-            </div>
+    <div class="row">
+        <div class="box border texta">
+            <textarea class="textbox" id="area" cols="30" rows="10"></textarea>
+            <button class="btn" onclick="sendMessage()">küldés</button>
         </div>
+        <div class="row mr">
+            <button onclick="emojis()" class="sbtn">&#128512;</button>
+            <button onclick="letters()" class="sbtn">A</button>
+            <button onclick="currency()" class="sbtn">€</button>
+        </div>
+        <div id="eb" class="box emojibox"></div>
+    </div>
+
 </body>
 
 </html>
