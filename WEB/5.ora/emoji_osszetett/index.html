@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            margin: 10px;
+        }
+
+        .box span {
+            background-color: gray;
+            display: block;
+            padding: 20px;
+        }
+
+        .row {
+            flex-direction: row;
+            display: flex;
+        }
+
+        .column {
+            flex-direction: column;
+            display: flex;
+        }
+
+        .border {
+            border: 1px solid black;
+        }
+        .box textarea {
+            display: block;
+        }
+        .box button {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus beatae animi excepturi nisi, consectetur
+            nemo illo vero modi numquam eaque veniam maxime aut voluptatibus sequi repellendus harum qui laborum
+            dolorum! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo non eos sequi iste deserunt suscipit
+            laudantium quam officiis? Accusantium, pariatur repellat in harum assumenda rem deleniti quaerat laborum
+            doloribus quas, architecto esse eum consectetur fuga tempore quae modi eveniet dolor eaque libero unde
+            reprehenderit sed. Ullam praesentium unde quae sed!</span>
+    </div>
+    <div class="column">
+        <div class="box">
+            <div>
+                <textarea class="textbox" id="area" cols="30" rows="10"></textarea>
+                <button class="btn" onclick="sendMessage()">küldés</button>
+            </div>
+        </div>
+</body>
+
+</html>
