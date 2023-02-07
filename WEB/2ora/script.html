@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: lightgray;
+        }
+    </style>
+    <script>
+        function xd() {
+            var text = document.getElementById('text');
+                text.innerHTML = "Hello";
+            }
+
+        function pixel() {
+        var text = document.getElementById('text');
+            text.style.fontSize = "25px";
+        }
+        function color() {
+        var text = document.getElementById('text');
+            text.style.color = "red";
+        }
+        function hatter() {
+        var text = document.getElementById('text');
+            text.style.backgroundColor = "yellow";
+        }
+        function imgsrc() {
+        var text = document.getElementById('imgs');
+            text.src = "https://www.w3schools.com/js/pic_bulbon.gif";
+        }
+    
+
+    </script>
+</head>
+<body>
+    <h1>Egyszerű szkriptes példa</h1>
+    <button onclick="xd()">Az alsó bekezdés írja be hogy Hello!</button>
+    <br>
+    <br>
+    <button onclick="pixel()">A font mérete legyen 25pixel</button>
+    <br>
+    <br>
+    <button onclick="color()">legyen piros</button>
+    <br>
+    <br>
+    <button onclick="hatter()">legyen sárga a háttér</button>
+    <br>
+    <br>
+    <button onclick="imgsrc()">a https://www.w3schools.com/js/pic_bulbon.gif képet töltse be az alul lévő img tag-be</button>
+
+    <h1>Egyszerű scriptes példa</h1>
+    <p id="text">Ez a bekezdés</p>
+    <img id="imgs" src="https://www.w3schools.com/js/pic_bulboff.gif" alt="">
+</body>
+</html>

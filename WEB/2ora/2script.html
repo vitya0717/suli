@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. Scriptes példa</title>
+    <script>
+        function h1tit() {
+            document.getElementById('h1t').innerHTML = "A h1-es címet egy stript írja ide amikor betöltődik a body";
+        }
+        function text() {
+            var text = document.getElementById('text');
+            text.style.color = "green";
+            text.style.backgroundColor = "yellow";
+            text.style.fontSize = "20px";
+            text.style.border = "1px solid black";
+            text.style.paddingBottom = "20px";
+        }
+        function date() {
+            document.getElementById("text").innerHTML = Date();
+        }
+        function srchange() {
+            var img = document.getElementById(event.target.id);
+            if(img.classList.contains('on')) {
+                img.src = "https://www.w3schools.com/js/pic_bulboff.gif";
+                img.classList.remove('on')
+                img.classList.add('off')
+            } else {
+                img.src = "https://www.w3schools.com/js/pic_bulbon.gif";
+                img.classList.remove('off')
+                img.classList.add('on')
+            }
+
+        }
+    </script>
+    <style>
+        .img-container {
+            width: fit-content;
+            height: fit-content;
+            float: left;
+            margin: 2px;
+            border: 1px solid black;
+            background-color: #efefef
+        }
+    </style>
+</head>
+<body onload="h1tit()">
+    <i>Ebben a példában csak https://www.w3schools.com/html/html_scripts.asp példáit gyúrtam össze.</i>
+    <br>
+    <h1 id="h1t"></h1>
+    <br>
+    <br>
+    <button onclick="date()">Dátum én idő megjelenítése</button>
+    <br>
+    <br>
+    <button onclick="text()">Zöld, sárga háttér, a betű 20 képpontos</button>
+    <br>
+    <br>
+    <p id="text"></p>
+    <div class="img-container">
+        <img id="elso" onclick="srchange()" src="https://www.w3schools.com/js/pic_bulboff.gif" alt="">
+    </div>
+    <div class="img-container">
+        <img id="masodik" onclick="srchange()" src="https://www.w3schools.com/js/pic_bulboff.gif" alt="">
+    </div>
+    <div class="img-container">
+        <img id="harmadik" onclick="srchange()" src="https://www.w3schools.com/js/pic_bulboff.gif" alt="">
+    </div>
+    
+</body>
+</html>

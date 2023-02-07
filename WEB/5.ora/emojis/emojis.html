@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            color: black;
+        }
+
+        .row {
+            flex-direction: row;
+        }
+
+        .text-box {
+            background-color: lightgray;
+            padding: 20px;
+            margin: 20px;
+            display: block;
+        }
+
+        .text-box a {
+            color: black;
+        }
+
+        .text-box .icon {
+            font-size: 100px;
+            ;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Speciális karakterek</h1>
+        <div class="text-box content-column">
+            <div>
+                <a
+                    href="https://www.w3schools.com/charsets/ref_html_ascii.asp">https://www.w3schools.com/charsets/ref_html_ascii.asp</a>
+            </div>
+            <div>
+                <a
+                    href="https://www.w3schools.com/charsets/ref_emoji.asp">https://www.w3schools.com/charsets/ref_emoji.asp</a>
+            </div>
+        </div>
+        <div class="text-box">
+            <span style="font-size: 100px;">
+                <script>
+                    document.write("&#8986;")
+                </script>
+            </span>
+            <span>Egy karakter méret tetszőlegesen nagyítható</span>
+        </div>
+        <div>
+            <pre>
+                &lt;script>
+                    document.write("&amp;#128510")
+                &lt;/script>
+                A fenti kód módosításával és egy forciklussal generáltam ki
+                a következő emoji erdőt
+            </pre>
+        </div>
+        <div class="text-box">
+            <script>
+                for (let i = 128510; i <= 128599; i++) {
+                   document.write(`&#${i};`);
+                }
+            </script>
+        </div>
+    </div >
+</body >
+
+</html >

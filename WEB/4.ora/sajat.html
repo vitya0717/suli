@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miniszterek</title>
+    <style>
+        .container {
+            padding: 0px;
+            margin: 0px;
+            display: flex;
+            flex-direction: row;
+            box-sizing: border-box;
+        }
+        .card {
+            text-decoration: none;
+            width: 30%;
+            padding: 1%;
+            margin: 1%;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        .card-title {
+            font-size: 3vh;
+            color: black;
+            font-weight: 550;
+        }
+        .card-img {
+            width: 500px;
+            border: 1px solid gray;
+            padding: 1%;
+        }
+
+        @media(min-width: 700px) {
+            .container {
+                flex-direction: column;
+                width: 100%;
+            }
+            .card {
+                width: 100%;
+            }
+        }
+        ul li {
+            list-style: none;
+        }
+        ul li::before {
+            content: "■";
+            color: tomato;
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+        .sub-description li {
+            color: gray; 
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <a id="" href="https://24.hu/belfold/2023/02/01/vagyonnyilatkozatok-2023-miniszterek-ellenzek/" class="card">
+                <img class="card-img" src="images/d__yt20221119006-e1675229623618-480x271.jpg" alt="">
+                <div class="card-title">Van olyan miniszter, akinek nincs pénztartaléka, Gyurcsánynak majd félmilliárdja van értékpapírban</div> 
+                <div class="sub-description">
+                    <ul>
+                        <li>Orbán Viktornak feleségével együtt 14 millió forint megtakarítása van</li>
+                    </ul>
+                    <ul>
+                        <li>Havi 24 milliót keresett találmányával Rogán Antal</li>
+                    </ul>
+                </div>  
+            </a>
+            <a id="xd2" href="#" class="card">
+                <img class="card-img" src="images/gettyimages-1238380483-480x270.jpg" alt="">
+                <div class="card-title">Egyéves az élelmiszerárstop – a kereskedők szerint nincs mesterséges hiánygerjesztés, de a veszteségük egyre nagyobb</div> 
+                <div class="sub-description">
+                    <ul>
+                        <li>Hosszú távon is számos, előre nem látott és nem kívánt mellékhatás jelentkezhet.</li>
+                    </ul>
+                </div>  
+            </a>
+            <a id="xd2" href="#" class="card">
+                <img class="card-img" src="https://s.24.hu/app/uploads/2023/01/ill24_fejermegyeiszentgyorgykorhaz_-660x371.jpg" alt="">
+                <div class="card-title">Zaklatás miatt panaszolta be a beteghordót egy abortuszon átesett nő</div> 
+                <div class="sub-description">
+                    <ul>
+                        <li>A székesfehérvári kórházban belső vizsgálat indult.</li>
+                    </ul>
+                </div>  
+            </a>
+        </div>
+        <div class="row">
+            <a id="xd2" href="#" class="card">
+                <img class="card-img" src="images/gettyimages-1238380483-480x270.jpg" alt="">
+                <div class="card-title">Egyéves az élelmiszerárstop – a kereskedők szerint nincs mesterséges hiánygerjesztés, de a veszteségük egyre nagyobb</div> 
+                <div class="sub-description">
+                    <ul>
+                        <li>Hosszú távon is számos, előre nem látott és nem kívánt mellékhatás jelentkezhet.</li>
+                    </ul>
+                </div>  
+            </a>
+        </div>
+    </div>
+</body>
+</html>

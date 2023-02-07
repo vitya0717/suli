@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>Reszponzív Képek</h1>
+    <p>A következő kép mindig felveszi a maximális méretet:</p>
+    <img width=100% src="https://www.w3schools.com/html/img_girl.jpg">
+    <p>A következő kép mindig felveszi a maximális méretet, de sose nagyobb a kép max méreténél</p>
+    <img src="https://www.w3schools.com/html/img_girl.jpg" style="max-width:100%;height:auto;">
+    <p>A következő példához szándékosan keress új képet a neten.<br>Használj továbbra is Abszolut hivatkozást.<br>Legyen 3db különböző tartalmú és különböző méretű képet!~<br>200px, 500px, 1500px<br>A megvalósításhoz használd a picture taget</p>
+    <picture>
+        <source media="(min-width:900px)" srcset="https://www.w3schools.com/tags/img_pink_flowers.jpg">
+        <source media="(min-width:700px)" srcset="https://www.railwaychildren.org.uk/media/148352/smiley-jamal.jpg?anchor=center&mode=crop&width=271&height=283&rnd=132814494469800000">
+        <source media="(min-width:500px)" srcset="https://www.w3schools.com/tags/img_orange_flowers.jpg">
+        <img src="" alt="">
+      </picture>
+</body>
+</html>

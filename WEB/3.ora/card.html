@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="10">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .container {
+            overflow: hidden;
+        }
+        .card {
+            box-shadow: 5px 5px blueviolet;
+            border: 2px solid gray;
+            border-radius: 25px;
+            float: left;
+            width: 16%;
+            margin: 5px;
+            padding: 10px;
+            overflow: hidden;
+        }
+        .thumbnail {
+            width: 100px;
+            padding: 5px;
+            border: 1px solid lightgray;
+            float: right;
+            margin: 5px;
+        }
+        .card-content {
+            text-align: justify;
+            margin: 2px;
+        }
+        .card-title {
+            float: left;
+            margin: 10px;
+        }
+
+        @media (max-width: 1000px) {
+            .card {
+                width: 100%;
+            }
+        }
+        @media (max-width: 800px ) {
+            .container {
+               display: inline-flex;
+            }
+        }
+        @media (max-width: 700px ) {
+            .container {
+               display:list-item;
+               max-width: fit-content;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2 class="card-title">1. Kártya</h2>
+            <img class="thumbnail" src="https://www.w3schools.com/html/img_chania.jpg" alt="">
+            <p class="card-content">
+                Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Corporis, dolores molestias accusantium nisi, optio minima dolorum officia totam deserunt quod, laudantium sequi fugiat hic? Inventore iusto quasi corrupti suscipit nam?
+                laudantium sequi fugiat hic? Inventore iusto quasi corrupti suscipit nam?
+            </p>
+        </div>
+        <div class="card">
+            <h2 class="card-title">2. Kártya</h2>
+            <img class="thumbnail" src="https://www.w3schools.com/html/img_girl.jpg" alt="">
+            <p class="card-content">
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis vel quod nesciunt eum rem? Sit quisquam incidunt ex dolorum. Quisquam quibusdam perferendis dignissimos hic architecto ratione repellat repudiandae dolorum molestias!
+               laudantium sequi fugiat hic? Inventore iusto quasi corrupti suscipit nam? to quasi corrupti suscipit nam? to quasi corrupti suscipit nam?
+            </p>
+        </div>
+        <div class="card">
+            <h2 class="card-title">3. Kártya</h2>
+            <img class="thumbnail" src="https://www.w3schools.com/html/pic_trulli.jpg" alt="">
+            <p class="card-content">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt nulla ratione qui accusamus quaerat temporibus veniam nam, natus ipsa autem aliquam voluptatum reiciendis, debitis porro placeat adipisci quo! Eos, nemo? to quasi corrupti suscipit nam?
+            </p>
+        </div>
+    </div>
+</body>
+</html>

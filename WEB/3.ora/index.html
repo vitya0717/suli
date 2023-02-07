@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title {
+            font-weight: normal;
+            color: yellow;
+        }
+        .h2-title {
+            color: white;
+            font-weight: normal;
+            background-color: tomato;
+            padding: 10px;
+            width: 250px;
+        }
+        .h2-title-other {
+            font-weight: normal;
+            background-color: tomato;
+            padding: 10px;
+            width: 250px;
+        }
+        .h2-title:first-of-type {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function changeClass() {
+            var ozd = document.getElementById('ozd');
+
+            if (ozd.classList.contains('h2-title')) {
+                ozd.classList.remove('h2-title');
+            } else {
+                ozd.classList.add('h2-title');
+            }
+                
+            var malyi = document.getElementById('malyi');
+
+            if (malyi.classList.contains('h2-title')) {
+                malyi.classList.remove('h2-title');
+            } else {
+                malyi.classList.add('h2-title');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 class="title">Többszörös class, és id selektorok használata</h1>
+    <p>A következő városok csak h2 címsorok! Mind megkapja ugyanazt az osztály típusú definíciót, de Ozd és Mályi másik osztálytípusú definíciót is kap.</p>
+    <h2 id="miskolc" class="h2-title">Miskolc</h2>
+    <h2 id="kazicbarcika" class="h2-title">Kazincbarcika</h2>
+    <h2 id="ozd" class="h2-title-other">Ózd</h2>
+    <h2 id="malyi" class="h2-title-other">Mályi</h2>
+    <h2 id="mezokovesd" class="h2-title">Mezőkövesd</h2>
+
+    <p>Tanulmányozd a következő példát: <a href="https://www.w3schools.com/code/tryit.asp?filename=GNG02EEV0WJQ">https://www.w3schools.com/code/tryit.asp?filename=GNG02EEV0WJQ</a><br>A következő gombra kattintva a Mályi és Ózd legyen fehér betűvel írva!</p>
+    <button class="bátön" onclick="changeClass()">Mályi és Ózd</button>
+
+
+</body>
+</html>

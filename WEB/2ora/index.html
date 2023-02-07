@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.webp" type="image/x-icon">
+    <title>Táblázat</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            width: 100px;
+        }
+        th:first-child {
+            background-color: white;
+        }
+        tr:nth-child(even) {
+            background-color: lightgray;
+        }
+
+
+        /*exd = table, xxx = tr, xxxddd = td*/
+        .exd:nth-child(even) {
+            background-color: azure;
+        }
+        .xxx:first-child {
+            background-color: cornflowerblue;
+        }
+        .xxx:nth-child(2n) {
+            background-color: lightgray;
+        }
+        .exd, .xxx, .xxxddd {
+            border: 1px solid lightgray;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML Táblázatok</h1>
+    <h2>Ebben a példábn a táblázatok színezését kérem számon.</h2>
+    <ul>
+        <li>van a táblázatban egy alapszín = "azure"</li>
+        <li>az első sor "cornflowerblue" színű</li>
+        <li>tr:nth-child selektorral lehet páros és páratlan sorokat máshogy színezni!</li>
+    </ul>
+    <table border="1">
+        <tr>
+            <th colspan="3">Cím</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td rowspan="2">3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td rowspan="3">5</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td colspan="2", rowspan="2">13</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>18</td>
+        </tr>
+    </table>
+    <br>
+    <table class="exd">
+        <tr class="xxx">
+            <td class="xxxddd">2021.01.01</td>
+            <td class="xxxddd">2021.02.01</td>
+            <td class="xxxddd">2021.03.01</td>
+        </tr>
+        <tr class="xxx">
+            <td class="xxxddd">2021.01.02</td>
+            <td class="xxxddd">2021.02.02</td>
+            <td class="xxxddd">2021.03.02</td> 
+        </tr>
+        <tr class="xxx">
+            <td class="xxxddd">2021.01.03</td>
+            <td class="xxxddd">2021.02.03</td>
+            <td class="xxxddd">2021.03.03</td> 
+        </tr>
+        <tr class="xxx">
+            <td class="xxxddd">2021.01.04</td>
+            <td class="xxxddd">2021.02.04</td>
+            <td class="xxxddd">2021.03.04</td>
+        </tr>
+        <tr class="xxx">
+            <td class="xxxddd">2021.01.05</td>
+            <td class="xxxddd">2021.02.05</td>
+            <td class="xxxddd">2021.03.05</td>
+        </tr>
+        <tr class="xxx">
+            <td class="xxxddd">2021.01.06</td>
+            <td class="xxxddd">2021.02.06</td>
+            <td class="xxxddd">2021.03.06</td>
+        </tr>
+        <tr class="xxx">
+            <td class="xxxddd">2021.01.07</td>
+            <td class="xxxddd">2021.02.07</td>
+            <td class="xxxddd">2021.03.07</td>
+        </tr>
+        <tr class="xxx">
+            <td class="xxxddd">2021.01.08</td>
+            <td class="xxxddd">2021.02.08</td>
+            <td class="xxxddd">2021.03.08</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -17,7 +17,7 @@ namespace KarakterGeneralas
 
             string output = "";
 
-            if (ered == -1)
+            if (ered == 1)
             {
                 output = $"A {szoveg1} a nagyobb!";
             }
@@ -47,7 +47,7 @@ namespace KarakterGeneralas
 
             for (int i = 0; i < 5; i++)
             {
-                szoveg1 += r.Next(100,300);
+                szoveg1 += r.Next(100, 300);
             }
             for (int j = 0; j < 3; j++)
             {
@@ -57,8 +57,8 @@ namespace KarakterGeneralas
             Console.WriteLine($"szoveg2: {szoveg2}");
 
             Console.WriteLine(nagyobb(szoveg1, szoveg2));
-         
-            
+
+
 
             Console.ReadKey();
 
