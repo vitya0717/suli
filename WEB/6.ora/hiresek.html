@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class hiresNo {
+            constructor(nev, foglalkozas, nemzetiseg) {
+                this.nev = nev;
+                this.foglalkozas = foglalkozas;
+                this.nemzetiseg = nemzetiseg;
+            }
+        }
+        function elonev(nemzet) {
+            if (nemzet == "n") {
+                return "Frau";
+            } else {
+                return "Ms."
+            }
+        }
+        function kiiras() {
+            let spen = document.getElementById("text");
+            let nem = document.getElementById("nemzet").value;
+            let nev = document.getElementById("name").value;
+            let foglal = document.getElementById("foglal").value;
+
+            let peldany = new hiresNo(nev, foglal, nem);
+            console.log(peldany);
+            spen.innerHTML += "{nemzetiseg} {neve} egy híres {foglalkozas} <br>".replace("{nemzetiseg}", elonev(peldany.nemzetiseg)).replace("{neve}", peldany.nev).replace("{foglalkozas}", peldany.foglalkozas)
+        }
+    </script>
+</head>
+
+<body>
+    <label for="name">Adj meg egy nevet!</label>
+    <input id="name" name="name" type="text">
+    <br>
+    <label for="foglal">Adj meg egy foglalkozást!</label>
+    <input id="foglal" name="foglal" type="text">
+    <br>
+    <label for="nemzet">Add meg a nemzetiséged (a/n)</label>
+    <input id="nemzet" name="nemzet" type="text">
+    <br>
+    <input onclick="kiiras()" type="button" value="generál">
+    <br>
+    <span id="text"></span>
+</body>
+
+</html>
