@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            background-color: blanchedalmond;
+            border-left: 4px solid lightgray;
+            padding: 10px;
+        }
+    </style>
+    <script>
+
+        //nyitvatartás
+        function nyitvatartas() {
+            let inputValue = document.getElementById("ido").value;
+            let equal = document.getElementById("endtext");
+            if (Number(inputValue) < 8 || Number(inputValue) >= 16) {
+                equal.textContent = "A bolt még zárva van!";
+            } else if ((Number(inputValue) >= 8 && Number(inputValue) < 16)) {
+                equal.textContent = "A bolt még nyitva van és {LeftTime} óra van még hátra zárásig!".replace('{LeftTime}', 16 - Number(inputValue));
+            }
+        }
+
+        //melyik a nagyobb
+        function nagyobb() {
+            let num1 = Number(document.getElementById('num1').value);
+            let num2 = Number(document.getElementById('num2').value);
+            let equal = document.getElementById('endtextnum');
+            if (num1 == num2) {
+                equal.textContent = "A két szám egyenlő!"
+            } else if (num1 > num2) {
+                equal.textContent = "A {num1} nagyobb!".replace("{num1}", num1)
+            } else {
+                equal.textContent = "A {num2} nagyobb!".replace("{num2}", num2)
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <p>
+            Egy bolt pontban reggel nyolc órakor nyit, és pontban délután tizenhat órakor zár be - azaz 8:00-kor már
+            nyitva van és 16:00-kor már nincs nyitva.
+            Írjon programot nyitvatartas.py néven! A program kérjen be egy egész órát jelző számot a felhasználótól,
+            majd írja ki, hogy a megadott időpontban
+            nyitva van-e a bolt! Amennyiben igen, akkor azt is írja ki, hogy mennyi idő van még zárásig, azaz hány egész
+            óra áll rendelkezésre odaérni a boltba!
+            A program üzeneteinek megfogalmazásában kövesse az alábbi példát! Azokat a részeket, amiket a felhasználó
+            gépel be, a mintában vastagított és
+            döntött betűkkel emeltük ki.
+        </p>
+    </div>
+    <label for="ora">Hány óra van most?</label>
+    <input id="ido" name="ora" type="text">
+    <br>
+    <input onclick="nyitvatartas()" type="button" value="Nagyobb">
+    <br>
+    <span id="endtext">Eredmény</span>
+    <div class="container">
+        <p>
+            Írjon programot nagyobb.py néven! A program kérjen be két számot a felhasználótól, majd írja ki, hogy melyik
+            a nagyobb! A program üzeneteinek
+            megfogalmazásában kövesse az alábbi példát! Azokat a részeket, amiket a felhasználó gépel be, a mintában
+            vastagított és döntött betűkkel emeltük
+            ki.
+        </p>
+    </div>
+    <label for="szam1">Adj meg egy számot!</label>
+    <input id="num1" name="szam1" type="text">
+    <br>
+    <label for="szam2">Adj meg egy másik számot!</label>
+    <input id="num2" name="szam2" type="text">
+    <br>
+    <input onclick="nagyobb()" type="button" value="Nagyobb">
+    <br>
+    <span id="endtextnum">Eredmény</span>
+</body>
+
+</html>

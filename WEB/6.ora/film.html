@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*Math.floor(Math.random() * arr.length)*/
+
+        function oraperc(percek) {
+            let ora = Math.floor(Number(percek) / 60, 0);
+            let perc = percek % 60;
+
+            return String(ora) + 'óra ' + String(perc) + 'perc';
+        }
+        window.onload = function () {
+            for (let i = 0; i < 3; i++) {
+                let cim = prompt("Add meg egy film címét! ");
+                let porc = Number(prompt("Hány perces a film? "));
+                document.write("A(z) {title} című film {ora} hosszú!".replace("{title}", cim).replace("{ora}", oraperc(porc))+"<br>")
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <span id="textresult"></span>
+    </div>
+</body>
+
+</html>

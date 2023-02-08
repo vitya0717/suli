@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="szo">Hány órás visszaszámlálást tervezünk? </label>
+    <input id="st1" name="szo" type="text" value="">
+    <br>
+    <input onclick="hosszabb()" type="button" value="ellenorzes">
+    <br>
+    <span id="text"></span>
+    <script>
+        function hosszabb() {
+            let st1 = Number(document.getElementById('st1').value);
+            let phours = Number(st1);
+            let txt = document.getElementById('text')
+            txt.value = "";
+            for (let i = st1; i > 0; i--) {
+                let input = prompt("Meg kell szakítani a visszaszámálást? ");
+                if (input.toLowerCase() == 'i') {
+                    txt.innerHTML += "Visszaszámlálás: " + i + "<br>";
+                    phours++;
+                } else if (input.toLowerCase() == 'n') {
+                    txt.innerHTML += "Visszaszámlálás: " + i + "<br>";
+                }
+            }
+            txt.innerHTML += "A rakéta a visszaszámlálást követően ennyi órával indult:" + phours;
+
+
+        }
+    </script>
+</body>
+
+</html>

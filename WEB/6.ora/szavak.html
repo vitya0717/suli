@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="szo">Adj meg egy szót</label>
+    <input id="st1" name="szo" type="text" value="">
+    <br>
+    <label for="szo">Adj meg egy másik szót</label>
+    <input id="st2" name="szo" type="text" value="">
+    <br>
+    <input onclick="hosszabb()" type="button" value="ellenorzes">
+    <br>
+    <span id="text"></span>
+    <script>
+       function hosszabb() {
+            let st1 = document.getElementById('st1').value;
+            let st2 = document.getElementById('st2').value;
+            let txt = document.getElementById('text')
+            if (st1.length > st2.length) {
+                txt.textContent = st1 + " Hosszabb!";
+            } else {
+                txt.textContent = st2 + " Hosszabb!";
+            }
+        }
+    </script>
+</body>
+
+</html>

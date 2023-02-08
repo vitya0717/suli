@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: lightgray;
+        }
+        .container {
+            height: 400px;
+            background: gray;
+            width: 400px;
+            border-bottom: 30px solid burlywood;
+            border-top: 30px solid burlywood;
+            padding: 20px;
+            align-items: center;
+            text-align: center;
+            margin: auto;
+        }
+
+        .container input {
+            width: 100%;
+        }
+    </style>
+    <script>
+        //bejelentkezés
+        /*Írjon programot jelszo.py néven, amely azt vizsgálja, hogy egy felhasználó helyesen adja-e meg a jelszavát! A
+        program addig kérdezi újra a felhasználónév-jelszó párost, amíg a felhasználó mindkettőt hibátlanul meg nem
+        adja. A program egyetlen felhasználó (bori99) jelszavát (Szivecske<3) ismeri, csak ezt a párost fogadja el
+        helyesként. Mind a sikertelen, mind a sikeres bejelentkezési kísérletekről üzenetet ír a képernyőre.
+        A program üzeneteinek megfogalmazásában kövesse az alábbi példát! Azokat a részeket, amiket a felhasználó
+        gépel be, a mintában vastagított és döntött betűkkel emeltük ki./Írjon programot jelszo.py néven, amely azt vizsgálja, hogy egy felhasználó helyesen adja-e meg a jelszavát! A
+        program addig kérdezi újra a felhasználónév-jelszó párost, amíg a felhasználó mindkettőt hibátlanul meg nem
+        adja. A program egyetlen felhasználó (bori99) jelszavát (Szivecske<3) ismeri, csak ezt a párost fogadja el
+        helyesként. Mind a sikertelen, mind a sikeres bejelentkezési kísérletekről üzenetet ír a képernyőre.
+        A program üzeneteinek megfogalmazásában kövesse az alábbi példát! Azokat a részeket, amiket a felhasználó
+        gépel be, a mintában vastagított és döntött betűkkel emeltük ki.*/
+        function login() {
+            const username = "bori99";
+            const password = "Szivecske<3";
+
+            let login_username = document.getElementById('uinput').value
+            let login_password = document.getElementById('pinput').value
+            let result = document.getElementById('result');
+
+            if(login_username != username || login_password != password) {
+                result.textContent = "Belépés megtagadva!"
+            } else {
+                result.textContent = "Belépés engedélyezve!"
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <form style="margin: auto;" action="">
+            <label for="username">Adja meg a felhasználónevét!</label>
+            <br>
+            <input id="uinput" name="username" type="text">
+            <br><br>
+            <label for="password">Adja meg a jelszavát!</label>
+            <br>
+            <input id="pinput" name="password" type="password">
+            <br><br>
+            <input onclick="login()" type="button" value="Bejelentkezés">
+        </form>
+        <br>
+        <span id="result">Nincs bejelentkezve!</span>
+    </div>
+</body>
+
+</html>

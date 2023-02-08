@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sikeres(pontok) {
+            if (Number(pontok) >= 48) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function vizsga() {
+            let st1 = document.getElementById('st1').value;
+            let st2 = document.getElementById('st2').value;
+            let txt = document.getElementById('text')
+            txt.textContent = sikeres(st2) ? "Sikeres vizsga" : "Sikertelen xd"; 
+        }
+    </script>
+</head>
+
+<body>
+    <label for="szo">Add meg a vizsgázó nevét</label>
+    <input id="st1" name="szo" type="text" value="">
+    <br>
+    <label for="szo">Add meg a vizsgázó pontszámát</label>
+    <input id="st2" name="szo" type="text" value="">
+    <br>
+    <input onclick="vizsga()" type="button" value="ellenorzes">
+    <br>
+    <span id="text"></span>
+</body>
+
+</html>
