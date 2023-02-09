@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas06\KetdimenziosTomb_Matrix\bin\Debug\KetdimenziosTomb_Matrix.exe.config
+C:\Users\Tanulo\source\repos\Eloadas06\KetdimenziosTomb_Matrix\bin\Debug\KetdimenziosTomb_Matrix.exe
+C:\Users\Tanulo\source\repos\Eloadas06\KetdimenziosTomb_Matrix\bin\Debug\KetdimenziosTomb_Matrix.pdb
+C:\Users\Tanulo\source\repos\Eloadas06\KetdimenziosTomb_Matrix\obj\Debug\KetdimenziosTomb_Matrix.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas06\KetdimenziosTomb_Matrix\obj\Debug\KetdimenziosTomb_Matrix.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas06\KetdimenziosTomb_Matrix\obj\Debug\KetdimenziosTomb_Matrix.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas06\KetdimenziosTomb_Matrix\obj\Debug\KetdimenziosTomb_Matrix.exe
+C:\Users\Tanulo\source\repos\Eloadas06\KetdimenziosTomb_Matrix\obj\Debug\KetdimenziosTomb_Matrix.pdb

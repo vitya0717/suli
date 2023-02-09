@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas06\HetesLotto\bin\Debug\HetesLotto.exe.config
+C:\Users\Tanulo\source\repos\Eloadas06\HetesLotto\bin\Debug\HetesLotto.exe
+C:\Users\Tanulo\source\repos\Eloadas06\HetesLotto\bin\Debug\HetesLotto.pdb
+C:\Users\Tanulo\source\repos\Eloadas06\HetesLotto\obj\Debug\HetesLotto.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas06\HetesLotto\obj\Debug\HetesLotto.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas06\HetesLotto\obj\Debug\HetesLotto.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas06\HetesLotto\obj\Debug\HetesLotto.exe
+C:\Users\Tanulo\source\repos\Eloadas06\HetesLotto\obj\Debug\HetesLotto.pdb
