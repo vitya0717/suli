@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -64,7 +65,7 @@ namespace Tomb_Vektor
             //bool[] alapVizsgaEredmenyek = new bool[osztalyTanulok.Length];
             Dictionary<int, Dictionary<string, int>> alapvizsgaEredmeny = new Dictionary<int, Dictionary<string, int>>();
             Dictionary<string, int> alapvizsgaEredmeny2 = new Dictionary<string, int>();
-            for (int i = 0; i < 30; i++)
+            for (int i = 1; i < 30; i++)
             {
                 int eredmeny = r.Next(0, 101);
                 alapvizsgaEredmeny2.Add(tanulok[i], eredmeny);
@@ -76,42 +77,36 @@ namespace Tomb_Vektor
                     alapvizsgaEredmeny.Add(i, alapvizsgaEredmeny2);
                 }
             }
+            //mysql adatok
+            string data = "server=localhost;user=username;database=agazati;port=3306;password=12345;Allow User Variables=true";
 
-            string data = "server=localhost;user=username;database=agazati;port=3306;password=12345";
             MySqlConnection connect = new MySqlConnection(data);
             try
             {
-                MySqlCommand command;
-                MySqlDataReader reader;
-                string query = "";
+                //mysql kapcsolat létrehozása
+                connect.Open();
+                string query;
                 int k = 0;
                 
                 foreach (var item in alapvizsgaEredmeny)
                 {
-                    connect.Open();
-                    query = $"INSERT INTO tanulok (id,neve,eredmeny) VALUES (@{item.Key},@{item.Value.ToArray()[k].Key},@{item.Value.ToArray()[k].Value})";
-                    command = new MySqlCommand(query, connect);
-                    //Console.WriteLine($"ID:{item.Key}, Neve: {item.Value.ToArray()[k].Key}, Eredmény: {item.Value.ToArray()[k].Value}%");
-                    command.Parameters.Add($"@{item.Key}", DbType.Int32).Value = item.Value.ToArray()[k].Value;
-                    command.Parameters.Add($"@{item.Value.ToArray()[k].Key}", DbType.String).Value = item.Value.ToArray()[k].Key;
-                    command.Parameters.Add($"@{item.Value.ToArray()[k].Value}", DbType.Int64).Value = item.Value.ToArray()[k].Value;
-                    reader = command.ExecuteReader();
-                    while (reader.Read())
-                    {
-
-                    }
+                    Console.WriteLine($"ID:{item.Key}, Neve: {item.Value.ToArray()[k].Key}, Eredmény: {item.Value.ToArray()[k].Value}%");
+                    //query = $"INSERT INTO agatazi.tanulok(id,neve,eredmeny) VALUES ({item.Key},{item.Value.ToArray()[k].Key},{item.Value.ToArray()[k].Value});";
+                    query = "INSERT INTO tanulok(id,neve,eredmeny) VALUES (@id,@neve,@eredmeny);";
+                    MySqlCommand cmd = new MySqlCommand(query, connect);
+                    cmd.Parameters.AddWithValue("@id", item.Key);
+                    cmd.Parameters.AddWithValue("@neve", item.Value.ToArray()[k].Key);
+                    cmd.Parameters.AddWithValue("@eredmeny", item.Value.ToArray()[k].Value);
+                    cmd.ExecuteNonQuery();
                     k++;
-                    connect.Close();
-
                 }
             }
             catch (Exception e)
             {
-                
                 Console.WriteLine(e.Message);
             }
 
-            
+            connect.Close();
 
             Console.ReadKey();
 
