@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function nevelo(szo) {
+            let maganhangzok = "aáeéiíoóöőuúüű";
+            if (maganhangzok.includes(szo[0].toLowerCase())) {
+                return 'Az';
+            } else {
+                return 'A';
+            }
+        }
+        function jelzo() {
+            const jel = ["piros", "nagy", "könnyed"];
+            return jel[Math.floor(Math.random() * jel.length)];
+        }
+        function mondat() {
+            let text = document.getElementById("text");
+            let w = document.getElementById("word").value;
+            text.textContent = nevelo(w) + " " + w + " " + jelzo();
+        }
+    </script>
+</head>
+
+<body>
+    <label for="input">Adj meg egy főnevet!</label>
+    <input id="word" name="input" type="text">
+    <br>
+    <input onclick="mondat()" type="button" value="mondat">
+    <span id="text"></span>
+</body>
+
+</html>
