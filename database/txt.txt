@@ -1,0 +1,2 @@
+termék(termek_id, kategoria, név, ára)
+felhasználó(lakcím, név, email, felhasz.id)

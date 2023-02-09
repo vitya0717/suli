@@ -1,0 +1,28 @@
+Egy a többhöz kapcsolat
+(1:n kapcsolat)
+Ebbe a kapcsolat típusban az egyik tábla egyetlen rekordja a másik tábla több rekordjához kapcsolódik.
+(pl egy felhasználónak lehet a rendszerben rögzítve több hozzászólása)Ez a kapcsolat nem fordítható meg.
+
+Egy az egyhez kapcsolat
+(1:1 kapcsolat)
+(pl a felhasználónak egy profilja van és a profil)
+
+Több a többhöz kapcsolat
+(n:m kapcsolat)
+Az egyik adattábla egyik rekorja a másik adattábla több rekordjával van kapcsolatban és a
+ másik adattábla egy rekorjda az első adattábla több rekordjával aáll kapcsolatban!
+(pl egy tanár több tantárgyat is taníthat és egy tantárgyat többen is taníthatnak)
+
+
+Normálforma
+
+1.normálforma
+- minden tulajdonság csak elemi adatokat tartalmaz(pl: cím <-> irsz, város, utca)
+2. normálforma
+- (feltételezés, hogy már 1.normálformában van) A reálció minden tulajdonsága csak az elsődleges kuls egészétől függ
+ (ÖSSZETETT KULCS KERÜLÉSE) 
+3. normálforma
+- Második normálformában van
+- Meg kell szüntetni a tranzitív függőséget
+2.9 Image editing
+2.10 Graphic design

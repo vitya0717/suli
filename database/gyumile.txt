@@ -1,0 +1,3 @@
+szallitas(sorszam, gyumi_id, partner_id, idopont, mennyiseg)
+gyumile(gyumiId, neve)
+partner(partnerId, neve, telephely)
