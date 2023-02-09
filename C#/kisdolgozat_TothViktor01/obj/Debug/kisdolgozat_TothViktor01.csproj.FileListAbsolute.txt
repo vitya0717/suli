@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\kisdolgozat_TothViktor01\bin\Debug\kisdolgozat_TothViktor01.exe.config
+C:\Users\Tanulo\source\repos\kisdolgozat_TothViktor01\bin\Debug\kisdolgozat_TothViktor01.exe
+C:\Users\Tanulo\source\repos\kisdolgozat_TothViktor01\bin\Debug\kisdolgozat_TothViktor01.pdb
+C:\Users\Tanulo\source\repos\kisdolgozat_TothViktor01\obj\Debug\kisdolgozat_TothViktor01.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\kisdolgozat_TothViktor01\obj\Debug\kisdolgozat_TothViktor01.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\kisdolgozat_TothViktor01\obj\Debug\kisdolgozat_TothViktor01.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\kisdolgozat_TothViktor01\obj\Debug\kisdolgozat_TothViktor01.exe
+C:\Users\Tanulo\source\repos\kisdolgozat_TothViktor01\obj\Debug\kisdolgozat_TothViktor01.pdb
