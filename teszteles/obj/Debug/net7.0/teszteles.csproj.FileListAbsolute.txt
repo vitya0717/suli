@@ -1,0 +1,15 @@
+D:\Users\Viktor\Documents\GitHub\suli\teszteles\bin\Debug\net7.0\teszteles.exe
+D:\Users\Viktor\Documents\GitHub\suli\teszteles\bin\Debug\net7.0\teszteles.deps.json
+D:\Users\Viktor\Documents\GitHub\suli\teszteles\bin\Debug\net7.0\teszteles.runtimeconfig.json
+D:\Users\Viktor\Documents\GitHub\suli\teszteles\bin\Debug\net7.0\teszteles.dll
+D:\Users\Viktor\Documents\GitHub\suli\teszteles\bin\Debug\net7.0\teszteles.pdb
+D:\Users\Viktor\Documents\GitHub\suli\teszteles\obj\Debug\net7.0\teszteles.csproj.AssemblyReference.cache
+D:\Users\Viktor\Documents\GitHub\suli\teszteles\obj\Debug\net7.0\teszteles.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\Viktor\Documents\GitHub\suli\teszteles\obj\Debug\net7.0\teszteles.AssemblyInfoInputs.cache
+D:\Users\Viktor\Documents\GitHub\suli\teszteles\obj\Debug\net7.0\teszteles.AssemblyInfo.cs
+D:\Users\Viktor\Documents\GitHub\suli\teszteles\obj\Debug\net7.0\teszteles.csproj.CoreCompileInputs.cache
+D:\Users\Viktor\Documents\GitHub\suli\teszteles\obj\Debug\net7.0\teszteles.dll
+D:\Users\Viktor\Documents\GitHub\suli\teszteles\obj\Debug\net7.0\refint\teszteles.dll
+D:\Users\Viktor\Documents\GitHub\suli\teszteles\obj\Debug\net7.0\teszteles.pdb
+D:\Users\Viktor\Documents\GitHub\suli\teszteles\obj\Debug\net7.0\teszteles.genruntimeconfig.cache
+D:\Users\Viktor\Documents\GitHub\suli\teszteles\obj\Debug\net7.0\ref\teszteles.dll

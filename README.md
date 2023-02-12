@@ -1,2 +1,0 @@
-# suli
-iskolás cuccok

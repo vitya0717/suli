@@ -25,7 +25,6 @@ namespace Tomb_Vektor
             foreach (int num in szamok)
             {
                 Console.WriteLine(num);
-            
             }
             Console.WriteLine("----------");
             foreach (int num in szamok)
