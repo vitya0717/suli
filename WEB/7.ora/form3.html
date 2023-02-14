@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Document</title>
+    <script>
+        var nums = [10, 23, 31, 14, -45];
+        function pushItems() {
+            nums.push(Number(document.getElementById("numbers").value));
+            console.log(nums);
+        }
+        function generateList() {
+            document.getElementById("pushnums").textContent = "";
+            for (let i = 0; i < nums.length; i++) {
+                document.getElementById("pushnums").textContent += nums[i];
+                if (i != nums.length - 1) {
+                    document.getElementById("pushnums").textContent += ',';
+                }
+            }
+
+        }
+        function generateTable() {
+            let osszeg = 0;
+            document.getElementById("tab").innerHTML =
+                "<tr class='w3-red'>" +
+                "<th>index</th>" +
+                "<th>érték</th>" +
+                "</tr>";
+            for (let i = 0; i < nums.length; i++) {
+                document.getElementById("tab").innerHTML +=
+                    "<tr>" +
+                    "<td>" + i + "</td>" +
+                    "<td>" + nums[i] + "</td>" +
+                    "</tr>"
+                osszeg += nums[i];
+            }
+            document.getElementById("tab").innerHTML +=
+                "<tr class='w3-gray'>" +
+                "<td>Összeg:</td>" +
+                "<td>" + osszeg + "</td>" +
+                "</tr>" +
+                "<tr class='w3-gray'>" +
+                "<td>Max: " + Math.max(...nums) + "</td>" +
+                "<td>" + Math.max(...nums) + "</td>" +
+                "<tr class='w3-gray'>" +
+                "<td>Min: " + Math.min(...nums) + "</td>" +
+                "<td>" + Math.min(...nums) + "</td>" +
+                "</tr>";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="w3-container">
+        <div id="wrong">Rossz karakterek: nincs</div>
+        <input type="text">
+        <div class="w3-panel w3-leftbar w3-sand">
+            <p>A gomb segítségével lehessen egy tömbe értékeket beszúrni. Az eltárolt tömböt, vesszős listaként
+                megjelníteni.
+                <br>Valamint dinamikusan kigenerálni táblázatos formában, Összeg, Maximum meghatározásával.
+            </p>
+        </div>
+        <input id="numbers" type="text">
+        <input onclick="pushItems()" type="button" value="Beszúrás">
+        <input onclick="generateList()" type="button" value="Vesszős lista">
+        <input onclick="generateTable()" type="button" value="Táblás generálás">
+
+        <div class="w3-panel w3-leftbar w3-sand">
+            <span id="pushnums"></span>
+        </div>
+        <div>
+            <table class="w3-table w3-bordered" id="tab"></table>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

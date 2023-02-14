@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function felugro() {
+            let tartalom = document.getElementById("input1").value;
+            alert(tartalom);
+        }
+        function als() {
+            let also = document.getElementById("input2");
+            let felso = document.getElementById("input1");
+            if (felso.value.length > 0) {
+                also.value = felso.value;
+                felso.value = "";
+            }
+
+        }
+        function csere() {
+            let also = document.getElementById("input2");
+            let felso = document.getElementById("input1");
+
+            let temp1 = also.value;
+            let temp2 = felso.value;
+
+            felso.value = temp1;
+            also.value = temp2;
+        }
+        function alerttrue() {
+            alert(document.getElementById("truefalse").checked);
+        }
+        function hexCode() {
+            let color = document.getElementById("hexColor").value;
+            document.getElementById('input1').value = color;
+        }
+        function AlmaFa() {
+            let sel = document.getElementById("list");
+            let text = "";
+            for (let i = 0; i < sel.length; i++) {
+                text += sel[i].value;
+            }
+            alert(text);
+        }
+        function dateWrite() {
+            const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            console.log(month[new Date().getMonth()]);
+        }
+        function getPass() {
+            let getpass = document.getElementById("passtext");
+            alert(getpass.value);
+        }
+        function showPass() {
+            let show = document.getElementById("passtext");
+            show.type = "text";
+        }
+        function hidePass() {
+            let hide = document.getElementById("passtext");
+            hide.type = "password"
+        }
+        function sum() {
+            let summa = document.getElementById("input1").value;
+            if(isNaN(summa)) {
+                alert("Nem szám!")
+            } else {
+                summa = Number(summa);
+                summa += 1;
+                alert(summa);
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <input id="input1" type="text">
+    <input onclick="felugro()" type="button" value="Egy felugró ablaka jelenjen meg a bevieli mező értéke">
+    <hr>
+    <input id="input2" type="text">
+    <input onclick="als()" type="button" value="Az alsó beviteli mezőbe mozgassuk át a tartalmat">
+</body>
+<hr>
+<input onclick="csere()" type="button" value="Csere: a két beviteli mező cseréljen értéket!">
+<hr>
+<input onclick="alerttrue()" type="checkbox" name="trueorfalse" id="truefalse">
+<label for="trueorfalse">Egy alertben jelenjen meg checkbox értéke: true vagy false</label>
+<hr>
+<input type="color" name="hex" id="hexColor">
+<input onclick="hexCode()" type="button"
+    value="A hexadecimális szinkódot jelenítsd meg az első szöveges bevitelimezőben!" for="hex">
+<hr>
+<select id="list">
+    <option selected>Almafán terem</option>
+    <option value="Alma">Alma</option>
+    <option value="Alma2">Alma2</option>
+    <option value="Alma3">Alma3</option>
+</select>
+<input onclick="AlmaFa()" type="button"
+    value="Járd be a gyümölcsös legördülő listát! Az értékeket és opciókat fűzd össze és egy alertba jelenítsd meg">
+<hr>
+<input type="date" name="datenow" id="datte">
+<input onclick="dateWrite()" type="button" value="Egy alertba melyik hónap van!">
+<hr>
+<input id="passtext" type="password">
+<input ond="getPass()" type="button" value="Mi a jelszó? egy alertba jelenítsd meg!">
+<input onmouseup="hidePass()" onmousedown="showPass()" type="button" value="Amíg ezt lenyomod megjelíteni a jelszót">
+<hr>
+<input onclick="sum()" type="button"
+    value="Ha az első text inputmezőben szám van akkor adj hozzá egyet különben írd ki, hogy nem szám!">
+<hr>
+
+</html>

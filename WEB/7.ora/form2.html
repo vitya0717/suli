@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            padding: 10px;
+        }
+    </style>
+
+    <script>
+        function fel1() {
+            let res = document.getElementById("feladat1");
+            let txt = document.getElementById("fel1text");
+            res.textContent = "karakterek száma:" + txt.value.length;
+        }
+
+        function fel2() {
+            let res = document.getElementById("feladat2");
+            let select = document.getElementById("select");
+
+            let c1 = document.getElementById("check1").checked;
+            let c2 = document.getElementById("check2").checked;
+
+            if (select.value == 1) {
+                if (c1 && c2) {
+                    res.textContent = c1 + select[select.selectedIndex].textContent + c2 + " = true";
+                }
+                else {
+                    res.textContent = c1 + select[select.selectedIndex].textContent + c2 + " = false";
+                }
+            }
+
+            if (select.value == 2) {
+                if (c1 || c2) {
+                    res.textContent = c1 + select[select.selectedIndex].textContent + c2 + " = true";
+                }
+                else {
+                    res.textContent = c1 + select[select.selectedIndex].textContent + c2 + " = false";
+                }
+            }
+
+            if (select.value == 3) {
+                if (c1 != c2) {
+                    res.textContent = c1 + select[select.selectedIndex].textContent + c2 + " = true";
+                }
+                else {
+                    res.textContent = c1 + select[select.selectedIndex].textContent + c2 + " = false";
+                }
+            }
+
+        }
+
+        function fel3(rbutton) {
+
+            let res = document.getElementById("feladat3");
+            let month = new Date().getMonth();
+            sor = "Melyik évszak van? ";
+
+
+            if (rbutton.value == "tél") {
+                if (month == 11 || month == 0 || month == 1) {
+                    res.textContent = sor + "Helyes";
+                } else {
+                    res.textContent = sor + "rossz, mert " + (month + 1) + ". hónap van";
+                }
+            }
+            if (rbutton.value == "tavasz") {
+                if (month == 2 || month == 3 || month == 4) {
+                    res.textContent = sor + "Helyes";
+                } else {
+                    res.textContent = sor + "rossz, mert " + (month + 1) + ". hónap van";
+                }
+            }
+            if (rbutton.value == "nyár") {
+                if (month == 5 || month == 6 || month == 7) {
+                    res.textContent = sor + "Helyes";
+                }
+                else {
+                    res.textContent = sor + "rossz, mert " + (month+1) + ". hónap van";
+                }
+            }
+            if (rbutton.value == "ősz") {
+                if (month == 8 || month == 9 || month == 10) {
+                    res.textContent = sor + "Helyes";
+                } else {
+                    res.textContent = sor + "rossz, mert " + (month + 1) + ". hónap van";
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <p class="w3-panel w3-leftbar w3-sand">A stílusról: w3.css-vel van kizárólag formázva. w3-panel, w3-container
+        w3-sand w3-leftbar w3-example.</p>
+    <hr>
+    <p id="feladat1">karakterek száma:</p>
+    <form>
+        <input id="fel1text" type="text" onchange="fel1()">
+    </form>
+    <p class="w3-panel w3-leftbar w3-sand">A fenti text beviteli mezőhöz válassz egy eseményt, és készíts egy függvényt
+        ami gépelés közben a felette lévő divbe megjeleníti a begépelt karakterek számát.</p>
+    <hr>
+
+    <p id="feladat2">ide jön majd a xd</p>
+    <form>
+        <input type="checkbox" id="check1" onchange="fel2()"> egyik feltétel
+        <br>
+        <input type="checkbox" id="check2" onchange="fel2()"> másik feltétel
+    </form>
+    <select class="form-select form-select-lg" name="" id="select" onchange="fel2()">
+        <option selected value="1"> AND </option>
+        <option value="2"> OR </option>
+        <option value="3"> XOR </option>
+    </select>
+    <p class="w3-panel w3-leftbar w3-sand">Ebben a feladatrészben két checkbox és egy legördülőmenü van. Készíts
+        scriptet, melyet mindhárom elem meghív. Ez értékeiktől függően jelenjen meg a logikai kifejezés kiértékelve. A
+        scriptben is használd a logikai operátorokat.</p>
+
+    <hr>
+    <div id="feladat3">Melyik évszak van? </div>
+
+    <input type="radio" id="r1" name="yeet" value="tél" onchange="fel3(this)">
+    <label for="r1">tél</label><br>
+    <input type="radio" id="r2" name="yeet" value="tavasz" onchange="fel3(this)">
+    <label for="r2">tavasz</label><br>
+    <input type="radio" id="r3" name="yeet" value="nyár" onchange="fel3(this)">
+    <label for="r3">nyár</label><br>
+    <input type="radio" id="r4" name="yeet" value="ősz" onchange="fel3(this)">
+    <label for="r4">ősz</label><br>
+
+    <p class="w3-panel w3-leftbar w3-sand">Ebben a feladatrészben, a Date objektumot kell használni, hogy megtudjuk
+        melyik hónap van. Majd a radiogombokra kattintva határozza meg, a hónap megfelel-e a kiválasztott évszaknak. Az
+        összetett választ a felette lévő divbe írja bele!</p>
+
+
+</body>
+
+</html>

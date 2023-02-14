@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asd</title>
+    <script>
+        function feladat1(){
+            points = document.getElementById("text1").value;
+            if(points<=10){
+                console.log("egyes");
+                return;
+            }
+            if(points<=20){
+                console.log("kettes");
+                return;
+            }
+            if(points<=30){
+                console.log("hármas");
+                return;
+            }
+            if(points<=40){
+                console.log("négyes");
+                return;
+            }
+            if(points>40){
+                console.log("ötös");
+                return;
+            }
+        }
+        var szamok = [2,4,13,4,6,42,3];
+        function feladat2_a(){
+            
+            var sum = 0;
+            szamok.forEach(element => {
+                sum+=element;
+            });
+            console.log("Összeg: "+sum);
+        }
+
+        function feladat2_b(){
+            var vane = false;
+            var keresett=31;
+            szamok.forEach(element => {
+                if(element==keresett){
+                   vane=true
+
+                }
+            });
+
+            console.log("Tartalmaz: "+vane);
+        }
+
+        function feladat2_c(){
+            var even = "";
+            var keresett=31;
+            szamok.forEach(element => {
+                if(element%2==0){
+                    even+=element+",";
+                }
+            });
+
+            console.log("párosak: "+even);
+        }
+
+        function feladat2_d(){
+            var min = Math.min(...szamok);
+            var max = Math.max(...szamok);
+
+            console.log("minimum: "+min+"\n"+"maximum: "+max);
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" id="text1">
+        <input class="FButton" type="button" value="értékel" onclick="feladat1()">
+        <hr>
+        <input class="FButton" type="button" value="feladat2 sum" onclick="feladat2_a()">
+        <input class="FButton" type="button" value="feladat2 tartalmaz" onclick="feladat2_b()">
+        <input class="FButton" type="button" value="feladat2 páros" onclick="feladat2_c()">
+        <input class="FButton" type="button" value="feladat2 min, max" onclick="feladat2_d()">
+        <hr>
+    </form>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            padding: 10px;
+        }
+    </style>
+
+    <script>
+        function f1() {
+            let res = document.getElementById("feladat1");
+            let text = document.getElementById("f1text").value.split('');
+
+            let wrongs = "";
+            text.forEach(element => {
+                console.log(element);
+                if (!(element == "1" || element == "2" || element == "x")) {
+                    wrongs += element + " ";
+                }
+            });
+            res.textContent = "Rossz karakterek: " + wrongs;
+
+        }
+
+
+        function f2() {
+            let res = document.getElementById("feladat2");
+            let text = document.getElementById("f2text").value.split('');
+            let vane = false;
+            let toolong = false;
+
+            text.forEach(element => {
+                if (!(element == "1" || element == "2" || element == "x")) {
+                    vane = true;
+                }
+            });
+
+            if (vane) {
+                res.style = "background-color:red";
+                res.textContent = "Helytelen karakterek!";
+                return;
+            }
+            if (text.length != 14) {
+                res.style = "background-color:red";
+                res.textContent = "Nem megfelelő hossz: "+text.length;
+                return;
+            }
+            res.style = "background-color:white";
+            res.textContent = "beepboop";
+        }
+
+        function f3() {
+            let res = document.getElementById("feladat3");
+            let text = document.getElementById("f3text").value.split('');
+
+            let count = 0;
+            text.forEach(element => {
+                if (element == "x") {
+                    count++;
+                }
+            });
+            res.textContent="Döntetlenek száma: "+count;
+        }
+
+        function f4() {
+            let res = document.getElementById("feladat4");
+            let text = document.getElementById("f4text").value.split('');
+
+            let count = 0;
+            text.forEach(element => {
+                if (element == "1" || element=="2") {
+                    count++;
+                }
+            });
+            res.textContent="Nyerések száma: "+count;
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <div id="feladat1">aaaa</div>
+    <form>
+        <input id="f1text" type="text" onchange="f1()">
+    </form>
+    <p class="w3-panel w3-leftbar w3-sand">Totó eredmények rögzítésénél csak 1,2 és x értékek lehetnek. A fenti divbe
+        írja bele a rossz karaktereket.</p>
+    <hr>
+
+    <div id="feladat2">ccccccccccc</div>
+    <form>
+        <input id="f2text" type="text" onchange="f2()">
+    </form>
+    <p class="w3-panel w3-leftbar w3-sand">Totó eredmények rögzítésénél csak 1,2 és x értékek lehetnek. 14 darab a jó, jelenjen meg a karakterek száma, és a div-et szinezze, ha rossz!</p>
+    <hr>
+
+    <div id="feladat3">totike</div>
+    <form>
+        <input id="f3text" type="text" onchange="f3()">
+    </form>
+    <p class="w3-panel w3-leftbar w3-sand">Totó eredmények rögzítésénél, hány döntetlen van?</p>
+    <hr>
+
+    <div id="feladat4">BBBBBBBBBBBBBBBBBBBBBBBB</div>
+    <form>
+        <input id="f4text" type="text" onchange="f4()">
+    </form>
+    <p class="w3-panel w3-leftbar w3-sand">Totó eredmények rögzítésénél, hányszor nyert valamelyik csapat?</p>
+    <hr>
+
+</body>
+
+</html>
