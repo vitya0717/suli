@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function readKitolt() {
+            document.getElementById("read").value = "Alma";
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label for="rendszam">A következő mezőbe Rendszámot kell írni kötött a beviteli string 3 betű majd kötőjel és 3 számjegy, ezt a pattern attribútumon keresztül lehet megvalósítani!</label>
+        <input pattern="[A-Z]{3}(-){1}[0-9]{3}$" type="text" name="rendszam" placeholder="ABC-123">
+        <hr>
+        <label for="email">Email cím megadása. Az autocomplete és az email id miatt automatikus kitöltés történik.</label>
+        <input type="text" name="email" autocomplete="on" placeholder="freegames@consistent.ru">
+        <hr>
+        <label for="readonly">A readonly attribútum letiltja a felhasználói interakciót, de scriptből lehet bele adatot írni!</label>
+        <input id="read" type="text" name="readonly" readonly>
+        <input onclick="readKitolt()" type="button" value="<-Alma">
+        <hr>
+        <label for="karakter">150 karakter hosszú és kötelező kitölteni!</label>
+        <br>
+        <input style="width: 90%;" type="text" maxlength="150" minlength="150" placeholder="Kezdj el gépelni">
+        <hr>
+        <label for="szamok">A mező szám tipusú, -10 és 120 közötti érték vihető be. 5tel lehet léptetni.</label>
+        <input type="number" name="szamok" step="5" min="-10" max="120">
+        <hr>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
