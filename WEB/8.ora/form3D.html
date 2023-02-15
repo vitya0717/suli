@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Document</title>
+</head>
+<script>
+    function correction() {
+        let tajszam = document.getElementById("tajsz").value;
+        let corr = document.getElementById("correct");
+        let isCorrect = true;
+        if (tajszam.length != 11 || tajszam[3] != "-" || tajszam[7] != "-") {
+            isCorrect = false;
+        }
+        corr.innerHTML = isCorrect ? "Megfelelő" : "Nem megfelelő";
+    }
+    function adozas() {
+        let reg = new RegExp();
+        let pattern = "[0-9]{8}(-){1}[0-9]{1}(-){1}[0-9]{2}";
+
+    }
+</script>
+
+<body>
+    <div class="w3-container">
+        <div class="w3-panel w3-leftbar w3-sand">
+            <p>
+                Ellenőrízd le a beírt tajszámról, hogy 11 karakter hosszú, és megfelelően tagolt kötőjelekkel?
+            </p>
+        </div>
+        <span id="correct">Megfelelő</span><br>
+        <input onkeyup="correction()" id="tajsz" type="text" name="taj">
+        <div class="w3-panel w3-leftbar w3-sand">
+            <p>
+                Végezzünk ellenőrzést a személyi azonosítóval: https://hu.wikipedia.org/wiki/Szem%C3%A9lyi
+                azonos%C3%ADt%C3%B3 A személyi szám úgy
+                nevezett „beszélő szám", azaz struktúrája van. 11 decimális számjegyből áll és M ÉÉHHNN SSSK alakú.
+                Szeretnénk tudni hogy nő vagy férfi az illető!
+                (nemcsak akkor férfi, ha 1-el kezdődik!) Hanyadikként születt aznap?
+            </p>
+        </div>
+        <span id="nev">Férfi, 123. aznap</span>
+        <label for="ado">Személyi szám:</label>
+        <input type="text">
+
+        <div class="w3-panel w3-leftbar w3-sand">
+            <p>
+                Írj be egy adószámot, majd határozd meg az ÁFA kód alapján az adóalany tevékenységi körét! Az adószám 11 karakterből épül fel:
+                <br>• az első 8 számjegy az adózó törzsszáma,
+                <br>• a 9. számjegy az adózó áfa kódja,
+                <br>• a 10-11. számjegy az adózó székhelye szerinti adóhatóság kódja.
+                https://www.rsm.hu/kisokos/adoszam
+            </p>
+        </div>
+        <span id="adotext">Alanyi adómentes adóalany</span>
+        <label for="ado">Adószám szám:</label>
+        <input type="text">
+    </div>
+</body>
+
+</html>
