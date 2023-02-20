@@ -12,9 +12,13 @@ namespace SorbaRendezes
         public static Random r = new Random();
         static void Main(string[] args)
         {
-            Queue<string> sor = new Queue<string>();
+            //Végső sor
             Dictionary<string, int> vegsoParok = new Dictionary<string, int>();
+            //Kezdetleges sor
+            Queue<string> sor = new Queue<string>();
+            //Diákok nevei
             Stack<string> diakok = new Stack<string>();
+            //Random sorszám!
             HashSet<int> visited = new HashSet<int>();
             int index = 0;
 
@@ -36,13 +40,19 @@ namespace SorbaRendezes
                 sor.Enqueue($"{diak}:{visited.ElementAt(index)}");
                 index++;
             }
+            foreach (var item in sor)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine(); //semmi xd
 
             foreach (var item in sor)
             {
                 string[] splitSor = item.Split(':');
                 vegsoParok.Add(splitSor[0], int.Parse(splitSor[1]));
             }
-            foreach (var item in vegsoParok.OrderBy(it => it.Value)) { Console.WriteLine(item); }
+            foreach (var item in vegsoParok.OrderBy(it => it.Value)) { Console.WriteLine(item.Key); }
             
 
             Console.ReadKey();
