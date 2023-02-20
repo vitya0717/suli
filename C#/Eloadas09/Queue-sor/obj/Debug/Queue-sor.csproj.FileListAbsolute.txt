@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas09\Queue-sor\bin\Debug\Queue-sor.exe.config
+C:\Users\Tanulo\source\repos\Eloadas09\Queue-sor\bin\Debug\Queue-sor.exe
+C:\Users\Tanulo\source\repos\Eloadas09\Queue-sor\bin\Debug\Queue-sor.pdb
+C:\Users\Tanulo\source\repos\Eloadas09\Queue-sor\obj\Debug\Queue-sor.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas09\Queue-sor\obj\Debug\Queue-sor.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas09\Queue-sor\obj\Debug\Queue-sor.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas09\Queue-sor\obj\Debug\Queue-sor.exe
+C:\Users\Tanulo\source\repos\Eloadas09\Queue-sor\obj\Debug\Queue-sor.pdb

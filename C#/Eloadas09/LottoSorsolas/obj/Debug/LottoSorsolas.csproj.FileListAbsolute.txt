@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas09\LottoSorsolas\bin\Debug\LottoSorsolas.exe.config
+C:\Users\Tanulo\source\repos\Eloadas09\LottoSorsolas\bin\Debug\LottoSorsolas.exe
+C:\Users\Tanulo\source\repos\Eloadas09\LottoSorsolas\bin\Debug\LottoSorsolas.pdb
+C:\Users\Tanulo\source\repos\Eloadas09\LottoSorsolas\obj\Debug\LottoSorsolas.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas09\LottoSorsolas\obj\Debug\LottoSorsolas.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas09\LottoSorsolas\obj\Debug\LottoSorsolas.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas09\LottoSorsolas\obj\Debug\LottoSorsolas.exe
+C:\Users\Tanulo\source\repos\Eloadas09\LottoSorsolas\obj\Debug\LottoSorsolas.pdb

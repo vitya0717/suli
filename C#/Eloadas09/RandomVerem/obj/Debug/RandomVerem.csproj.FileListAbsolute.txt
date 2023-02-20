@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas09\RandomVerem\bin\Debug\RandomVerem.exe.config
+C:\Users\Tanulo\source\repos\Eloadas09\RandomVerem\bin\Debug\RandomVerem.exe
+C:\Users\Tanulo\source\repos\Eloadas09\RandomVerem\bin\Debug\RandomVerem.pdb
+C:\Users\Tanulo\source\repos\Eloadas09\RandomVerem\obj\Debug\RandomVerem.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas09\RandomVerem\obj\Debug\RandomVerem.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas09\RandomVerem\obj\Debug\RandomVerem.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas09\RandomVerem\obj\Debug\RandomVerem.exe
+C:\Users\Tanulo\source\repos\Eloadas09\RandomVerem\obj\Debug\RandomVerem.pdb
