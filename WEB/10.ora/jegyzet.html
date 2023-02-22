@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <title>Document</title>
+    <script>
+
+        const jegyzetek = [];
+        const months = ["Január", "Február", "Március", "Április", "Május", "Június", "Július", "Augusztus", "Szeptember", "Október", "November", "December"];
+        const d = new Date();
+        let day = d.getDate();
+        let month = months[d.getMonth()];
+        let year = d.getFullYear();
+        let index_id = 3;
+
+        class jegyzet {
+            constructor(id, title, content, datetime) {
+                this.id = id;
+                this.title = title;
+                this.content = content;
+                this.datetime = datetime;
+            }
+        }
+        window.onload = function () {
+            jegyzetek.push(new jegyzet(0, 'cim1', 'jasfhkjdshfkhgfdgsdkfgsdhjfgsdjhfgksdjhgjh', year + "-" + month + "-" + day));
+            jegyzetek.push(new jegyzet(1, 'cim2', 'jasfhkjdshfkhgfdgsdkskdhfkjhsdgfkjhasgfkfgsdhjfgsdjhfgksdjhgjh', year + "-" + month + "-" + day));
+            jegyzetek.push(new jegyzet(2, 'macska', 'Szereti a qutyát', year + "-" + month + "-" + day));
+            jegyzetek.push(new jegyzet(3, 'kutya', 'Szereti a tejet', year + "-" + month + "-" + day));
+            write();
+        }
+        function add() {
+            let id = index_id;
+            let tit = document.getElementById("title").value;
+            let content = document.getElementById("content").value;
+            let date = year + "-" + month + "-" + day;
+            jegyzetek.push(new jegyzet(id, tit, content, date));
+            index_id++;
+            console.log(jegyzetek);
+            write();
+        }
+        function write() {
+            let table = document.getElementById("table");
+            table.innerHTML = "";
+            table.innerHTML += "<tr><th>Cím</th><th>Tartalom</th><th>Dátum</th><th>Műveletek</th></tr>";
+            if (jegyzetek.length > 0) {
+                jegyzetek.forEach(item => {
+                    table.innerHTML +=
+                        "<tr>" +
+                        "<td>" + item.title + "</td>" +
+                        "<td>" + item.content + "</td>" +
+                        "<td>" + item.datetime + "</td>" +
+                        "<td><button onclick='deleteObj()' class='ms-3 me-3 btn btn-danger' id='" + item.id + "'>Törlés</button>" +
+                        "<button onclick='modosit()' class='ms-3 me-3 btn btn-warning' id='" + item.id + "'>Módosítás</button></td>" +
+                        "</tr>";
+                });
+            }
+        }
+        function deleteObj() {
+            let obj = document.getElementById(event.target.id);
+            jegyzetek.forEach(item => {
+                if (item.id == obj.id) {
+                    delete jegyzetek[jegyzetek.indexOf(item)];
+                    write();
+                }
+            });
+        }
+        function modosit() {
+            let modos = document.getElementById(event.target.id);
+            let index = 0;
+            let hidden_button = document.getElementById("hiddenbutton");
+            while (jegyzetek[index].id != modos.id) {
+                index++;
+            }
+            let tit = document.getElementById("title");
+            let content = document.getElementById("content");
+
+            content.value = jegyzetek[index].content;
+            tit.value = jegyzetek[index].title;
+            hidden_button.style.visibility = "visible";
+            hidden_button.setAttribute("value", modos.id);
+
+        }
+        function saveModosit() {
+            let button = document.getElementById("hiddenbutton");
+            let index = 0;
+            while (jegyzetek[index].id != button.getAttribute("value")) {
+                index++;
+            }
+            jegyzetek[index].title = document.getElementById("title").value;
+            jegyzetek[index].content = document.getElementById("content").value;
+            button.style.visibility ="hidden";
+            write();
+
+        }
+        function find() {
+            let search_input = document.getElementById("search");
+            let table = document.getElementById("table");
+            table.innerHTML = "";
+            jegyzetek.forEach(item => {
+                if (item.content.includes(search_input.value)) {
+                    table.innerHTML +=
+                        "<tr>" +
+                        "<td>" + item.title + "</td>" +
+                        "<td>" + item.content + "</td>" +
+                        "<td>" + item.datetime + "</td>" +
+                        "<td><button onclick='deleteObj()' class='ms-3 me-3 btn btn-danger' id='" + item.id + "'>Törlés</button>" +
+                        "<button onclick='modosit()' class='ms-3 me-3 btn btn-warning' id='" + item.id + "'>Módosítás</button></td>" +
+                        "</tr>";
+                }
+            });
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="mb-3">
+                <p>írj egy webalkalmazást, amely lehetővé teszi a felhasználók számára, hogy jegyzeteket hozzanak létre
+                    és tároljanak egy JavaScript objektumtömbben, majd a jegyzetek listáját jelenítsék
+                    meg egy táblázatban a Bootstrap keretrendszer segítségével.
+                    Az alkalmazásnak tartalmaznia kell egy űrlapot, amelyben a felhasználók beírhatják a jegyzet címét
+                    és tartalmát, valamint egy gombot, amely lehetővé teszi a jegyzet hozzáadását az
+                    objektumtömbhöz.
+                    Az alkalmazásnak továbbá lehetővé kell tennie a felhasználók számára, hogy az objektumtömbben
+                    található jegyzetek között keressenek kulcsszavak segítségével. A kulcsszavakat egy
+                    beviteli mezőbe lehet beírni, majd az alkalmazásnak meg kell jelenítenie az összes olyan jegyzetet,
+                    amely tartalmazza a kulcsszót.
+                    Az objektumtömb a jegyzeteket tartalmazza, és minden jegyzet egy objektum, amelynek két tulajdonsága
+                    van: "cím" és "tartalom". Az objektumtömbnek továbbá tartalmaznia kell egy
+                    "dátum" tulajdonságot is, amely a jegyzetek létrehozásának dátumát tartalmazza.
+                    Az alkalmazásnak továbbá lehetőséget kell biztosítania a jegyzetek törlésére az objektumtömbből,
+                    valamint a jegyzetek szerkesztésére is. A szerkesztés lehetővé teheti a felhasználók
+                    számára, hogy módosítsák a jegyzet címét vagy tartalmát.
+                    Az alkalmazásnak a Bootstrap keretrendszert kell használnia az űrlap és a táblázat megjelenítéséhez,
+                    valamint a felhasználói felület formázásához.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h1>Jegyzet alkalmazása</h1>
+                <form>
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Cím</label>
+                        <input type="text" class="form-control" id="title">
+                    </div>
+                    <div class="mb-3">
+                        <label for="content" class="form-label">Tartalom</label>
+                        <textarea class="form-control" name="content" id="content" rows="3"></textarea>
+                    </div>
+                    <button onclick="add()" type="button" class="btn btn-primary text-light">Jegyzet hozzáadása</button>
+                    <button id="hiddenbutton" style="visibility: hidden;" onclick="saveModosit()" type="button"
+                        class="btn btn-success text-light">Módosítás mentése</button>
+                    <hr>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h1>Jegyzetek</h1>
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label" for="search">Keresés</label>
+                        <input onkeyup="find()" id="search" class="form-control" type="text">
+                    </div>
+                </form>
+                <div class="mb-3">
+                    <table class="table" id="table">
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
