@@ -14,3 +14,11 @@ D:\Users\Viktor\Documents\GitHub\suli\C#\Eloadas01\Operatorok\obj\Debug\Operator
 D:\Users\Viktor\Documents\GitHub\suli\C#\Eloadas01\Operatorok\obj\Debug\Operatorok.csproj.CoreCompileInputs.cache
 D:\Users\Viktor\Documents\GitHub\suli\C#\Eloadas01\Operatorok\obj\Debug\Operatorok.exe
 D:\Users\Viktor\Documents\GitHub\suli\C#\Eloadas01\Operatorok\obj\Debug\Operatorok.pdb
+C:\Users\Tanulo\Documents\GitHub\suli\C#\Eloadas01\Operatorok\bin\Debug\Operatorok.exe.config
+C:\Users\Tanulo\Documents\GitHub\suli\C#\Eloadas01\Operatorok\bin\Debug\Operatorok.exe
+C:\Users\Tanulo\Documents\GitHub\suli\C#\Eloadas01\Operatorok\bin\Debug\Operatorok.pdb
+C:\Users\Tanulo\Documents\GitHub\suli\C#\Eloadas01\Operatorok\obj\Debug\Operatorok.csproj.AssemblyReference.cache
+C:\Users\Tanulo\Documents\GitHub\suli\C#\Eloadas01\Operatorok\obj\Debug\Operatorok.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\Documents\GitHub\suli\C#\Eloadas01\Operatorok\obj\Debug\Operatorok.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\Documents\GitHub\suli\C#\Eloadas01\Operatorok\obj\Debug\Operatorok.exe
+C:\Users\Tanulo\Documents\GitHub\suli\C#\Eloadas01\Operatorok\obj\Debug\Operatorok.pdb

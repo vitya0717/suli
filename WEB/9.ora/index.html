@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        const diakok = []
+
+        class diak {
+            constructor(name, age, class_name) {
+                this.name = name;
+                this.age = age;
+                this.class_name = class_name;
+            }
+        }
+        function contains(diak_name) {
+            let vane = false;
+            if (diakok.length > 0) {
+                diakok.forEach(d => {
+                    if (d.name == diak_name) {
+                        vane = true;
+                    }
+                });
+            }
+            return vane;
+        }
+        function write() {
+            document.getElementById('list').innerHTML = "";
+            diakok.forEach(d => {
+                document.getElementById('list').innerHTML += "<li id='" + d.name + "'>" + d.name + " - " + d.age + "éves," + d.class_name;
+            });
+        }
+        function add() {
+            let named = document.getElementById('name').value;
+            let aged = document.getElementById('age').value;
+            let classd = document.getElementById('classn').value;
+            let new_diak;
+            if (!contains(named)) {
+                new_diak = new diak(named, Number(aged), classd);
+                diakok.push(new_diak);
+                write();
+            }
+        }
+        function change() {
+            let named = document.getElementById('name').value;
+            let aged = document.getElementById('age').value;
+            let classd = document.getElementById('classn').value;
+            let index = 0;
+            if (diakok.length > 0 && contains(named)) {
+                while (diakok[index].name != named) {
+                    index++;
+                }
+                diakok[index].name = named;
+                diakok[index].age = aged;
+                diakok[index].class_name = classd;
+                write();
+            }
+        }
+        function remove() {
+            let named = document.getElementById('name').value;
+            let index = 0;
+            if (diakok.length > 0 && contains(named)) {
+                while (diakok[index].name != named) {
+                    index++;
+                }
+                delete diakok[index];
+                write();
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <p>
+            Készítsünk példát, amelyben egy objektumtömböt hozunk létre, amely a diákok nevét, életkorát és osztályát
+            tartalmazza. A felhasználónak lehetősége van hozzáadni, törölni és frissíteni a diák adatokat. Törlés és
+            módosítás
+            név alapján történik. Akadályozzuk meg, hogy ugyanaz a név többször előforduljon!
+        </p>
+        <h1>Diáknyilvántartás</h1>
+        <form>
+            <label for="name">Név:</label>
+            <input id="name" type="text" name="name">
+
+            <label for="age">Életkor:</label>
+            <input id="age" type="number" name="age">
+
+            <label for="class_name">Osztály:</label>
+            <input id="classn" type="text" name="class_name">
+            <br>
+            <input onclick="add()" type="button" value="Hozzáadás">
+            <input onclick="change()" type="button" value="Módosítás">
+            <input onclick="remove()" type="button" value="Törlés">
+        </form>
+        <span>
+            <ul id="list">
+
+            </ul>
+        </span>
+    </div>
+</body>
+
+</html>

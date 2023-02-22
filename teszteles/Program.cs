@@ -13,6 +13,7 @@ for (int i = 1; i < szamok.Length; i++)
     IntegerDivide(szamok[i], i);
 }
 
+
 //2. feladat
 int szam1 = 5;
 int szam2 = 4;
