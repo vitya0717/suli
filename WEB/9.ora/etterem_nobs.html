@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const foods = [];
+        class Food {
+            constructor(name, price, description) {
+                this.name = name;
+                this.price = price;
+                this.description = description;
+            }
+        }
+
+        window.onload = function autoPush() {
+            foods.push(new Food('Hamburger', '1500', 'Friss salátával, paradicsommal, hagymával és steak burgonyával'));
+            foods.push(new Food('Pizza', '1800', 'Gyümölcsös pizza sonkával, gombával, fokhagymával és olívabogyóval'));
+            foods.push(new Food('Tészta', '1200', 'Paradicsomos spagetti bazsalikommal és feta sajttal'));
+            foods.push(new Food('Saláta', '900', 'Krémes csirkés saláta dióval és balzsamecetes öntettel'));
+            write();
+        }
+
+        function write() {
+            let table = document.getElementById("food_table");
+            table.innerHTML += "<tr><th>Név</th><th>Ár</th><th>Leírás</th></tr>";
+            foods.forEach(fod => {
+                table.innerHTML += "<tr><td>" + fod.name + "</td><td>" + fod.price + "</td><td>" + fod.description + "</td></tr>";
+            });
+        }
+        function search() {
+            let table = document.getElementById("food_list");
+            let search_price = document.getElementById("search_input");
+            table.innerHTML = "";
+            foods.forEach(fod => {
+                if (Number(fod.price) <= Number(search_price.value)) {
+                    table.innerHTML += "<li class='list-group-item'>" + fod.name + " " + fod.price + " " + fod.description + "</li>";
+                }
+            });
+        }
+
+    </script>
+    <style>
+        .container {
+            width: 800px;
+            text-align: justify;
+        }
+        table, th {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div>
+                <p>Feladat: Készíts egy weboldalt, amely bemutat egy éttermet! Az oldalnak tartalmaznia kell az étterem
+                    nevét,
+                    menüjét, nyitvatartását, címét és elérhetőségeit. Az oldalnak egy táblázatban kell megjelenítenie az
+                    étel nevét,
+                    árát és leírását. A táblázatot egy objektumtömbböl kell betölteni, és a felhasználónak lehetősége
+                    kell, hogy
+                    legyen a táblázatban keresni egy ételre ár alapján. Jelenjen meg a keresett összegből megvásárolható
+                    termékel</p>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <h1>Menü</h1>
+                <table id="food_table"></table>
+            </div>
+            <div>
+                <h1>Összeg</h1>
+                <span>Keresés</span>
+                <br>
+                <input id="search_input" type="text">
+                <br>
+                <br>
+                <button onclick="search()" id="search" name="search" type="button" value="Keresés">Keresés</button>
+                <ul id="food_list">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
