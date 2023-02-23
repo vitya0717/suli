@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Torpedo\Torpedo\bin\Debug\Torpedo.exe.config
+C:\Users\Tanulo\source\repos\Torpedo\Torpedo\bin\Debug\Torpedo.exe
+C:\Users\Tanulo\source\repos\Torpedo\Torpedo\bin\Debug\Torpedo.pdb
+C:\Users\Tanulo\source\repos\Torpedo\Torpedo\obj\Debug\Torpedo.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Torpedo\Torpedo\obj\Debug\Torpedo.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Torpedo\Torpedo\obj\Debug\Torpedo.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Torpedo\Torpedo\obj\Debug\Torpedo.exe
+C:\Users\Tanulo\source\repos\Torpedo\Torpedo\obj\Debug\Torpedo.pdb
