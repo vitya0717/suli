@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas08\TombEljaras\bin\Debug\TombEljaras.exe.config
+C:\Users\Tanulo\source\repos\Eloadas08\TombEljaras\bin\Debug\TombEljaras.exe
+C:\Users\Tanulo\source\repos\Eloadas08\TombEljaras\bin\Debug\TombEljaras.pdb
+C:\Users\Tanulo\source\repos\Eloadas08\TombEljaras\obj\Debug\TombEljaras.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas08\TombEljaras\obj\Debug\TombEljaras.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas08\TombEljaras\obj\Debug\TombEljaras.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas08\TombEljaras\obj\Debug\TombEljaras.exe
+C:\Users\Tanulo\source\repos\Eloadas08\TombEljaras\obj\Debug\TombEljaras.pdb

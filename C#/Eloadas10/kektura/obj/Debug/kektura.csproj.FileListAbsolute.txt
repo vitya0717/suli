@@ -1,0 +1,9 @@
+C:\Users\Tanulo\source\repos\Eloadas10\kektura\bin\Debug\kektura.exe.config
+C:\Users\Tanulo\source\repos\Eloadas10\kektura\bin\Debug\kektura.exe
+C:\Users\Tanulo\source\repos\Eloadas10\kektura\bin\Debug\kektura.pdb
+C:\Users\Tanulo\source\repos\Eloadas10\kektura\obj\Debug\kektura.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas10\kektura\obj\Debug\kektura.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas10\kektura\obj\Debug\kektura.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas10\kektura\obj\Debug\kektura.exe
+C:\Users\Tanulo\source\repos\Eloadas10\kektura\obj\Debug\kektura.pdb
+C:\Users\Tanulo\source\repos\Eloadas10\kektura\bin\Debug\kektura.csv

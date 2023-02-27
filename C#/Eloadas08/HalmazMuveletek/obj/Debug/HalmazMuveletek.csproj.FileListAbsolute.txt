@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas08\HalmazMuveletek\bin\Debug\HalmazMuveletek.exe.config
+C:\Users\Tanulo\source\repos\Eloadas08\HalmazMuveletek\bin\Debug\HalmazMuveletek.exe
+C:\Users\Tanulo\source\repos\Eloadas08\HalmazMuveletek\bin\Debug\HalmazMuveletek.pdb
+C:\Users\Tanulo\source\repos\Eloadas08\HalmazMuveletek\obj\Debug\HalmazMuveletek.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas08\HalmazMuveletek\obj\Debug\HalmazMuveletek.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas08\HalmazMuveletek\obj\Debug\HalmazMuveletek.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas08\HalmazMuveletek\obj\Debug\HalmazMuveletek.exe
+C:\Users\Tanulo\source\repos\Eloadas08\HalmazMuveletek\obj\Debug\HalmazMuveletek.pdb

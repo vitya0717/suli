@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas07\_3DTomb\bin\Debug\_3DTomb.exe.config
+C:\Users\Tanulo\source\repos\Eloadas07\_3DTomb\bin\Debug\_3DTomb.exe
+C:\Users\Tanulo\source\repos\Eloadas07\_3DTomb\bin\Debug\_3DTomb.pdb
+C:\Users\Tanulo\source\repos\Eloadas07\_3DTomb\obj\Debug\_3DTomb.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas07\_3DTomb\obj\Debug\_3DTomb.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas07\_3DTomb\obj\Debug\_3DTomb.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas07\_3DTomb\obj\Debug\_3DTomb.exe
+C:\Users\Tanulo\source\repos\Eloadas07\_3DTomb\obj\Debug\_3DTomb.pdb

@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas08\2dtomb\bin\Debug\2dtomb.exe.config
+C:\Users\Tanulo\source\repos\Eloadas08\2dtomb\bin\Debug\2dtomb.exe
+C:\Users\Tanulo\source\repos\Eloadas08\2dtomb\bin\Debug\2dtomb.pdb
+C:\Users\Tanulo\source\repos\Eloadas08\2dtomb\obj\Debug\2dtomb.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas08\2dtomb\obj\Debug\2dtomb.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas08\2dtomb\obj\Debug\2dtomb.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas08\2dtomb\obj\Debug\2dtomb.exe
+C:\Users\Tanulo\source\repos\Eloadas08\2dtomb\obj\Debug\2dtomb.pdb

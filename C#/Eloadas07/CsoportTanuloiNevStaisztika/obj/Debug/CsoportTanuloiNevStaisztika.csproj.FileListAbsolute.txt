@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas07\CsoportTanuloiNevStaisztika\bin\Debug\CsoportTanuloiNevStaisztika.exe.config
+C:\Users\Tanulo\source\repos\Eloadas07\CsoportTanuloiNevStaisztika\bin\Debug\CsoportTanuloiNevStaisztika.exe
+C:\Users\Tanulo\source\repos\Eloadas07\CsoportTanuloiNevStaisztika\bin\Debug\CsoportTanuloiNevStaisztika.pdb
+C:\Users\Tanulo\source\repos\Eloadas07\CsoportTanuloiNevStaisztika\obj\Debug\CsoportTanuloiNevStaisztika.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas07\CsoportTanuloiNevStaisztika\obj\Debug\CsoportTanuloiNevStaisztika.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas07\CsoportTanuloiNevStaisztika\obj\Debug\CsoportTanuloiNevStaisztika.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas07\CsoportTanuloiNevStaisztika\obj\Debug\CsoportTanuloiNevStaisztika.exe
+C:\Users\Tanulo\source\repos\Eloadas07\CsoportTanuloiNevStaisztika\obj\Debug\CsoportTanuloiNevStaisztika.pdb

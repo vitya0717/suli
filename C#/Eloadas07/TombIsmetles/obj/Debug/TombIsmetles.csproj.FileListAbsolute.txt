@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas07\TombIsmetles\bin\Debug\TombIsmetles.exe.config
+C:\Users\Tanulo\source\repos\Eloadas07\TombIsmetles\bin\Debug\TombIsmetles.exe
+C:\Users\Tanulo\source\repos\Eloadas07\TombIsmetles\bin\Debug\TombIsmetles.pdb
+C:\Users\Tanulo\source\repos\Eloadas07\TombIsmetles\obj\Debug\TombIsmetles.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas07\TombIsmetles\obj\Debug\TombIsmetles.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas07\TombIsmetles\obj\Debug\TombIsmetles.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas07\TombIsmetles\obj\Debug\TombIsmetles.exe
+C:\Users\Tanulo\source\repos\Eloadas07\TombIsmetles\obj\Debug\TombIsmetles.pdb
