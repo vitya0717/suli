@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        var a = {
+            "@context": {
+                "@vocab": "http://schema.org/&quot"
+            },
+            "@type": "Product",
+            "brand": {
+                "@type": "Brand",
+                "name": "AUDI"
+            },
+            "color": "Fehér (metál)",
+            "description": "Eladó használt Fehér (metál) AUDI A3 Sportback 40 TFSI e S line S-tronic kitűnő ferdehátú, 5 ajtós, 1 395 cm³, 150 kW, 204 LE, hibrid (benzin), 36 700 km, 2021/6 18 520 000 Ft (Eladó címe: Tata)",
+            "image": [
+                {
+                    "@type": "ImageObject",
+                    "url": "https://hasznaltauto.medija.hu/3598310/19104270_1.jpg?v=1676628757&quot"
+                },
+                {
+                    "@type": "ImageObject",
+                    "url": "https://hasznaltauto.medija.hu/3598310/19104270_2.jpg?v=1676628757&quot"
+                },
+                {
+                    "@type": "ImageObject",
+                    "url": "https://hasznaltauto.medija.hu/3598310/19104270_3.jpg?v=1676628757&quot"
+                },
+                {
+                    "@type": "ImageObject",
+                    "url": "https://hasznaltauto.medija.hu/3598310/19104270_4.jpg?v=1676628757&quot"
+                },
+                {
+                    "@type": "ImageObject",
+                    "url": "https://hasznaltauto.medija.hu/3598310/19104270_5.jpg?v=1676628757&quot"
+                },
+                {
+                    "@type": "ImageObject",
+                    "url": "https://hasznaltauto.medija.hu/3598310/19104270_6.jpg?v=1676628757&quot"
+                },
+                {
+                    "@type": "ImageObject",
+                    "url": "https://hasznaltauto.medija.hu/3598310/19104270_7.jpg?v=1676628757&quot"
+                },
+                {
+                    "@type": "ImageObject",
+                    "url": "https://hasznaltauto.medija.hu/3598310/19104270_8.jpg?v=1676628757&quot"
+                },
+                {
+                    "@type": "ImageObject",
+                    "url": "https://hasznaltauto.medija.hu/3598310/19104270_9.jpg?v=1676628757&quot"
+                },
+                {
+                    "@type": "ImageObject",
+                    "url": "https://hasznaltauto.medija.hu/3598310/19104270_11.jpg?v=1676628757&quot"
+                },
+                {
+                    "@type": "ImageObject",
+                    "url": "https://hasznaltauto.medija.hu/3598310/19104270_12.jpg?v=1676628757&quot"
+                }
+            ],
+            "name": "AUDI A3 Sportback 40 TFSI e S line S-tronic",
+            "offers": {
+                "@type": "Offer",
+                "availability": "InStock",
+                "itemCondition": "UsedCondition",
+                "price": 18520000,
+                "priceCurrency": "HUF",
+                "seller": {
+                    "@type": "Person",
+                    "name": ""
+                },
+                "url": "/szemelyauto/audi/a3/audi_a3_sportback_40_tfsi_e_s_line_s-tronic-19104270"
+            }
+        }
+        console.log(Object.keys(a));
+        console.log(Object.entries(a));
+        window.onload = function() {
+            var card = document.getElementById("cards");
+            card.innerHTML += 
+            "<div class='card m-2' style='width: 18rem;'>"+
+                "<img src='"+a.image[0].url+"' class='card-img-top' alt=''>"+
+                "<div class='card-body'>"+
+                    "<h5 class='card-title'>"+a.name+"</h5>"+
+                    "<p class='card-text'>"+a.description+"</p>"+
+                    "<a href='#'' class='btn btn-primary'>Kevesebb</a>"+
+                "</div>"+
+            "</div>";
+            card.innerHTML += 
+            "<div class='card m-2' style='width: 18rem;'>"+
+                "<img src='"+a.image[0].url+"' class='card-img-top' alt=''>"+
+                "<div class='card-body'>"+
+                    "<h5 class='card-title'>"+a.name+"</h5>"+
+                    "<p class='card-text'>"+a.description+"</p>"+
+                    "<a href='#'' class='btn btn-primary'>Kevesebb</a>"+
+                "</div>"+
+            "</div>";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="cards" class="row">
+
+        </div>
+    </div>
+</body>
+
+</html>
