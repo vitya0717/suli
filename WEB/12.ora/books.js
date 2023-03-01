@@ -1024,11 +1024,11 @@ var bookss = [
     });
     pageOpen('0');
     var pageCount = pages.length;
-    document.getElementById("pageid").innerHTML += `<li class="page-item"><a class="page-link" href="#">Previous</a></li>`;
+    document.getElementById("pageid").innerHTML += `<li class="page-item"><a class="page-link">Previous</a></li>`;
     for (let index = 0; index < pageCount; index++) {
         document.getElementById("pageid").innerHTML += `<li class="page-item"><a class="page-link" onclick="pageOpen('${index}')">${index}</a></li>`
     }
-    document.getElementById("pageid").innerHTML += `<li class="page-item"><a class="page-link" href="#">Next</a></li>`
+    document.getElementById("pageid").innerHTML += `<li class="page-item"><a class="page-link">Next</a></li>`
   }
 
   function pageOpen(id) {
@@ -1036,7 +1036,6 @@ var bookss = [
     bookdiv.innerHTML = "";
     var index = 0;
     pages[id].forEach(book => {
-        console.log(book);
         bookdiv.innerHTML +=
         `
         <div class="modal fade" id="modal${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -1060,7 +1059,7 @@ var bookss = [
             </div>
         </div>
         </div>
-        <div id="modal${index}" class="card" style="width: 18rem;">
+        <div id="modal${index}" class="card" style="width: 20rem;">
         <img data-bs-toggle="modal" data-bs-target="#modal${index}" src="${"https://raw.githubusercontent.com/benoitvallon/100-best-books/master/static/images/"+book.imageLink.split('/')[1]}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h2 class="card-title">${book.title}</h5>
