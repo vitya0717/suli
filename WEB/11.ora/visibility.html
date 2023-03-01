@@ -5,10 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <title>Document</title>
     <script>
+
+        var descript1;
+        var descript2;
+        var des1;
+        var des2;
+
         var a = {
             "@context": {
                 "@vocab": "http://schema.org/&quot"
@@ -80,29 +89,104 @@
                 "url": "/szemelyauto/audi/a3/audi_a3_sportback_40_tfsi_e_s_line_s-tronic-19104270"
             }
         }
-        console.log(Object.keys(a));
-        console.log(Object.entries(a));
-        window.onload = function() {
-            var card = document.getElementById("cards");
-            card.innerHTML += 
-            "<div class='card m-2' style='width: 18rem;'>"+
-                "<img src='"+a.image[0].url+"' class='card-img-top' alt=''>"+
-                "<div class='card-body'>"+
-                    "<h5 class='card-title'>"+a.name+"</h5>"+
-                    "<p class='card-text'>"+a.description+"</p>"+
-                    "<a href='#'' class='btn btn-primary'>Kevesebb</a>"+
-                "</div>"+
-            "</div>";
-            card.innerHTML += 
-            "<div class='card m-2' style='width: 18rem;'>"+
-                "<img src='"+a.image[0].url+"' class='card-img-top' alt=''>"+
-                "<div class='card-body'>"+
-                    "<h5 class='card-title'>"+a.name+"</h5>"+
-                    "<p class='card-text'>"+a.description+"</p>"+
-                    "<a href='#'' class='btn btn-primary'>Kevesebb</a>"+
-                "</div>"+
-            "</div>";
+
+        function kevesebb() {
+            descript1 = document.getElementById("car-description1");
+            des1 = document.getElementById("des1-gomb");
+            if (des1.textContent == "Kevesebb") {
+                descript1.textContent = a.description.substring(0, 21) + "...";
+                des1.textContent = "Több";
+            } else {
+                descript1.textContent = a.description;
+                des1.textContent = "Kevesebb";
+            }
         }
+        function elrejt() {
+            descript2 = document.getElementById("car-description2");
+            des2 = document.getElementById("des2-gomb");
+            if (des2.textContent == "Rejt") {
+                descript2.textContent = "";
+                des2.textContent = "Felfed";
+            } else {
+                descript2.textContent = a.description;
+                des2.textContent = "Rejt";
+            }
+        }
+        window.onload = function () {
+            var card = document.getElementById("cards");
+            card.innerHTML +=
+                "<div class='card m-2' style='width: 18rem;'>" +
+                "<img src='" + a.image[0].url + "' class='card-img-top' alt=''>" +
+                "<div class='card-body'>" +
+                "<h5 class='card-title'>" + a.name + "</h5>" +
+                "<p id='car-description1' class='card-text'>" + a.description + "</p>" +
+                "<a onclick='kevesebb()' id='des1-gomb' class='btn btn-primary'>Kevesebb</a>" +
+                "</div>" +
+                "</div>";
+            card.innerHTML +=
+                "<div class='card m-2' style='width: 18rem;'>" +
+                "<img src='" + a.image[1].url + "' class='card-img-top' alt=''>" +
+                "<div class='card-body'>" +
+                "<h5 class='card-title'>" + a.name + "</h5>" +
+                "<p id='car-description2' class='card-text'>" + a.description + "</p>" +
+                "<a onclick='elrejt()' id='des2-gomb' class='btn btn-primary'>Rejt</a>" +
+                "</div>" +
+                "</div>";
+            card.innerHTML +=
+                "<div class='card m-2' style='width: 18rem;'>" +
+                "<img src='" + a.image[2].url + "' class='card-img-top' title='" + a.description + "'>" +
+                "</div>";
+            card.innerHTML +=
+                "<div class='card m-2' style='width: 18rem;'>" +
+                "<a class='btn btn-primary' data-bs-toggle='collapse' href='#collapseExample' role='button' aria-expanded='false' aria-controls='collapseExample'>" + a.name + "</a>" +
+                "<div class='collapse' id='collapseExample'>" +
+                "<div class='card-body'>" +
+                "<h5 class='card-title'>" + a.name + "</h5>" +
+                "<p class='card-text'>" + a.description + "</p>" +
+                "<img src='" + a.image[4].url + "' class='card-img-top'>" +
+                "</div>" +
+                "</div>" +
+                "</div>";
+
+            /*<div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Accordion Item #1
+                </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+                </div>
+            </div>*/
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            });
+            card.innerHTML +=
+                "<button style='width: 20rem;' type='button' class='btn btn-primary m-2' data-bs-toggle='modal' data-bs-target='#exampleModal'>" + a.name + "</button>" +
+                "<div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>" +
+                "<div class='modal-dialog'>" +
+                "<div class='modal-content'>" +
+                "<div class='modal-header'>" +
+                "<h5 class='modal-title' id='exampleModalLabel'>Modal title</h5>" +
+                "<button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>" +
+                "</div>" +
+                "<div class='modal-body'>" +
+                "<p>" + a.description + "</p>" +
+                "<img style='width: 18rem;' src='" + a.image[5].url + "' class='card-img-top' alt='...'>" +
+                "<p id='leira6'></p>" +
+                "</div>" +
+                "<div class='modal-footer'>" +
+                "<button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Bezár</button>" +
+                "</div>" +
+                "</div>" +
+                "</div>" +
+                "</div>";
+        }
+
     </script>
 </head>
 
@@ -111,6 +195,36 @@
         <div id="cards" class="row">
 
         </div>
+        <!--Pop overs-->
+        <button id="g7" type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover"
+            data-bs-placement="right" data-bs-content="Right popover">
+        </button>
+        <script>
+            var popover1 = document.getElementById("g7")
+            popover1.innerHTML = a.name;
+            popover1.setAttribute("data-bs-title", a.name);
+            popover1.setAttribute("data-bs-content", a.description);
+
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) { return new bootstrap.Popover(popoverTriggerEl) })
+
+
+        </script>
+        <!--8. tooltip-->
+
+        <button id="g8" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top"
+            title="Tooltip on top">
+            Tooltip on top
+        </button>
+        <script>
+            var tooltips1 = document.getElementById("g8")
+            tooltips1.innerHTML = a.name;
+            tooltips1.setAttribute("data-bs-title", a.description);
+
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) { return new bootstrap.Tooltip(tooltipTriggerEl) })
+        </script>
+
     </div>
 </body>
 
