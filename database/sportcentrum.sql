@@ -1,5 +1,5 @@
 DROP DATABASE IF EXISTS sportcentrum;
-CREATE DATABASE sportcentrum;
+CREATE DATABASE sportcentrum COLLATE "utf8_hungarian_ci" CHARACTER SET UTF8;
 USE sportcentrum;
 
 CREATE TABLE ugyfelek(
