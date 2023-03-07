@@ -67,7 +67,14 @@ INSERT INTO dtipus(tipus_id, tipus) VALUES
     (3, "Órai munka"),
     (4, "Szorgalmi feladat"),
     (5, "Szóbeli felelet"),
-    (6, "Beadandó feladat");
+    (6, "Beadandó feladat"),
+    (7, "Teszt feladat"),
+    (8, "Írásbeli röpdolgozat"),
+    (9, "Projektmunka"),
+    (10, "Házi dolgozat"),
+    (11, "Gyakorlati feladat"),
+    (12, "Írásbeli témazáró dolgozat"),
+    (13, "Csoportmunka");
 
 /*	az	nev	*/
 INSERT INTO osztaly(osztaly_id, nev) VALUES 
@@ -108,13 +115,24 @@ INSERT INTO tantargyak(tantargy_id, nev) VALUES
     (10, "Webprogramozás"),
     (11, "Munkavállalói ismeretek");
 
-/*mod_id INT,
-    tema text,
-    ertekeles int,
-    datum date,
-    PRIMARY KEY(mod_id)*/
+INSERT INTO `dolgozat` (`dolgozat_id`, `tema`, `mod_id`, `suly`) VALUES 
+    ('1', NULL, '6', '100'),
+    ('2', 'Házi feladatok', '6', '100'),
+    ('3', 'Vocabulary', '1', '100'),
+    ('4', 'TK 15.o. 3. Definitions', '5', '100'),
+    ('5', 'Wordwall nyelvtani feladatok', '4', '100'),
+    ('6', 'Computing quiz', '1', '100'),
+    ('7', 'Reading and translating', '3', '100'),
+    ('8', 'Networking', '2', '100'),
+    ('9', 'Vocabulary', '1', '100');
 
-/*tanulo_id	tantargy_id	tanar_id ertekeles
-
-INSERT INTO ertekeles(tanulo_id, tantargy_id, tanar_id, dolgozat,ertekeles,datum) VALUES
-    (2, 1, 10, 1, 5,  "2023-03-03");*/
+INSERT INTO ertekeles(tanulo_id, tantargy_id, tanar_id, dolgozat, ertekeles,datum) VALUES
+    (3, 1, 10, 9, 5, "2023-01-18"),
+    (3, 1, 10, 8, 5, "2023-01-18"),
+    (3, 1, 10, 7, 5, "2022-12-09"),
+    (3, 1, 10, 6, 5, "2022-11-18"),
+    (3, 1, 10, 5, 5, "2022-11-04"),
+    (3, 1, 10, 4, 5, "2022-11-04"),
+    (3, 1, 10, 3, 5, "2022-10-28"),
+    (3, 1, 10, 2, 5, "2022-10-28"),
+    (3, 1, 10, 1, 5, "2022-09-26");

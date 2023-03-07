@@ -38,8 +38,9 @@
         var titles = [];
         var id = 0;
         var bookCount;
-        var cardlist; 
-
+        var cardlist;
+        //var pattern = "https(:){1}//raw(.){1}githubusercontent(.){1}com(/){1}benoitvallon(/){1}100-best-books(/){1}master(/){1}static(/){1}images(/){1}[a-zA-Z0-9\-\]{1,254}.jpg";
+        var pattern = "images(/){1}[a-zA-Z0-9\-\]{1,254}.jpg";
         window.onload = function () {
             fetch("https://raw.githubusercontent.com/benoitvallon/100-best-books/master/books.json")
                 .then((response) => response.json())
@@ -59,23 +60,23 @@
                         }
                     });
                     bookCount = konyvek.length;
-                    createCards(konyvek.length);
+                    createCards(konyvek);
                     console.log("Újra lett generálva minden... sajna");
+                    console.log(konyvek[0])
                 });
         }
         //Kártyák létrehozás
-        function createCards() {
+        function createCards(array) {
             cardlist = document.getElementById("card-list");
             cardlist.innerHTML = "";
-            for (let i = 0; i < konyvek.length; i++) {
-                if (konyvek[i] != undefined) {
-                    const konyv = konyvek[i];
-
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] != undefined) {
+                    const konyv = array[i];
+                    const srcImg = konyv.imagelink.match(pattern) ? `${"https://raw.githubusercontent.com/benoitvallon/100-best-books/master/static/images/" + konyv.imagelink.split('/')[1]}` :  konyv.imagelink;
                     cardlist.innerHTML +=
                         `<div id="${konyv.id}" class="col">
-                    <div class="card h-100">
-                        <img style="height: 75%;" src="${"https://raw.githubusercontent.com/benoitvallon/100-best-books/master/static/images/" + konyv.imagelink.split('/')[1]}"
-                            class="card-img-top">
+                            <div class="card h-100">
+                            <img style="height: 75%;" src="${srcImg}" class="card-img-top"> 
                         <div class="card-body">
                             <h5 class="card-title">${konyv.author}</h5>
                             <p class="card-text">${konyv.title}</p>
@@ -136,29 +137,28 @@
                 }
             }
         }
-
         //sort
         function sortBooks(type) {
             var sorted = [];
             if (type == "year") {
-                console.log("Év szerint sort!")
                 sorted = konyvek.sort((a, b) => a.year > b.year ? 0 : -1);
             } else if (type == "pages") {
-                console.log("Oldalak szerint sort!")
                 sorted = konyvek.sort((a, b) => a.pages > b.pages ? 0 : -1);
             }
-            console.log(`${konyvek[0].author}, ${konyvek[1].title}`);
         }
 
         //Keresés (nyelv szerint, szerző szerint, cím szerint)
         function searchBooks() {
             var search_input = document.getElementById("searchInput");
             var conditions = search_input.value.split(',');
+            if (conditions.length == 1 && conditions[0] == '') { return createCards(konyvek); }
+            console.log(conditions.length)
+            console.log(conditions)
             var searched = []
             conditions.forEach(element => {
                 if (authors.includes(element) || languages.includes(element) || titles.includes(element)) {
                     konyvek.forEach(konyv => {
-                        if (konyv.author == element || konyv.language == element || konyv.title == element) {
+                        if (konyv.author.includes(element) || konyv.language.includes(element) || konyv.title.includes(element)) {
                             if (!searched.includes(konyv)) {
                                 searched.push(konyv);
                             }
@@ -166,6 +166,19 @@
                     });
                 }
             });
+            createCards(searched);
+        }
+
+        function ArrayContainsBook(array, konyv) {
+            var vane = false;
+            array.forEach(ko => {
+                if (ko.author == konyv[0] &&
+                    ko.country == konyv[1] &&
+                    ko.title == konyv[2]) {
+                    vane = true;
+                }
+            });
+            return vane;
         }
 
         function addBook() {
@@ -178,15 +191,18 @@
             var pages = document.getElementById("new-pages");
             var title = document.getElementById("new-title");
             var year = document.getElementById("new-year");
+            var newBook;
 
-            var newBook = new Konyv(author.value, country.value, imageLink.value, language.value, link.value, pages.value, title.value, year.value);
 
-            if (!konyvek.includes(newBook)) {
+            if (!ArrayContainsBook(konyvek, { author, country, title })) {
+                newBook = new Konyv(id, author.value, country.value, imageLink.value, language.value, link.value, pages.value, title.value, year.value);
                 konyvek.push(newBook);
-                createCards();
+                id++;
+                createCards(konyvek);
             }
+
         }
-        
+
         function removeBook() {
             var book = document.getElementById(event.target.id);
             konyvek.forEach(konyv => {
@@ -194,10 +210,9 @@
                     if (book.id == konyv.id) {
                         delete konyvek[konyvek.indexOf(konyv)];
                         bookCount--;
-                        createCards();
-                        console.log(bookCount)
+                        createCards(konyvek);
                     }
-                } 
+                }
             });
         }
 
@@ -223,12 +238,70 @@
                         <a class="nav-link text-warning" href="index.html">Főoldal</a>
                     </li>
                     <li class="nav-item">
-                        <a onclick="addBook()" class="nav-link text-warning" href="#">Új könyv</a>
+                        <a data-bs-toggle="modal" data-bs-target="#newBook" class="nav-link text-warning" href="#">Új
+                            könyv</a>
+                        <div class="modal fade" id="newBook" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Új könyv hozzáadása</h5>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <!--Szerző-->
+                                                <label for="new-author" class="col-form-label">Szerző:</label>
+                                                <input id="new-author" type="text" class="form-control">
+                                                <!--Ország-->
+                                                <label for="new-country" class="col-form-label">Ország:</label>
+                                                <input id="new-country" type="text" class="form-control"
+                                                    id="recipient-name">
+                                                <!--Borítókép-->
+                                                <label for="new-imagelink" class="col-form-label">Borítókép(.png/.jpg
+                                                    link):</label>
+                                                <input id="new-imagelink" type="text" class="form-control"
+                                                    id="recipient-name">
+                                                <!--Nyelv-->
+                                                <label for="new-langauage" class="col-form-label">Nyelv:</label>
+                                                <input id="new-langauage" type="text" class="form-control"
+                                                    id="recipient-name">
+                                                <!--Információ-->
+                                                <label for="new-link" class="col-form-label">Információs
+                                                    link(wiki):</label>
+                                                <input id="new-link" type="text" class="form-control"
+                                                    id="recipient-name">
+                                                <!--Oldalszám-->
+                                                <label for="new-pages" class="col-form-label">Oldalszám:</label>
+                                                <input id="new-pages" type="text" class="form-control"
+                                                    id="recipient-name">
+                                                <!--Címe-->
+                                                <label for="new-title" class="col-form-label">Címe:</label>
+                                                <input id="new-title" type="text" class="form-control"
+                                                    id="recipient-name">
+                                                <!--Megjelenés éve-->
+                                                <label for="new-year" class="col-form-label">Megjelenés éve:</label>
+                                                <input id="new-year" type="text" class="form-control"
+                                                    id="recipient-name">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-warning"
+                                            data-bs-dismiss="modal">Mégsem</button>
+                                        <button onclick="addBook()" type="button" class="btn btn-success"
+                                            data-bs-dismiss="modal">Hozzáadás</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Keresés" aria-label="Search">
-                    <button class="btn btn-outline-warning" type="button">Keresés</button>
+                    <input id="searchInput" class="form-control me-2" type="search" placeholder="Keresés"
+                        aria-label="Search">
+                    <button onclick="searchBooks()" class="btn btn-outline-warning" type="button">Keresés</button>
                 </form>
             </div>
         </div>
