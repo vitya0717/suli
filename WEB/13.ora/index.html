@@ -39,6 +39,26 @@
         var id = 0;
         var bookCount;
         var cardlist;
+        //Új könyv változók
+        var author;
+        var country;
+        var imagelink;
+        var language;
+        var link;
+        var pages;
+        var title;
+        var year;
+        var newBook;
+        //Módosítás
+        var cauthor;
+        var ccountry;
+        var cimagelink;
+        var clanguage;
+        var clink;
+        var cpages;
+        var ctitle;
+        var cyear;
+
         //var pattern = "https(:){1}//raw(.){1}githubusercontent(.){1}com(/){1}benoitvallon(/){1}100-best-books(/){1}master(/){1}static(/){1}images(/){1}[a-zA-Z0-9\-\]{1,254}.jpg";
         var pattern = "images(/){1}[a-zA-Z0-9\-\]{1,254}.jpg";
         window.onload = function () {
@@ -62,8 +82,25 @@
                     bookCount = konyvek.length;
                     createCards(konyvek);
                     console.log("Újra lett generálva minden... sajna");
-                    console.log(konyvek[0])
                 });
+            //author, country, imagelink, language, link, pages, title, year
+            author = document.getElementById("new-author");
+            author.value = "Putyin";
+            country = document.getElementById("new-country");
+            country.value = "Oroszország";
+            imagelink = document.getElementById("new-imagelink");
+            imagelink.value = "https://image.cnbcfm.com/api/v1/image/107170422-16717337232022-12-22t182143z_934003418_rc25by9yeknw_rtrmadp_0_ukraine-crisis-russia-putin.jpeg?v=1673966428";
+            language = document.getElementById("new-langauage");
+            language.value = "Orosz";
+            link = document.getElementById("new-link");
+            link.value = "www.google.ru";
+            pages = document.getElementById("new-pages");
+            pages.value = "60000";
+            title = document.getElementById("new-title");
+            title.value = "A nép szava";
+            year = document.getElementById("new-year");
+            year.value = "2024";
+
         }
         //Kártyák létrehozás
         function createCards(array) {
@@ -72,7 +109,7 @@
             for (let i = 0; i < array.length; i++) {
                 if (array[i] != undefined) {
                     const konyv = array[i];
-                    const srcImg = konyv.imagelink.match(pattern) ? `${"https://raw.githubusercontent.com/benoitvallon/100-best-books/master/static/images/" + konyv.imagelink.split('/')[1]}` :  konyv.imagelink;
+                    const srcImg = konyv.imagelink.match(pattern) ? `${"https://raw.githubusercontent.com/benoitvallon/100-best-books/master/static/images/" + konyv.imagelink.split('/')[1]}` : konyv.imagelink;
                     cardlist.innerHTML +=
                         `<div id="${konyv.id}" class="col">
                             <div class="card h-100">
@@ -83,31 +120,47 @@
                             <p class="card-text"><small class="text-muted">Megjelenés: ${konyv.year}</small></p>
 
                             <!-- Módosítás -->
-                            <button data-bs-toggle="modal" data-bs-target="#cardChange-${konyv.id}" class="btn btn-warning" onclick="changeBook(${konyv.id})">Módosítás</button>
+                            <button id="${konyv.id}" onclick="loadChangeValues()" data-bs-toggle="modal" data-bs-target="#cardChange-${konyv.id}" class="btn btn-warning">Módosítás</button>
 
                             <div class="modal fade" id="cardChange-${konyv.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
+                                    <h5 class="modal-title" id="exampleModalLabel">Módosítás</h5>
                                 </div>
                                 <div class="modal-body">
                                     <form>
                                     <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                        <input type="text" class="form-control" id="recipient-name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="message-text" class="col-form-label">Message:</label>
+                                        <!--Szerző-->
+                                        <label for="cnew-author-cardChange-${konyv.id}" class="col-form-label">Szerző:</label>
+                                        <input id="cnew-author-cardChange-${konyv.id}" type="text" class="form-control">
+                                        <!--Ország-->
+                                        <label for="cnew-country-cardChange-${konyv.id}" class="col-form-label">Ország:</label>
+                                        <input id="cnew-country-cardChange-${konyv.id}" type="text" class="form-control" id="recipient-name">
+                                        <!--Borítókép-->
+                                        <label for="cnew-imagelink-cardChange-${konyv.id}" class="col-form-label">Borítókép(.png/.jpg link):</label>
+                                        <input id="cnew-imagelink-cardChange-${konyv.id}" type="text" class="form-control" id="recipient-name">
+                                        <!--Nyelv-->
+                                        <label for="cnew-langauage-cardChange-${konyv.id}" class="col-form-label">Nyelv:</label>
+                                        <input id="cnew-langauage-cardChange-${konyv.id}" type="text" class="form-control"  id="recipient-name">
+                                        <!--Információ-->
+                                        <label for="cnew-link-cardChange-${konyv.id}" class="col-form-label">Információs link(wiki):</label>
+                                        <input id="cnew-link-cardChange-${konyv.id}" type="text" class="form-control"id="recipient-name">
+                                        <!--Oldalszám-->
+                                        <label for="cnew-pages-cardChange-${konyv.id}" class="col-form-label">Oldalszám:</label>
+                                        <input id="cnew-pages-cardChange-${konyv.id}" type="text" class="form-control"id="recipient-name">
+                                        <!--Címe-->
+                                        <label for="cnew-title-cardChange-${konyv.id}" class="col-form-label">Címe:</label>
+                                        <input id="cnew-title-cardChange-${konyv.id}" type="text" class="form-control" id="recipient-name">
+                                        <!--Megjelenés éve-->
+                                        <label for="cnew-year-cardChange-${konyv.id}" class="col-form-label">Megjelenés éve:</label>
+                                        <input id="cnew-year-cardChange-${konyv.id}" type="text" class="form-control"id="recipient-name">
                                     </div>
                                     </form>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégsem</button>
-                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Send message</button>
+                                    <button id="${konyv.id}" onclick="changeBook()" type="button" class="btn btn-success" data-bs-dismiss="modal">Módosítás mentése</button>
                                 </div>
                                 </div>
                             </div>
@@ -146,7 +199,6 @@
                 sorted = konyvek.sort((a, b) => a.pages > b.pages ? 0 : -1);
             }
         }
-
         //Keresés (nyelv szerint, szerző szerint, cím szerint)
         function searchBooks() {
             var search_input = document.getElementById("searchInput");
@@ -168,41 +220,27 @@
             });
             createCards(searched);
         }
-
+        var vane = false;
         function ArrayContainsBook(array, konyv) {
-            var vane = false;
             array.forEach(ko => {
-                if (ko.author == konyv[0] &&
-                    ko.country == konyv[1] &&
-                    ko.title == konyv[2]) {
+                if (ko.author == konyv.author &&
+                    ko.country == konyv.country &&
+                    ko.title == konyv.title) {
                     vane = true;
                 }
             });
             return vane;
         }
-
+        //Új könyv hozzáadás
         function addBook() {
-            //author, country, imagelink, language, link, pages, title, year
-            var author = document.getElementById("new-author");
-            var country = document.getElementById("new-country");
-            var imageLink = document.getElementById("new-imagelink");
-            var language = document.getElementById("new-langauage");
-            var link = document.getElementById("new-link");
-            var pages = document.getElementById("new-pages");
-            var title = document.getElementById("new-title");
-            var year = document.getElementById("new-year");
-            var newBook;
-
-
-            if (!ArrayContainsBook(konyvek, { author, country, title })) {
-                newBook = new Konyv(id, author.value, country.value, imageLink.value, language.value, link.value, pages.value, title.value, year.value);
+            newBook = new Konyv(id, author.value, country.value, imagelink.value, language.value, link.value, pages.value, title.value, year.value);
+            if (!ArrayContainsBook(konyvek, newBook)) {
                 konyvek.push(newBook);
                 id++;
                 createCards(konyvek);
             }
-
         }
-
+        //Könyv törlése
         function removeBook() {
             var book = document.getElementById(event.target.id);
             konyvek.forEach(konyv => {
@@ -215,9 +253,42 @@
                 }
             });
         }
-
-        function changeBook(id) {
-
+        //Módosítás változók betöltése
+        function loadChangeValues() {
+            var id = event.target.id;
+            cauthor = document.getElementById("cnew-author-cardChange-"+id);
+            cauthor.value = konyvek[id].author;
+            ccountry = document.getElementById("cnew-country-cardChange-"+id);
+            ccountry.value = konyvek[id].ccountry;
+            cimagelink = document.getElementById("cnew-imagelink-cardChange-"+id);
+            cimagelink.value = konyvek[id].imagelink;
+            clanguage = document.getElementById("cnew-langauage-cardChange-"+id);
+            clanguage.value = konyvek[id].language;
+            clink = document.getElementById("cnew-link-cardChange-"+id);
+            clink.value = konyvek[id].link;
+            cpages = document.getElementById("cnew-pages-cardChange-"+id);
+            cpages.value = konyvek[id].pages;
+            ctitle = document.getElementById("cnew-title-cardChange-"+id);
+            ctitle.value = konyvek[id].title;
+            cyear = document.getElementById("cnew-year-cardChange-"+id);
+            cyear.value = konyvek[id].year;
+        }
+        //Könyv módosítás
+        function changeBook() {
+            var changeBook = document.getElementById(event.target.id);
+            if (ArrayContainsBook(konyvek, konyvek[changeBook.id])) {
+                konyvek[changeBook.id].author = cauthor.value;
+                konyvek[changeBook.id].country = ccountry.value;
+                konyvek[changeBook.id].imagelink = cimagelink.value;
+                konyvek[changeBook.id].language = clanguage.value;
+                konyvek[changeBook.id].link = clink.value;
+                konyvek[changeBook.id].pages = cpages.value;
+                konyvek[changeBook.id].title = ctitle.value;
+                konyvek[changeBook.id].year = cyear.value;
+                createCards(konyvek);
+            }
+            console.log(ArrayContainsBook(konyvek, konyvek[changeBook.id]))
+            console.log(changeBook.id);
         }
 
 
