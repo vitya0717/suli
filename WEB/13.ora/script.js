@@ -90,7 +90,7 @@
                     const srcImg = konyv.imagelink.match(pattern) ? `${"https://raw.githubusercontent.com/benoitvallon/100-best-books/master/static/images/" + konyv.imagelink.split('/')[1]}` : konyv.imagelink;
                     cardlist.innerHTML +=
                         `<div id="${konyv.id}" class="col">
-                            <div class="card h-100">
+                            <div class="card h-100 brownBorder">
                             <img style="height: 75%;" src="${srcImg}" class="card-img-top"> 
                         <div class="card-body">
                             <h5 class="card-title">${konyv.author}</h5>
