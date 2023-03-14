@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        function oraChange() {
+            var ora = document.getElementById("ora_mut");
+            var ido = document.getElementById("orra");
+            ora.style.rotate = ido.value+"deg";
+            //ora*30
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Készítsünk egy analóg órát SVG segítségével.</h1>
+            <br>
+            <ul>
+                <li>Körökből és téglalpokból építsük fel az óra szerkezetét.</li>
+                <li>A pontos idő beállításához, a transform attribútumon keresztül használjuk a translate és rotate
+                    függvényeket.</li>
+                <li>A beviteli mezőkbe frissítéskor töltődjön be az aktuális óra, perc.</li>
+                <li>A beállít gomb segítségével lehessen beálltani az időt.</li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col">
+                <svg width="500" heigth="300">
+                    <circle id="ora" cx="250" cy="75" r="55" stroke="black" stroke-width="4" fill="magenta" />
+                    <circle id="pont" cx="250" cy="75" r="5" stroke="black" stroke-width="4" fill="black" />
+                    <line value="0" id="ora_mut" class="mutato_ora" x1="0" y1="0" x2="20" y2="60"
+                        style="stroke:rgb(255,0,0);stroke-width:3" />
+                </svg>
+            </div>
+            <div class="col">
+                <label>Óra</label><br>
+                <input id="orra" type="text"><br>
+                <label>Perc</label><br>
+                <input id="perc" type="text"><br>
+                <br>
+                <button onclick="oraChange()" class="button p-2" id="">Beállít</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

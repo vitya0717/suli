@@ -18,6 +18,7 @@
             }
         }
 
+        
         var konyvek = [];
         var id = 0;
         var bookCount;
@@ -31,6 +32,7 @@
         var pages;
         var title;
         var year;
+        //üres könyv példány
         var newBook;
         //Módosítás
         var cauthor;
