@@ -12,12 +12,73 @@
         crossorigin="anonymous"></script>
     <title>Document</title>
     <script>
+
+        var updateTime = 20;
+        var isRunning = false;
+        var updateT;
+
         function oraChange() {
+            if (isRunning) {
+                clearInterval(updateT);
+                isRunning = false;
+            }
+            /* *-*-*-*-*-*-* */
+
+            //Óra mutató
             var ora = document.getElementById("ora_mut");
-            var ido = document.getElementById("orra");
-            ora.style.rotate = ido.value+"deg";
-            //ora*30
+            //Óra input
+            var ora_ido = document.getElementById("orra");
+
+            /* *-*-*-*-*-*-* */
+
+            //Perc mutató
+            var perc = document.getElementById("perc_mut");
+            //Perc input
+            var perc_ido = document.getElementById("perrc");
+
+            /* *-*-*-*-*-*-* */
+
+            //Másodperc mutató
+            var msp = document.getElementById("msp_mut");
+            //Másodperc input
+            var msp_ido = document.getElementById("msp");
+
+            /* *-*-*-*-*-*-* */
+
+            ora.setAttribute("transform", `rotate(${(Number(ora_ido.value) * 30)}, 250, 90)`);
+            perc.setAttribute("transform", `rotate(${(Number(perc_ido.value) * 360) / 60}, 250, 90)`);
+            msp.setAttribute("transform", `rotate(${(Number(msp_ido.value * 6))}, 250, 90)`);
         }
+
+        function jelenlegiIdo() {
+
+                if (!isRunning) {
+                    isRunning = true;
+                    updateT = setInterval(jelenlegiIdo, updateTime);
+                }
+                var dateTime = new Date();
+
+                /* *-*-*-*-*-*-* */
+
+                //Óra mutató
+                var ora = document.getElementById("ora_mut");
+
+                /* *-*-*-*-*-*-* */
+
+                //Perc mutató
+                var perc = document.getElementById("perc_mut");
+
+                /* *-*-*-*-*-*-* */
+
+                //Másodperc mutató
+                var msp = document.getElementById("msp_mut");
+
+                /* *-*-*-*-*-*-* */
+
+                ora.setAttribute("transform", `rotate(${(Number(dateTime.getHours()) * 30)}, 250, 90)`);
+                perc.setAttribute("transform", `rotate(${(Number(dateTime.getMinutes()) * 360) / 60}, 250, 90)`);
+                msp.setAttribute("transform", `rotate(${(Number(dateTime.getSeconds() * 6))}, 250, 90)`);
+            }
     </script>
 </head>
 
@@ -36,20 +97,30 @@
         </div>
         <div class="row">
             <div class="col">
-                <svg width="500" heigth="300">
-                    <circle id="ora" cx="250" cy="75" r="55" stroke="black" stroke-width="4" fill="magenta" />
-                    <circle id="pont" cx="250" cy="75" r="5" stroke="black" stroke-width="4" fill="black" />
-                    <line value="0" id="ora_mut" class="mutato_ora" x1="0" y1="0" x2="20" y2="60"
-                        style="stroke:rgb(255,0,0);stroke-width:3" />
+                <svg width="500" heigth="500">
+                    <circle id="ora" cx="250" cy="90" r="55" stroke="black" stroke-width="4" fill="gray" />
+                    <circle id="pont" cx="250" cy="90" r="5" stroke="black" stroke-width="4" fill="black" />
+                    <!--Óra mutató-->
+                    <line id="ora_mut" x1="250" y1="90" x2="250" y2="70" style="stroke:rgb(0, 0, 0);stroke-width:3" />
+                    <!--Perc mutató-->
+                    <line id="perc_mut" x1="250" y1="90" x2="250" y2="50"
+                        style="stroke:rgb(112, 92, 19);stroke-width:2" />
+                    <!--Másodperc mutató-->
+                    <line id="msp_mut" x1="250" y1="90" x2="250" y2="40"
+                        style="stroke:rgb(212, 36, 9);stroke-width:1" />
                 </svg>
             </div>
             <div class="col">
                 <label>Óra</label><br>
                 <input id="orra" type="text"><br>
                 <label>Perc</label><br>
-                <input id="perc" type="text"><br>
+                <input id="perrc" type="text"><br>
+                <br>
+                <label>Másodperc</label><br>
+                <input id="msp" type="text"><br>
                 <br>
                 <button onclick="oraChange()" class="button p-2" id="">Beállít</button>
+                <button onclick="jelenlegiIdo()" class="button p-2" id="">Jelenlegi idő ;)</button>
             </div>
         </div>
     </div>
