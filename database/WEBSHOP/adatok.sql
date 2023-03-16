@@ -27,17 +27,14 @@ CREATE TABLE varos(
     varos_azon INT AUTO_INCREMENT,
     iranyito_szam INT,
     varos_neve VARCHAR(64),
-    INDEX(varos_azon)
+    PRIMARY KEY(varos_azon)
 );
 
 CREATE TABLE utca(
     utca_azon INT AUTO_INCREMENT,
-    varos_azon INT,
     utca_neve VARCHAR(64),
     hazszam INT,
-    INDEX(utca_azon),
-    INDEX(varos_azon),
-    FOREIGN KEY(varos_azon) REFERENCES varos(varos_azon)
+    PRIMARY KEY(utca_azon)
 );
 
 CREATE TABLE felhasznalo(
@@ -102,12 +99,12 @@ INSERT INTO varos(varos_azon, iranyito_szam, varos_neve) VALUES
 (2, "1011", "Budapest"),
 (3, "2640", "Nógrád");
 
-INSERT INTO utca(utca_azon, varos_azon, utca_neve, hazszam) VALUES 
-(1, 1,"Kis Pista", 43),
-(2, 2, "Fiastyúk", 243),
-(3, 3, "Terhes utca", 65);
+INSERT INTO utca(utca_azon, utca_neve, hazszam) VALUES 
+(1,"Kis Pista", 43),
+(2, "Fiastyúk", 243),
+(3, "Terhes utca", 65);
 
 INSERT INTO felhasznalo(felhasz_azon, varos_azon, utca_azon, felhasznev, jelszo, email) VALUES 
 (1, 2, 2, "gerimester2009", "Alma12345X", "gerimester200@gmail.com"),
-(1, 2, 2, "yummmiiiOTP", "Jelszo", "lazlo.mail@freemail.com"),
+(1, 1, 2, "yummmiiiOTP", "Jelszo", "lazlo.mail@freemail.com"),
 (1, 2, 2, "ZsalmaLeves", "Naananaaa23", "zalma.lev10@citromail.com");
