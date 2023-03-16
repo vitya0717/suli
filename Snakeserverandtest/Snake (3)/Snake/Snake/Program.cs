@@ -5,8 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Threading;
-using System.IO;
-using System.Net.Sockets;
 
 namespace Snake
 {
@@ -23,9 +21,6 @@ namespace Snake
         static int time = 10000;
         static int score = 0;
         static int level = 1;
-        static int kigyoSzama = 0;
-        static StreamReader r;
-        static StreamWriter w;
 
         static void PalyaKeszites(char[,] screen)
         {
@@ -70,117 +65,31 @@ namespace Snake
             kigyo.Add(new Point(vKozep, yKozep));
             kigyo.Add(new Point(vKozep + 1, yKozep));
             kigyo.Add(new Point(vKozep + 2, yKozep));
-            kigyo.Add(new Point(vKozep + 3, yKozep));
         }
 
-        static void AdatKuldes()
+        static void KigyoKirajzolas()
         {
-            string kigyoAdatai = "KigyoAdat|" + kigyoSzama.ToString();
             for (int i = 0; i < Kigyo.Count; i++)
             {
-                string kigyoTest = $"{Kigyo[i].X}-{Kigyo[i].Y}";
-                kigyoAdatai += $";{kigyoTest}";
-            }
-            w.WriteLine(kigyoAdatai);
-            w.Flush();
-        }
-
-        static void AdatFogadas()
-        {
-            w.WriteLine($"send|{kigyoSzama}");
-            w.Flush();
-            string message = r.ReadLine();
-            if (message == "Start")
-            {
-                while (message != "Stop")
-                {
-                    message = r.ReadLine();
-                    if (message != "Stop")
-                    {
-                        List<Point> egyKigyo = new List<Point>();
-                        string[] adatok = message.Split(';');
-                        int egyKigyoSzama = int.Parse(adatok[0]);
-                        for (int i = 1; i < adatok.Length; i++)
-                        {
-                            string[] koordinatak = adatok[i].Split('-');
-                            Point koordinata = new Point(int.Parse(koordinatak[0]), int.Parse(koordinatak[1]));
-                            egyKigyo.Add(koordinata);
-                        }
-                        KigyoKirajzolas(egyKigyo, false);
-                        Console.SetCursorPosition(0, 0);
-                        Console.Write(message);
-                    }
-                }
-            }
-            w.WriteLine("almak");
-            w.Flush();
-            message = r.ReadLine();
-            string[] adat = message.Split(';');
-            for (int i = 0; i < adat.Length-1; i++)
-            {
-                string[] koordinatak = adat[i].Split('-');
-                int x = int.Parse(koordinatak[0]);
-                int y = int.Parse(koordinatak[1]);
-                screen[x, y] = '♥';
-                Console.SetCursorPosition(x, y);
-                Console.Write('♥');
-            }
-        }
-
-        static void KigyoKirajzolas(List<Point> Kigyo, bool sajat)
-        {
-            if (sajat)
-            {
-                AdatKuldes();
-                Thread szal = null;
-
-                if(szal == null || !szal.IsAlive)
-                {
-                    szal = new Thread(AdatFogadas);
-                    szal.Start();
-                    szal.Join();
-                }
-                //AdatFogadas();
-            }
-            for (int i = 0; i < Kigyo.Count; i++)
-            {
-                Console.ForegroundColor = (ConsoleColor)(kigyoSzama%16);
                 Console.SetCursorPosition(Kigyo[i].X, Kigyo[i].Y);
                 if (i == 0)
                 {
                     Console.Write("☺");
-                    if (sajat)
-                    {
-                        screen[Kigyo[i].X, Kigyo[i].Y] = '☺';
-                    }
+                    screen[Kigyo[i].X, Kigyo[i].Y] = '☺';
                 }
-                else if (i <= Kigyo.Count-3)
+                else if (i != Kigyo.Count - 1)
                 {
                     Console.Write("o");
-                    if (sajat)
-                    {
-                        screen[Kigyo[i].X, Kigyo[i].Y] = 'o';
-                    }
-                }
-                else if (i == Kigyo.Count - 2)
-                {
-                    Console.Write("°");
-                    if (sajat)
-                    {
-                        screen[Kigyo[i].X, Kigyo[i].Y] = '°';
-                    }
+                    screen[Kigyo[i].X, Kigyo[i].Y] = 'o';
                 }
                 else
                 {
-                    Console.Write(" ");
-                    if (sajat)
-                    {
-                        screen[Kigyo[i].X, Kigyo[i].Y] = ' ';
-                    }
+                    Console.Write("°");
+                    screen[Kigyo[i].X, Kigyo[i].Y] = '°';
                 }
             }
         }
-        static void TerepTargyKirakas(char item, int db, ConsoleColor color)
+        static void TerepTargyKirakas(char item,int db,ConsoleColor color)
         {
             Console.ForegroundColor = color;
             int szamlalo = 0;
@@ -302,9 +211,9 @@ namespace Snake
                             break;
                         }
                 }
-                if (screen[x, y] == '■')
+                if (screen[x,y]=='■') 
                 {
-                    end = true;
+                    end= true;
                 }
                 else if (screen[x, y] != '♥')
                 {
@@ -314,85 +223,60 @@ namespace Snake
                 }
                 else
                 {
-                    w.WriteLine($"almaEves|{x}-{y}");
-                    w.Flush();
                     score += 1;
                     time += 500;
-                    almaSzam--;
+                    almaSzam --;
                     if (almaSzam == 0)
                     {
-                        almaSzam = 5 + level;
+                        almaSzam = 5+level;
                         level++;
                         time = 10000;
-                        //TerepTargyKirakas('♥', almaSzam, ConsoleColor.Red);
-                        TerepTargyKirakas('■', almaSzam, ConsoleColor.Cyan);
+                        TerepTargyKirakas('♥',almaSzam,ConsoleColor.Red);
+                        TerepTargyKirakas('■',almaSzam,ConsoleColor.Cyan);
                     }
                 }
                 time -= 10;
-                KigyoKirajzolas(Kigyo, true);
-
+                KigyoKirajzolas();
                 Informacio();
-                if (irany == 'j' || irany == 'b')
+                if (irany=='j' || irany=='b')
                 {
                     System.Threading.Thread.Sleep(100);
                 }
                 else
                 {
-                    System.Threading.Thread.Sleep(100);
+                    System.Threading.Thread.Sleep(200);
                 }
             }
-            w.WriteLine($"Exit|{kigyoSzama}");
             Console.SetCursorPosition(ScreenX / 2 - 5, ScreenY / 2);
             Console.BackgroundColor = ConsoleColor.Red;
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.ForegroundColor= ConsoleColor.White;
             Console.WriteLine("Game Over!");
         }
         static void Informacio()
         {
             Console.SetCursorPosition(0, ScreenY - 1);
             Console.Write($"Level: {level}");
-            Console.SetCursorPosition(ScreenX / 2 - 6, ScreenY - 1);
+            Console.SetCursorPosition(ScreenX/2-6, ScreenY - 1);
             Console.Write($"Score: {score}");
-            Console.SetCursorPosition(ScreenX - 10, ScreenY - 1);
-            Console.Write($"Time: {time / 100:D3}");
+            Console.SetCursorPosition(ScreenX-10, ScreenY - 1);
+            Console.Write($"Time: {time/100:D3}");
         }
         static void Main(string[] args)
         {
-            //
-            TcpClient client = new TcpClient("192.168.60.16", 50000);
-            r = new StreamReader(client.GetStream(), Encoding.UTF8);
-            w = new StreamWriter(client.GetStream(), Encoding.UTF8);
-            string message = r.ReadLine();
-            int szamlalo = 0;
-            if (message == "Start")
-            {
-                while (message != "Stop")
-                {
-                    if (szamlalo == 2)
-                    {
-                        kigyoSzama = int.Parse(r.ReadLine());
-                    }
-                    message = r.ReadLine();
-                    szamlalo++;
-                }
-            }
-            //
             PalyaKeszites(screen);
             Kirajzolas(screen);
             KigyoStart(Kigyo);
-            //KigyoKirajzolas();
-            //TerepTargyKirakas('♥', almaSzam, ConsoleColor.Red);
+            KigyoKirajzolas();
+            TerepTargyKirakas('♥',almaSzam,ConsoleColor.Red);
             irany = 'b';
             Console.CursorVisible = false;
-            Thread szal1 = new Thread(BillenyuzetFigyeles);
             Thread szal2 = new Thread(KigyoMozgatas);
-
+            Thread szal1 = new Thread(BillenyuzetFigyeles);
+        
             szal1.Start();
             szal2.Start();
-
             szal1.Join();
             szal2.Join();
-
             Console.ReadKey();
         }
     }
