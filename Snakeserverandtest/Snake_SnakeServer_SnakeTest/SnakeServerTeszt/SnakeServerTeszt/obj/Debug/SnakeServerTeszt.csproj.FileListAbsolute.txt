@@ -1,8 +1,0 @@
-C:\Users\KerenyiR\source\repos\SnakeServerTeszt\SnakeServerTeszt\bin\Debug\SnakeServerTeszt.exe.config
-C:\Users\KerenyiR\source\repos\SnakeServerTeszt\SnakeServerTeszt\bin\Debug\SnakeServerTeszt.exe
-C:\Users\KerenyiR\source\repos\SnakeServerTeszt\SnakeServerTeszt\bin\Debug\SnakeServerTeszt.pdb
-C:\Users\KerenyiR\source\repos\SnakeServerTeszt\SnakeServerTeszt\obj\Debug\SnakeServerTeszt.csproj.AssemblyReference.cache
-C:\Users\KerenyiR\source\repos\SnakeServerTeszt\SnakeServerTeszt\obj\Debug\SnakeServerTeszt.csproj.SuggestedBindingRedirects.cache
-C:\Users\KerenyiR\source\repos\SnakeServerTeszt\SnakeServerTeszt\obj\Debug\SnakeServerTeszt.csproj.CoreCompileInputs.cache
-C:\Users\KerenyiR\source\repos\SnakeServerTeszt\SnakeServerTeszt\obj\Debug\SnakeServerTeszt.exe
-C:\Users\KerenyiR\source\repos\SnakeServerTeszt\SnakeServerTeszt\obj\Debug\SnakeServerTeszt.pdb
