@@ -1,0 +1,6 @@
+varos(varos_azon, iranyitoszam, varos_neve, utca_neve, hazszam)
+bolt(bolt_azon, bolt_neve)
+felhasznalo(felhasz_azon, varos_azon, felhasznev, jelszo, email)
+beszallito(bolt_azon, varos_azon, beszallito_telszam)
+termek(termek_azon, termek_neve, termek_ara, raktar_elerhetoseg, raktar_termek_mennyiseg)
+rendeles(rendeles_azon, bolt_azon, termek_azon, felhasznalo_azon, rendeles_datuma, fizetendo_osszeg)
