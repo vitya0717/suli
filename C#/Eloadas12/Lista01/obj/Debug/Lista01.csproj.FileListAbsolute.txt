@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas12\Lista01\bin\Debug\Lista01.exe.config
+C:\Users\Tanulo\source\repos\Eloadas12\Lista01\bin\Debug\Lista01.exe
+C:\Users\Tanulo\source\repos\Eloadas12\Lista01\bin\Debug\Lista01.pdb
+C:\Users\Tanulo\source\repos\Eloadas12\Lista01\obj\Debug\Lista01.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas12\Lista01\obj\Debug\Lista01.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas12\Lista01\obj\Debug\Lista01.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas12\Lista01\obj\Debug\Lista01.exe
+C:\Users\Tanulo\source\repos\Eloadas12\Lista01\obj\Debug\Lista01.pdb

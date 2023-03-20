@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Struktura_struct", "Struktura_struct\Struktura_struct.csproj", "{99707345-F77C-4139-9001-673BC2896189}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrukturaListabanTarolva", "StrukturaListabanTarolva\StrukturaListabanTarolva.csproj", "{C56964A3-FFA9-465F-B663-80DB881FC3FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99707345-F77C-4139-9001-673BC2896189}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99707345-F77C-4139-9001-673BC2896189}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99707345-F77C-4139-9001-673BC2896189}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99707345-F77C-4139-9001-673BC2896189}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C56964A3-FFA9-465F-B663-80DB881FC3FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C56964A3-FFA9-465F-B663-80DB881FC3FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C56964A3-FFA9-465F-B663-80DB881FC3FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C56964A3-FFA9-465F-B663-80DB881FC3FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53255CDD-DCBD-438E-BB15-33A459930FF3}
+	EndGlobalSection
+EndGlobal

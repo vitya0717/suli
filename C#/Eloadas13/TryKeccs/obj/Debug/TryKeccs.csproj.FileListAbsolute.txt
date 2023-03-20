@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas13\TryKeccs\bin\Debug\TryKeccs.exe.config
+C:\Users\Tanulo\source\repos\Eloadas13\TryKeccs\bin\Debug\TryKeccs.exe
+C:\Users\Tanulo\source\repos\Eloadas13\TryKeccs\bin\Debug\TryKeccs.pdb
+C:\Users\Tanulo\source\repos\Eloadas13\TryKeccs\obj\Debug\TryKeccs.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas13\TryKeccs\obj\Debug\TryKeccs.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas13\TryKeccs\obj\Debug\TryKeccs.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas13\TryKeccs\obj\Debug\TryKeccs.exe
+C:\Users\Tanulo\source\repos\Eloadas13\TryKeccs\obj\Debug\TryKeccs.pdb

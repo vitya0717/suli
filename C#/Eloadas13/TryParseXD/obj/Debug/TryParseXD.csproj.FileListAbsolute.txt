@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas13\TryParseXD\bin\Debug\TryParseXD.exe.config
+C:\Users\Tanulo\source\repos\Eloadas13\TryParseXD\bin\Debug\TryParseXD.exe
+C:\Users\Tanulo\source\repos\Eloadas13\TryParseXD\bin\Debug\TryParseXD.pdb
+C:\Users\Tanulo\source\repos\Eloadas13\TryParseXD\obj\Debug\TryParseXD.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas13\TryParseXD\obj\Debug\TryParseXD.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas13\TryParseXD\obj\Debug\TryParseXD.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas13\TryParseXD\obj\Debug\TryParseXD.exe
+C:\Users\Tanulo\source\repos\Eloadas13\TryParseXD\obj\Debug\TryParseXD.pdb

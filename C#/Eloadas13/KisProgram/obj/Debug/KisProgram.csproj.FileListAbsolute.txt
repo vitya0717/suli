@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas13\KisProgram\bin\Debug\KisProgram.exe.config
+C:\Users\Tanulo\source\repos\Eloadas13\KisProgram\bin\Debug\KisProgram.exe
+C:\Users\Tanulo\source\repos\Eloadas13\KisProgram\bin\Debug\KisProgram.pdb
+C:\Users\Tanulo\source\repos\Eloadas13\KisProgram\obj\Debug\KisProgram.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas13\KisProgram\obj\Debug\KisProgram.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas13\KisProgram\obj\Debug\KisProgram.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas13\KisProgram\obj\Debug\KisProgram.exe
+C:\Users\Tanulo\source\repos\Eloadas13\KisProgram\obj\Debug\KisProgram.pdb

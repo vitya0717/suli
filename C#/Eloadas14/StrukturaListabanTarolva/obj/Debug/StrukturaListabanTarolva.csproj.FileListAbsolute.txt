@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas14\StrukturaListabanTarolva\bin\Debug\StrukturaListabanTarolva.exe.config
+C:\Users\Tanulo\source\repos\Eloadas14\StrukturaListabanTarolva\bin\Debug\StrukturaListabanTarolva.exe
+C:\Users\Tanulo\source\repos\Eloadas14\StrukturaListabanTarolva\bin\Debug\StrukturaListabanTarolva.pdb
+C:\Users\Tanulo\source\repos\Eloadas14\StrukturaListabanTarolva\obj\Debug\StrukturaListabanTarolva.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas14\StrukturaListabanTarolva\obj\Debug\StrukturaListabanTarolva.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas14\StrukturaListabanTarolva\obj\Debug\StrukturaListabanTarolva.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas14\StrukturaListabanTarolva\obj\Debug\StrukturaListabanTarolva.exe
+C:\Users\Tanulo\source\repos\Eloadas14\StrukturaListabanTarolva\obj\Debug\StrukturaListabanTarolva.pdb

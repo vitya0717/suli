@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lista01", "Lista01\Lista01.csproj", "{70746043-AE34-404A-917A-2C89FBDBD35F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szotar-Dictionary", "Szotar-Dictionary\Szotar-Dictionary.csproj", "{1733E8E0-EC38-43AB-A351-53947B7D641A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70746043-AE34-404A-917A-2C89FBDBD35F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70746043-AE34-404A-917A-2C89FBDBD35F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70746043-AE34-404A-917A-2C89FBDBD35F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70746043-AE34-404A-917A-2C89FBDBD35F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1733E8E0-EC38-43AB-A351-53947B7D641A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1733E8E0-EC38-43AB-A351-53947B7D641A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1733E8E0-EC38-43AB-A351-53947B7D641A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1733E8E0-EC38-43AB-A351-53947B7D641A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EFF3EC36-75CC-4549-B010-79C7A329E62C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas13\ArrayList\bin\Debug\ArrayList.exe.config
+C:\Users\Tanulo\source\repos\Eloadas13\ArrayList\bin\Debug\ArrayList.exe
+C:\Users\Tanulo\source\repos\Eloadas13\ArrayList\bin\Debug\ArrayList.pdb
+C:\Users\Tanulo\source\repos\Eloadas13\ArrayList\obj\Debug\ArrayLista.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas13\ArrayList\obj\Debug\ArrayLista.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas13\ArrayList\obj\Debug\ArrayLista.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas13\ArrayList\obj\Debug\ArrayList.exe
+C:\Users\Tanulo\source\repos\Eloadas13\ArrayList\obj\Debug\ArrayList.pdb
