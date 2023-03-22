@@ -1,0 +1,227 @@
+[{
+    "Vármegye\n": "Bács-Kiskun",
+    "Székhely\n": "Kecskemét",
+    "Ország-rész\n": "AF",
+    "Régió\n": "DA",
+    "Járás\n": "11",
+    "Település\n": "119",
+    "Népesség\n": "22",
+    "Terület\n": "503&#160;825",
+    "Nép-sűrűség\n": "8&#160;443"
+},
+{
+    "Vármegye\n": "Baranya",
+    "Székhely\n": "Pécs",
+    "Ország-rész\n": "DT",
+    "Régió\n": "DD",
+    "Járás\n": "10",
+    "Település\n": "301",
+    "Népesség\n": "14",
+    "Terület\n": "360&#160;704",
+    "Nép-sűrűség\n": "4&#160;430"
+},
+{
+    "Vármegye\n": "Békés",
+    "Székhely\n": "Békéscsaba",
+    "Ország-rész\n": "AF",
+    "Régió\n": "DA",
+    "Járás\n": "9",
+    "Település\n": "75",
+    "Népesség\n": "22",
+    "Terület\n": "334&#160;264",
+    "Nép-sűrűség\n": "5&#160;630"
+},
+{
+    "Vármegye\n": "Borsod-Abaúj-Zemplén",
+    "Székhely\n": "Miskolc",
+    "Ország-rész\n": "AF",
+    "Régió\n": "ÉM",
+    "Járás\n": "16",
+    "Település\n": "358",
+    "Népesség\n": "29",
+    "Terület\n": "642&#160;447",
+    "Nép-sűrűség\n": "7&#160;247"
+},
+{
+    "Vármegye\n": "Csongrád-Csanád",
+    "Székhely\n": "Szeged",
+    "Ország-rész\n": "AF",
+    "Régió\n": "DA",
+    "Járás\n": "7",
+    "Település\n": "60",
+    "Népesség\n": "10",
+    "Terület\n": "399&#160;012",
+    "Nép-sűrűség\n": "4&#160;262"
+},
+{
+    "Vármegye\n": "Fejér",
+    "Székhely\n": "Székesfehérvár",
+    "Ország-rész\n": "DT",
+    "Régió\n": "KD",
+    "Járás\n": "8",
+    "Település\n": "108",
+    "Népesség\n": "17",
+    "Terület\n": "417&#160;712",
+    "Nép-sűrűség\n": "4&#160;358"
+},
+{
+    "Vármegye\n": "Győr-Moson-Sopron",
+    "Székhely\n": "Győr",
+    "Ország-rész\n": "DT",
+    "Régió\n": "NyD",
+    "Járás\n": "7",
+    "Település\n": "183",
+    "Népesség\n": "12",
+    "Terület\n": "467&#160;144",
+    "Nép-sűrűség\n": "4&#160;208"
+},
+{
+    "Vármegye\n": "Hajdú-Bihar",
+    "Székhely\n": "Debrecen",
+    "Ország-rész\n": "AF",
+    "Régió\n": "ÉA",
+    "Járás\n": "10",
+    "Település\n": "82",
+    "Népesség\n": "21",
+    "Terület\n": "527&#160;989",
+    "Nép-sűrűség\n": "6&#160;209"
+},
+{
+    "Vármegye\n": "Heves",
+    "Székhely\n": "Eger",
+    "Ország-rész\n": "AF",
+    "Régió\n": "ÉM",
+    "Járás\n": "7",
+    "Település\n": "121",
+    "Népesség\n": "11",
+    "Terület\n": "294&#160;609",
+    "Nép-sűrűség\n": "3&#160;637"
+},
+{
+    "Vármegye\n": "Jász-Nagykun-Szolnok",
+    "Székhely\n": "Szolnok",
+    "Ország-rész\n": "AF",
+    "Régió\n": "ÉA",
+    "Járás\n": "9",
+    "Település\n": "78",
+    "Népesség\n": "22",
+    "Terület\n": "370&#160;007",
+    "Nép-sűrűség\n": "5&#160;581"
+},
+{
+    "Vármegye\n": "Komárom-Esztergom",
+    "Székhely\n": "Tatabánya",
+    "Ország-rész\n": "DT",
+    "Régió\n": "KD",
+    "Járás\n": "6",
+    "Település\n": "76",
+    "Népesség\n": "12",
+    "Terület\n": "299&#160;207",
+    "Nép-sűrűség\n": "2&#160;264"
+},
+{
+    "Vármegye\n": "Nógrád",
+    "Székhely\n": "Salgótarján",
+    "Ország-rész\n": "AF",
+    "Régió\n": "ÉM",
+    "Járás\n": "6",
+    "Település\n": "131",
+    "Népesség\n": "6",
+    "Terület\n": "189&#160;304",
+    "Nép-sűrűség\n": "2&#160;544"
+},
+{
+    "Vármegye\n": "Pest",
+    "Székhely\n": "Budapest",
+    "Ország-rész\n": "KM",
+    "Régió\n": "PE",
+    "Járás\n": "18",
+    "Település\n": "187",
+    "Népesség\n": "52",
+    "Terület\n": "1&#160;278&#160;874",
+    "Nép-sűrűség\n": "6&#160;390"
+},
+{
+    "Vármegye\n": "Somogy",
+    "Székhely\n": "Kaposvár",
+    "Ország-rész\n": "DT",
+    "Régió\n": "DD",
+    "Járás\n": "8",
+    "Település\n": "246",
+    "Népesség\n": "16",
+    "Terület\n": "301&#160;429",
+    "Nép-sűrűség\n": "6&#160;065"
+},
+{
+    "Vármegye\n": "Szabolcs-Szatmár-Bereg",
+    "Székhely\n": "Nyíregyháza",
+    "Ország-rész\n": "AF",
+    "Régió\n": "ÉA",
+    "Járás\n": "13",
+    "Település\n": "229",
+    "Népesség\n": "29",
+    "Terület\n": "552&#160;964",
+    "Nép-sűrűség\n": "5&#160;933"
+},
+{
+    "Vármegye\n": "Tolna",
+    "Székhely\n": "Szekszárd",
+    "Ország-rész\n": "DT",
+    "Régió\n": "DD",
+    "Járás\n": "6",
+    "Település\n": "109",
+    "Népesség\n": "11",
+    "Terület\n": "217&#160;463",
+    "Nép-sűrűség\n": "3&#160;703"
+},
+{
+    "Vármegye\n": "Vas",
+    "Székhely\n": "Szombathely",
+    "Ország-rész\n": "DT",
+    "Régió\n": "NyD",
+    "Járás\n": "7",
+    "Település\n": "216",
+    "Népesség\n": "13",
+    "Terület\n": "253&#160;551",
+    "Nép-sűrűség\n": "3&#160;336"
+},
+{
+    "Vármegye\n": "Veszprém",
+    "Székhely\n": "Veszprém",
+    "Ország-rész\n": "DT",
+    "Régió\n": "KD",
+    "Járás\n": "10",
+    "Település\n": "217",
+    "Népesség\n": "15",
+    "Terület\n": "341&#160;317",
+    "Nép-sűrűség\n": "4&#160;463"
+},
+{
+    "Vármegye\n": "Zala",
+    "Székhely\n": "Zalaegerszeg",
+    "Ország-rész\n": "DT",
+    "Régió\n": "NyD",
+    "Járás\n": "6",
+    "Település\n": "258",
+    "Népesség\n": "10",
+    "Terület\n": "268&#160;648",
+    "Nép-sűrűség\n": "3&#160;784"
+},
+{
+    "Vármegye\n": "\n"
+},
+{
+    "Vármegye\n": "Budapest (főváros)",
+    "Székhely\n": "–",
+    "Ország-rész\n": "KM",
+    "Régió\n": "BU",
+    "Járás\n": "23",
+    "Település\n": "23",
+    "Népesség\n": "–",
+    "Terület\n": "1&#160;752&#160;286",
+    "Nép-sűrűség\n": "525"
+},
+{
+    "Vármegye\n": "\n"
+}
+]
