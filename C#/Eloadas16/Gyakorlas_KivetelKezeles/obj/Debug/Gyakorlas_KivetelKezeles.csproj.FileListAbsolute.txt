@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas16\Gyakorlas_KivetelKezeles\bin\Debug\Gyakorlas_KivetelKezeles.exe.config
+C:\Users\Tanulo\source\repos\Eloadas16\Gyakorlas_KivetelKezeles\bin\Debug\Gyakorlas_KivetelKezeles.exe
+C:\Users\Tanulo\source\repos\Eloadas16\Gyakorlas_KivetelKezeles\bin\Debug\Gyakorlas_KivetelKezeles.pdb
+C:\Users\Tanulo\source\repos\Eloadas16\Gyakorlas_KivetelKezeles\obj\Debug\Gyakorlas_KivetelKezeles.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas16\Gyakorlas_KivetelKezeles\obj\Debug\Gyakorlas_KivetelKezeles.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas16\Gyakorlas_KivetelKezeles\obj\Debug\Gyakorlas_KivetelKezeles.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas16\Gyakorlas_KivetelKezeles\obj\Debug\Gyakorlas_KivetelKezeles.exe
+C:\Users\Tanulo\source\repos\Eloadas16\Gyakorlas_KivetelKezeles\obj\Debug\Gyakorlas_KivetelKezeles.pdb

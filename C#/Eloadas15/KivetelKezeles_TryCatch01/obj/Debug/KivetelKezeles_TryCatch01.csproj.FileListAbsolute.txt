@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas15\KivetelKezeles_TryCatch01\bin\Debug\KivetelKezeles_TryCatch01.exe.config
+C:\Users\Tanulo\source\repos\Eloadas15\KivetelKezeles_TryCatch01\bin\Debug\KivetelKezeles_TryCatch01.exe
+C:\Users\Tanulo\source\repos\Eloadas15\KivetelKezeles_TryCatch01\bin\Debug\KivetelKezeles_TryCatch01.pdb
+C:\Users\Tanulo\source\repos\Eloadas15\KivetelKezeles_TryCatch01\obj\Debug\KivetelKezeles_TryCatch01.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas15\KivetelKezeles_TryCatch01\obj\Debug\KivetelKezeles_TryCatch01.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas15\KivetelKezeles_TryCatch01\obj\Debug\KivetelKezeles_TryCatch01.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas15\KivetelKezeles_TryCatch01\obj\Debug\KivetelKezeles_TryCatch01.exe
+C:\Users\Tanulo\source\repos\Eloadas15\KivetelKezeles_TryCatch01\obj\Debug\KivetelKezeles_TryCatch01.pdb

@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas15\KivételKezeles_Struct\bin\Debug\KivételKezeles_Struct.exe.config
+C:\Users\Tanulo\source\repos\Eloadas15\KivételKezeles_Struct\bin\Debug\KivételKezeles_Struct.exe
+C:\Users\Tanulo\source\repos\Eloadas15\KivételKezeles_Struct\bin\Debug\KivételKezeles_Struct.pdb
+C:\Users\Tanulo\source\repos\Eloadas15\KivételKezeles_Struct\obj\Debug\KivételKezeles_Struct.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas15\KivételKezeles_Struct\obj\Debug\KivételKezeles_Struct.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas15\KivételKezeles_Struct\obj\Debug\KivételKezeles_Struct.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas15\KivételKezeles_Struct\obj\Debug\KivételKezeles_Struct.exe
+C:\Users\Tanulo\source\repos\Eloadas15\KivételKezeles_Struct\obj\Debug\KivételKezeles_Struct.pdb

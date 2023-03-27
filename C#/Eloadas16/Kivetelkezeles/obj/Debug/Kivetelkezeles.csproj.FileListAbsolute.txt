@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas16\Kivetelkezeles\bin\Debug\Kivetelkezeles.exe.config
+C:\Users\Tanulo\source\repos\Eloadas16\Kivetelkezeles\bin\Debug\Kivetelkezeles.exe
+C:\Users\Tanulo\source\repos\Eloadas16\Kivetelkezeles\bin\Debug\Kivetelkezeles.pdb
+C:\Users\Tanulo\source\repos\Eloadas16\Kivetelkezeles\obj\Debug\Kivetelkezeles.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas16\Kivetelkezeles\obj\Debug\Kivetelkezeles.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas16\Kivetelkezeles\obj\Debug\Kivetelkezeles.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas16\Kivetelkezeles\obj\Debug\Kivetelkezeles.exe
+C:\Users\Tanulo\source\repos\Eloadas16\Kivetelkezeles\obj\Debug\Kivetelkezeles.pdb

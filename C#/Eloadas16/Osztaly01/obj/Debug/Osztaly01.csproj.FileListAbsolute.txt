@@ -1,0 +1,9 @@
+C:\Users\Tanulo\source\repos\Eloadas16\Osztaly01\bin\Debug\Osztaly01.exe.config
+C:\Users\Tanulo\source\repos\Eloadas16\Osztaly01\bin\Debug\Osztaly01.exe
+C:\Users\Tanulo\source\repos\Eloadas16\Osztaly01\bin\Debug\Osztaly01.pdb
+C:\Users\Tanulo\source\repos\Eloadas16\Osztaly01\obj\Debug\Osztaly01.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas16\Osztaly01\obj\Debug\Osztaly01.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas16\Osztaly01\obj\Debug\Osztaly01.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas16\Osztaly01\obj\Debug\Osztaly01.exe
+C:\Users\Tanulo\source\repos\Eloadas16\Osztaly01\obj\Debug\Osztaly01.pdb
+C:\Users\Tanulo\source\repos\Eloadas16\Osztaly01\bin\Debug\kektura.csv
