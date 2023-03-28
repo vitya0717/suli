@@ -7,10 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        tr, td {
+        * {
+            margin: 0px;
+        }
+        tr,
+        td {
             border: 2px solid white;
             padding: 10px;
         }
+
         #atable {
             position: absolute;
             z-index: 1;
@@ -19,256 +24,295 @@
             border: 2px solid white;
             border-collapse: collapse;
         }
+        #btable {
+            position: absolute;
+            z-index: 1;
+            background-color: #409dcf;
+            opacity: 0.8;
+            border: 2px solid white;
+            border-collapse: collapse;
+            width: 500px;
+        }
+
         svg {
             position: absolute;
             z-index: -1;
         }
     </style>
     <script>
-        class Megye {
-            constructor(id, selected, varmegye, szekhely, orszagresze, regio, jaras, telepules, nepesseg, terulet, nepsuruseg) {
+        class megy {
+            constructor(id, selected, varmegye, szekhely, orszagresze, regio, jaras, telepules, varos, nepesseg, terulet, nepsuruseg) {
                 this.id = id;
                 this.selected = selected;
                 this.varmegye = varmegye;
                 this.szekhely = szekhely;
-                this.orszagresze =orszagresze;
+                this.orszagresze = orszagresze;
                 this.regio = regio;
                 this.jaras = jaras;
                 this.telepules = telepules;
+                this.varos = varos;
                 this.nepesseg = nepesseg;
                 this.terulet = terulet;
                 this.nepsuruseg = nepsuruseg;
             }
         }
+
         var varmegyek = [
-        {
-            "Vármegye": "Borsod-Abaúj-Zemplén",
-            "Székhely": "Miskolc",
-            "Ország-rész": "AF",
-            "Régió": "ÉM",
-            "Járás": "16",
-            "Település": "358",
-            "Népesség": "29",
-            "Terület": "642&#160;447",
-            "Nép-sűrűség": "7&#160;247"
-        },
-        {
-            "Vármegye": "Szabolcs-Szatmár-Bereg",
-            "Székhely": "Nyíregyháza",
-            "Ország-rész": "AF",
-            "Régió": "ÉA",
-            "Járás": "13",
-            "Település": "229",
-            "Népesség": "29",
-            "Terület": "552&#160;964",
-            "Nép-sűrűség": "5&#160;933"
-        },
-        {
-            "Vármegye": "Hajdú-Bihar",
-            "Székhely": "Debrecen",
-            "Ország-rész": "AF",
-            "Régió": "ÉA",
-            "Járás": "10",
-            "Település": "82",
-            "Népesség": "21",
-            "Terület": "527&#160;989",
-            "Nép-sűrűség": "6&#160;209"
-        },
-        {
-            "Vármegye": "Békés",
-            "Székhely": "Békéscsaba",
-            "Ország-rész": "AF",
-            "Régió": "DA",
-            "Járás": "9",
-            "Település": "75",
-            "Népesség": "22",
-            "Terület": "334&#160;264",
-            "Nép-sűrűség": "5&#160;630"
-        },
-        {
-            "Vármegye": "Csongrád-Csanád",
-            "Székhely": "Szeged",
-            "Ország-rész": "AF",
-            "Régió": "DA",
-            "Járás": "7",
-            "Település": "60",
-            "Népesség": "10",
-            "Terület": "399&#160;012",
-            "Nép-sűrűség": "4&#160;262"
-        },
-        {
-            "Vármegye": "Bács-Kiskun",
-            "Székhely": "Kecskemét",
-            "Ország-rész": "AF",
-            "Régió": "DA",
-            "Járás": "11",
-            "Település": "119",
-            "Népesség": "22",
-            "Terület": "503&#160;825",
-            "Nép-sűrűség": "8&#160;443"
-        },
-        {
-            "Vármegye": "Baranya",
-            "Székhely": "Pécs",
-            "Ország-rész": "DT",
-            "Régió": "DD",
-            "Járás": "10",
-            "Település": "301",
-            "Népesség": "14",
-            "Terület": "360&#160;704",
-            "Nép-sűrűség": "4&#160;430"
-        },
-        {
-            "Vármegye": "Somogy",
-            "Székhely": "Kaposvár",
-            "Ország-rész": "DT",
-            "Régió": "DD",
-            "Járás": "8",
-            "Település": "246",
-            "Népesség": "16",
-            "Terület": "301&#160;429",
-            "Nép-sűrűség": "6&#160;065"
-        },
-        {
-            "Vármegye": "Zala",
-            "Székhely": "Zalaegerszeg",
-            "Ország-rész": "DT",
-            "Régió": "NyD",
-            "Járás": "6",
-            "Település": "258",
-            "Népesség": "10",
-            "Terület": "268&#160;648",
-            "Nép-sűrűség": "3&#160;784"
-        },
-        {
-            "Vármegye": "Vas",
-            "Székhely": "Szombathely",
-            "Ország-rész": "DT",
-            "Régió": "NyD",
-            "Járás": "7",
-            "Település": "216",
-            "Népesség": "13",
-            "Terület": "253&#160;551",
-            "Nép-sűrűség": "3&#160;336"
-        },
-        {
-            "Vármegye": "Győr-Moson-Sopron",
-            "Székhely": "Győr",
-            "Ország-rész": "DT",
-            "Régió": "NyD",
-            "Járás": "7",
-            "Település": "183",
-            "Népesség": "12",
-            "Terület": "467&#160;144",
-            "Nép-sűrűség": "4&#160;208"
-        },
-        {
-            "Vármegye": "Komárom-Esztergom",
-            "Székhely": "Tatabánya",
-            "Ország-rész": "DT",
-            "Régió": "KD",
-            "Járás": "6",
-            "Település": "76",
-            "Népesség": "12",
-            "Terület": "299&#160;207",
-            "Nép-sűrűség": "2&#160;264"
-        },
-        {
-            "Vármegye": "Tolna",
-            "Székhely": "Szekszárd",
-            "Ország-rész": "DT",
-            "Régió": "DD",
-            "Járás": "6",
-            "Település": "109",
-            "Népesség": "11",
-            "Terület": "217&#160;463",
-            "Nép-sűrűség": "3&#160;703"
-        },
-        {
-            "Vármegye": "Veszprém",
-            "Székhely": "Veszprém",
-            "Ország-rész": "DT",
-            "Régió": "KD",
-            "Járás": "10",
-            "Település": "217",
-            "Népesség": "15",
-            "Terület": "341&#160;317",
-            "Nép-sűrűség": "4&#160;463"
-        },
-        {
-            "Vármegye": "Fejér",
-            "Székhely": "Székesfehérvár",
-            "Ország-rész": "DT",
-            "Régió": "KD",
-            "Járás": "8",
-            "Település": "108",
-            "Népesség": "17",
-            "Terület": "417&#160;712",
-            "Nép-sűrűség": "4&#160;358"
-        },
-        {
-            "Vármegye": "Pest",
-            "Székhely": "Budapest",
-            "Ország-rész": "KM",
-            "Régió": "PE",
-            "Járás": "18",
-            "Település": "187",
-            "Népesség": "52",
-            "Terület": "1&#160;278&#160;874",
-            "Nép-sűrűség": "6&#160;390"
-        },
-        {
-            "Vármegye": "Budapest (főváros)",
-            "Székhely": "–",
-            "Ország-rész": "KM",
-            "Régió": "BU",
-            "Járás": "23",
-            "Település": "23",
-            "Népesség": "–",
-            "Terület": "1&#160;752&#160;286",
-            "Nép-sűrűség": "525"
-        },
-        {
-            "Vármegye": "Jász-Nagykun-Szolnok",
-            "Székhely": "Szolnok",
-            "Ország-rész": "AF",
-            "Régió": "ÉA",
-            "Járás": "9",
-            "Település": "78",
-            "Népesség": "22",
-            "Terület": "370&#160;007",
-            "Nép-sűrűség": "5&#160;581"
-        },
-        {
-            "Vármegye": "Heves",
-            "Székhely": "Eger",
-            "Ország-rész": "AF",
-            "Régió": "ÉM",
-            "Járás": "7",
-            "Település": "121",
-            "Népesség": "11",
-            "Terület": "294&#160;609",
-            "Nép-sűrűség": "3&#160;637"
-        },
-        {
-            "Vármegye": "Nógrád",
-            "Székhely": "Salgótarján",
-            "Ország-rész": "AF",
-            "Régió": "ÉM",
-            "Járás": "6",
-            "Település": "131",
-            "Népesség": "6",
-            "Terület": "189&#160;304",
-            "Nép-sűrűség": "2&#160;544"
-        }
+            {
+                "Vármegye": "Borsod-Abaúj-Zemplén",
+                "Székhely": "Miskolc",
+                "Ország-rész": "AF",
+                "Régió": "ÉM",
+                "Járás": "16",
+                "Település": "358",
+                "Népesség": "29",
+                "Terület": "642&#160;447",
+                "Nép-sűrűség": "7&#160;247"
+            },
+            {
+                "Vármegye": "Szabolcs-Szatmár-Bereg",
+                "Székhely": "Nyíregyháza",
+                "Ország-rész": "AF",
+                "Régió": "ÉA",
+                "Járás": "13",
+                "Település": "229",
+                "Népesség": "29",
+                "Terület": "552&#160;964",
+                "Nép-sűrűség": "5&#160;933"
+            },
+            {
+                "Vármegye": "Hajdú-Bihar",
+                "Székhely": "Debrecen",
+                "Ország-rész": "AF",
+                "Régió": "ÉA",
+                "Járás": "10",
+                "Település": "82",
+                "Népesség": "21",
+                "Terület": "527&#160;989",
+                "Nép-sűrűség": "6&#160;209"
+            },
+            {
+                "Vármegye": "Békés",
+                "Székhely": "Békéscsaba",
+                "Ország-rész": "AF",
+                "Régió": "DA",
+                "Járás": "9",
+                "Település": "75",
+                "Népesség": "22",
+                "Terület": "334&#160;264",
+                "Nép-sűrűség": "5&#160;630"
+            },
+            {
+                "Vármegye": "Csongrád-Csanád",
+                "Székhely": "Szeged",
+                "Ország-rész": "AF",
+                "Régió": "DA",
+                "Járás": "7",
+                "Település": "60",
+                "Népesség": "10",
+                "Terület": "399&#160;012",
+                "Nép-sűrűség": "4&#160;262"
+            },
+            {
+                "Vármegye": "Bács-Kiskun",
+                "Székhely": "Kecskemét",
+                "Ország-rész": "AF",
+                "Régió": "DA",
+                "Járás": "11",
+                "Település": "119",
+                "Népesség": "22",
+                "Terület": "503&#160;825",
+                "Nép-sűrűség": "8&#160;443"
+            },
+            {
+                "Vármegye": "Baranya",
+                "Székhely": "Pécs",
+                "Ország-rész": "DT",
+                "Régió": "DD",
+                "Járás": "10",
+                "Település": "301",
+                "Népesség": "14",
+                "Terület": "360&#160;704",
+                "Nép-sűrűség": "4&#160;430"
+            },
+            {
+                "Vármegye": "Somogy",
+                "Székhely": "Kaposvár",
+                "Ország-rész": "DT",
+                "Régió": "DD",
+                "Járás": "8",
+                "Település": "246",
+                "Népesség": "16",
+                "Terület": "301&#160;429",
+                "Nép-sűrűség": "6&#160;065"
+            },
+            {
+                "Vármegye": "Zala",
+                "Székhely": "Zalaegerszeg",
+                "Ország-rész": "DT",
+                "Régió": "NyD",
+                "Járás": "6",
+                "Település": "258",
+                "Népesség": "10",
+                "Terület": "268&#160;648",
+                "Nép-sűrűség": "3&#160;784"
+            },
+            {
+                "Vármegye": "Vas",
+                "Székhely": "Szombathely",
+                "Ország-rész": "DT",
+                "Régió": "NyD",
+                "Járás": "7",
+                "Település": "216",
+                "Népesség": "13",
+                "Terület": "253&#160;551",
+                "Nép-sűrűség": "3&#160;336"
+            },
+            {
+                "Vármegye": "Győr-Moson-Sopron",
+                "Székhely": "Győr",
+                "Ország-rész": "DT",
+                "Régió": "NyD",
+                "Járás": "7",
+                "Település": "183",
+                "Népesség": "12",
+                "Terület": "467&#160;144",
+                "Nép-sűrűség": "4&#160;208"
+            },
+            {
+                "Vármegye": "Komárom-Esztergom",
+                "Székhely": "Tatabánya",
+                "Ország-rész": "DT",
+                "Régió": "KD",
+                "Járás": "6",
+                "Település": "76",
+                "Népesség": "12",
+                "Terület": "299&#160;207",
+                "Nép-sűrűség": "2&#160;264"
+            },
+            {
+                "Vármegye": "Tolna",
+                "Székhely": "Szekszárd",
+                "Ország-rész": "DT",
+                "Régió": "DD",
+                "Járás": "6",
+                "Település": "109",
+                "Népesség": "11",
+                "Terület": "217&#160;463",
+                "Nép-sűrűség": "3&#160;703"
+            },
+            {
+                "Vármegye": "Veszprém",
+                "Székhely": "Veszprém",
+                "Ország-rész": "DT",
+                "Régió": "KD",
+                "Járás": "10",
+                "Település": "217",
+                "Népesség": "15",
+                "Terület": "341&#160;317",
+                "Nép-sűrűség": "4&#160;463"
+            },
+            {
+                "Vármegye": "Fejér",
+                "Székhely": "Székesfehérvár",
+                "Ország-rész": "DT",
+                "Régió": "KD",
+                "Járás": "8",
+                "Település": "108",
+                "Népesség": "17",
+                "Terület": "417&#160;712",
+                "Nép-sűrűség": "4&#160;358"
+            },
+            {
+                "Vármegye": "Pest",
+                "Székhely": "Budapest",
+                "Ország-rész": "KM",
+                "Régió": "PE",
+                "Járás": "18",
+                "Település": "187",
+                "Népesség": "52",
+                "Terület": "1&#160;278&#160;874",
+                "Nép-sűrűség": "6&#160;390"
+            },
+            {
+                "Vármegye": "Budapest (főváros)",
+                "Székhely": "–",
+                "Ország-rész": "KM",
+                "Régió": "BU",
+                "Járás": "23",
+                "Település": "23",
+                "Népesség": "–",
+                "Terület": "1&#160;752&#160;286",
+                "Nép-sűrűség": "525"
+            },
+            {
+                "Vármegye": "Jász-Nagykun-Szolnok",
+                "Székhely": "Szolnok",
+                "Ország-rész": "AF",
+                "Régió": "ÉA",
+                "Járás": "9",
+                "Település": "78",
+                "Népesség": "22",
+                "Terület": "370&#160;007",
+                "Nép-sűrűség": "5&#160;581"
+            },
+            {
+                "Vármegye": "Heves",
+                "Székhely": "Eger",
+                "Ország-rész": "AF",
+                "Régió": "ÉM",
+                "Járás": "7",
+                "Település": "121",
+                "Népesség": "11",
+                "Terület": "294&#160;609",
+                "Nép-sűrűség": "3&#160;637"
+            },
+            {
+                "Vármegye": "Nógrád",
+                "Székhely": "Salgótarján",
+                "Ország-rész": "AF",
+                "Régió": "ÉM",
+                "Járás": "6",
+                "Település": "131",
+                "Népesség": "6",
+                "Terület": "189&#160;304",
+                "Nép-sűrűség": "2&#160;544"
+            }
         ]
         var megyek = [];
+        megyek.push(new megy("", false, "Borsod-Abaúj-Zemplén", "Miskolc", "AF", "ÉM", 16, 358, 29, 642447, 7247, 88));
+        megyek.push(new megy("", false, "Szabolcs-Szatmár-Bereg", "Nyíregyháza", "AF", "ÉA", 13, 229, 29, 552964, 5933, 93));
+        megyek.push(new megy("", false, "Hajdú-Bihar", "Debrecen", "AF", "ÉA", 10, 82, 21, 527989, 6209, 85));
+        megyek.push(new megy("", false, "Békés", "Békéscsaba", "AF", "DA", 9, 75, 22, 334264, 5630, 59));
+        megyek.push(new megy("", false, "Csongrád-Csanád", "Szeged", "AF", "DA", 7, 60, 10, 399012, 4262, 93));
+        megyek.push(new megy("", false, "Bács-kiskun", "Kecskemét", "AF", "DA", 11, 119, 22, 503825, 8443, 59));
+        megyek.push(new megy("", false, "Baranya", "Pécs", "DT", "DD", 10, 301, 14, 360704, 4430, 81));
+        megyek.push(new megy("", false, "Somogy", "Kaposvár", "DT", "DD", 8, 246, 16, 301429, 6065, 49));
+        megyek.push(new megy("", false, "Zala", "Zalaegerszeg", "DT", "NyD", 6, 258, 10, 268548, 3784, 71));
+        megyek.push(new megy("", false, "Vas", "Szombathely", "DT", "NyD", 7, 216, 13, 253551, 3336, 76));
+        megyek.push(new megy("", false, "Győr-Moson-Sopron", "Győr", "DT", "NyD", 7, 183, 12, 467144, 4208, 111));
+        megyek.push(new megy("", false, "Komárom-Esztergom", "Tatabánya", "DT", "kd", 6, 76, 12, 299207, 2264, 132));
+        megyek.push(new megy("", false, "Tolna", "Szekszárd", "DT", "DD", 6, 109, 11, 217463, 3703, 58));
+        megyek.push(new megy("", false, "Veszprém", "Veszprém", "DT", "KD", 10, 217, 15, 341317, 4463, 76));
+        megyek.push(new megy("", false, "Fejér", "Székesfehérvár", "DT", "KD", 8, 108, 17, 417712, 4358, 95));
+        megyek.push(new megy("", false, "Pest", "Budapest", "KM", "PE", 18, 187, 52, 1278874, 6390, 200));
+        megyek.push(new megy("", false, "Budapest", "-", "KM", "BU", 23, 23, 0, 1752286, 525, 3337));
+        megyek.push(new megy("", false, "Jász-Nagykun-Szolnok", "Szolnok", "AF", "ÉA", 9, 78, 22, 370007, 5581, 66));
+        megyek.push(new megy("", false, "Heves", "Eger", "AF", "ÉM", 7, 121, 11, 294609, 3637, 81));
+        megyek.push(new megy("", false, "Nógrád", "Salgótarján", "AF", "ÉM", 6, 131, 6, 189304, 2544, 74));
         var pathok = document.getElementsByTagName('path');
         window.onload = function () {
-            
+
             for (let i = 0; i < pathok.length - 1; i++) {
-                megyek.push(new Megye(pathok[i].id, false, varmegyek[i]["Vármegye"], varmegyek[i]["Székhely"], varmegyek[i]["Ország-rész"], varmegyek[i]["Régió"], varmegyek[i]["Járás"], varmegyek[i]["Település"], varmegyek[i]["Népesség"], varmegyek[i]["Terület"], varmegyek[i]["Nép-sűrűség"]));
+                megyek[i].id = pathok[i].id;
             }
+
+            for (let j = 0; j < megyek.length; j++) {
+                var temp = megyek[j].nepesseg / 255;
+                document.getElementById(megyek[j].id).style.fill = "#" + (1 << 24 | temp << 16 | 5 << 8 | 5).toString(16).slice(1);;
+            }
+
+            console.log(megyek)
         }
 
         function mouseOver(item) {
@@ -276,9 +320,9 @@
             while (megyek[index].id != item.id) {
                 index++;
             }
-            console.log(event.clientX, event.clientY)
+            //console.log(event.clientX, event.clientY)
 
-            document.getElementById("atable").innerHTML = 
+            document.getElementById("atable").innerHTML =
                 `<tr>
                     <td>Vármegye: </td>
                     <td>${megyek[index].varmegye}</td>
@@ -297,7 +341,7 @@
                 </tr>
                 <tr>
                     <td>Város: </td>
-                    <td>${megyek[index].jaras}</td>
+                    <td>${megyek[index].varos}</td>
                 </tr>
                 <tr>
                     <td>Népesség: </td>
@@ -325,26 +369,108 @@
             }
             if (!megyek[index].selected) {
                 document.getElementById(megyek[index].id).style.fill = "#b4c7b2";
+                for (let j = 0; j < megyek.length; j++) {
+                var temp = megyek[j].nepesseg / 255;
+                document.getElementById(megyek[j].id).style.fill = "#" + (1 << 24 | temp << 16 | 5 << 8 | 5).toString(16).slice(1);;
+            }
             }
             document.getElementById("atable").innerHTML = "";
         }
-
+        var elemek = " ";
+        var nepesseg = 0;//megyek[index].terulet
+        var telepulesek = 0;//megyek[index].telepules
+        var varosok = 0;////megyek[index].nepesseg
+        var terulet = 0;//megyek[index].nepsuruseg
+        var megynevek = [];
         function select(item) {
             var index = 0;
             while (item.id != megyek[index].id) {
                 index++;
             }
             var megye = document.getElementById(megyek[index].id);
+            var jobbOldalKiiratas = document.getElementById("btable");
             if (!megyek[index].selected) {
                 megyek[index].selected = true;
                 megye.style.fill = "green";
-                console.log(megyek[index].id)
-                console.log(index);
-                console.log(megyek[index].varmegye)
+                //console.log(megyek[index].id)
+                //console.log(index);
+                //console.log(megyek[index].varmegye)
+                if(!megynevek.includes(megyek[index])) {
+                    megynevek.push(megyek[index]);
+                }
+                elemek += megyek[index].varmegye + '<br>';
+                nepesseg += Number(megyek[index].nepesseg);
+                telepulesek += Number(megyek[index].telepules);
+                varosok += Number(megyek[index].varos);
+                terulet += Number(megyek[index].terulet);
+                console.log(megynevek);
+
+                jobbOldalKiiratas.innerHTML =
+                    `
+                <tr>
+                    <td>Vármegye: </td>
+                    <td>${elemek}</td>
+                </tr>
+                <tr>
+                    <td>Össznépesség: </td>
+                    <td>${nepesseg}</td>
+                </tr>
+                <tr>
+                    <td>Település: </td>
+                    <td>${telepulesek}</td>
+                </tr>
+                <tr>
+                    <td>Városok: </td>
+                    <td>${varosok}</td>
+                </tr>
+                <tr>
+                    <td>Terület: </td>
+                    <td>${terulet}</td>
+                </tr>
+                `
+
             } else {
+                elemek = "";
+                var ind = megynevek.indexOf(megyek[index]);
+                megynevek.slice(ind, 1);
+                console.log(megynevek);
+                console.log(megynevek[ind]);
+                console.log(index);
+                console.log(ind);
+                for (let i = 0; i < megynevek.length; i++) {
+                    elemek += megynevek[i].varmegye + "<br>";
+                }
+                nepesseg -= Number(megyek[index].nepesseg);
+                telepulesek -= Number(megyek[index].telepules);
+                varosok -= Number(megyek[index].varos);
+                terulet -= Number(megyek[index].terulet);
+                jobbOldalKiiratas.innerHTML =
+                    `
+                <tr>
+                    <td>Vármegye: </td>
+                    <td>${elemek}</td>
+                </tr>
+                <tr>
+                    <td>Össznépesség: </td>
+                    <td>${nepesseg}</td>
+                </tr>
+                <tr>
+                    <td>Település: </td>
+                    <td>${telepulesek}</td>
+                </tr>
+                <tr>
+                    <td>Városok: </td>
+                    <td>${varosok}</td>
+                </tr>
+                <tr>
+                    <td>Terület: </td>
+                    <td>${terulet}</td>
+                </tr>
+                `
                 megyek[index].selected = false;
                 megye.style.fill = "#b4c7b2";
             }
+            document.getElementById("btable").setAttribute("style", `transform: translate(500px, 500px)`);
         }
 
     </script>
@@ -471,6 +597,8 @@
             sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
     </svg>
     <table id="atable"></table>
+    <br>
+    <table style="width: 200px; margin-right: 0px;" id="btable"></table>
 </body>
 
 </html>
