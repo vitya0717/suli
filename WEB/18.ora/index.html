@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        #mozgato {
+            width: 880px;
+            position: absolute;
+            transform-origin: left;
+            transform: translate(0px, 0px) rotate(90deg);
+        }
+
+        input[type=range] {
+            -webkit-appearance: none;
+        }
+
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 300px;
+            height: 5px;
+            background: rgba(155, 155, 14, 0.87);
+            border: none;
+            border-radius: 3px;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            border: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: goldenrod;
+            margin-top: -4px;
+        }
+
+        input[type=range]:focus {
+            outline: none;
+        }
+
+        input[type=range]:focus::-webkit-slider-runnable-track {
+            background: rgba(155, 155, 14, 0.87);
+        }
+
+        #plane {
+            position: absolute;
+        }
+    </style>
+    <script>
+        function move(item) {
+            const rangeElement = document.getElementById(item.id);
+            const plane = document.getElementById("plane");
+            plane.setAttribute("style", `transform: translate(0px, ${rangeElement.value}px)`);
+        }
+
+        class Cloud {
+            constructor(id,x, y) {
+                this.id = id;
+                this.x = x;
+                this.y = y;
+            }
+        }
+        const cloudslist = [];
+        function randomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+        }
+
+        function clouds() {
+            var customId = 0;
+            const randomCount = randomInt(3, 6);
+            for (let i = 0; i < randomCount; i++) {
+                const randomY = randomInt(0, 780);
+                const cloud1 = new Cloud(customId ,1300, randomY);
+                cloudslist.push(cloud1);
+                customId++;
+            }
+
+            console.log(cloudslist);
+        }
+        function spawnClouds() {
+            console.log(cloudslist)
+            for (const c of cloudslist) {
+                document.getElementById("plane").innerHTML += `
+                <path
+                    style="position: absolute; transform: translate(${c.x}px, ${c.y}px); fill:lightblue;stroke:#000000;stroke-width:1.2500000;stroke-dasharray:none;stroke-linejoin:round;"
+                    d="M 48.996171,37.251271 C 47.958668,32.143973 39.185631,24.658486 33.930828,26.057885 C 27.350244,27.875054 24.319102,33.750906 29.022229,38.180278 C 24.861109,35.364180 14.478948,32.941167 8.8516150,42.752305 C 5.3584330,50.061076 15.250525,54.633620 18.276730,54.093064 C 12.486132,53.396616 -1.7806601,65.306814 4.5717298,71.373662 C 12.398859,77.540434 30.328023,70.871946 31.115271,65.721140 C 29.368597,73.253219 49.289455,74.699245 49.782264,64.230844 C 48.360488,69.138884 62.574082,74.362572 69.331408,72.364112 C 77.800433,70.297826 76.782138,63.322187 75.780037,61.195189 C 82.294178,61.939711 92.493777,63.786015 97.011836,57.091162 C 100.16106,50.764622 98.288765,43.698338 94.234782,41.475620 C 89.817633,39.373843 84.991240,39.483372 79.361925,43.043469 C 83.828729,40.136070 81.073796,30.760619 76.597083,28.701006 C 71.495048,26.361815 65.365281,25.905286 59.859869,27.042626 C 55.323516,27.769206 48.144478,31.594752 48.996171,37.251271 z "
+                    id="${c.id}"
+                    sodipodi:nodetypes="cccccccccccccccc" />`;
+            }
+        }
+        function moveClouds() {
+            var speed = 5;
+            for (const c of cloudslist) {
+                if(c.x <= 200) {
+                    c.x = 1400;
+                }
+                document.getElementById(c.id).setAttribute("style", `transform: translate(${c.x}, ${c.y})`);
+                c.x -= speed;
+                console.log(c.id, c.x);
+            }
+        }
+
+        window.onload = function () {
+            clouds();
+            spawnClouds();
+            setInterval(() => {
+                for (const c of cloudslist) {
+                if(c.x <= 200) {
+                    c.x = 1400;
+                }
+                document.getElementById(c.id).setAttribute("style", `transform: translate(${c.x}, ${c.y})`);
+                c.x -= speed;
+                console.log(c.id, c.x);
+            }
+            }, 1000);
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col">
+            <div id="canvas" style="border: 2px solid black; width: 1400px; height: 900px; margin: 3px;">
+                <svg id="plane" xmlns="http://www.w3.org/2000/svg" width="1400" height="1000">
+                    <path style="transform: scale(0.2, 0.2);"
+                        d="M 41,217 24,203 0,159 18,144 94,212 H 111 L 94,86 140,83 244,210 350,216 V 236 H 441 L 500,250 441,264 H 350 V 284 L 244,290 140,417 94,414 111,288 H 94 L 18,356 0,341 24,297 41,283 Z"
+                        stroke="none" fill="#aaa" />
+                </svg>
+                
+            </div>
+        </div>
+        <div class="col">
+            <input onmousemove="move(this)" type="range" name="XD" id="mozgato" min="0" max="780" value="0">
+        </div>
+    </div>
+</body>
+
+</html>

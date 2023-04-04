@@ -46,7 +46,7 @@ CREATE TABLE felhasznalo(
     email VARCHAR(64),
     PRIMARY KEY(felhasz_azon),
     INDEX(varos_azon),
-    FOREIGN KEY(varos_azon) REFERENCES varos(varos_azon)
+    FOREIGN KEY(varos_azon) REFERENCES `varos`(varos_azon)
 );
 
 CREATE TABLE beszallito(
