@@ -8,177 +8,377 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <style>
-        #mozgato {
-            width: 880px;
-            position: absolute;
-            transform-origin: left;
-            transform: translate(0px, 0px) rotate(90deg);
-        }
-
-        input[type=range] {
-            -webkit-appearance: none;
-        }
-
-        input[type=range]::-webkit-slider-runnable-track {
-            width: 300px;
-            height: 5px;
-            background: rgba(155, 155, 14, 0.87);
-            border: none;
-            border-radius: 3px;
-        }
-
-        input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            border: none;
-            height: 20px;
-            width: 20px;
-            border-radius: 50%;
-            background: goldenrod;
-            margin-top: -4px;
-        }
-
-        input[type=range]:focus {
-            outline: none;
-        }
-
-        input[type=range]:focus::-webkit-slider-runnable-track {
-            background: rgba(155, 155, 14, 0.87);
-        }
-
         #plane {
             position: absolute;
         }
+
+        #canvas {
+            background-color: blue;
+        }
+
+        .informationFontStyle {
+            font-size: 20px;
+            font-family: "Lucida Console", "Courier New", monospace;
+        }
+
+        body {
+            background-color: rgb(22, 150, 22);
+        }
     </style>
     <script>
+        //Minden amit frissíteni kell a pályán azt ezzel a változó segítségével tesszük meg!
+        var gameUpdater;
+        //Vizsgálat, hogy éppen fut-e a játék vagyis hogy updatel-e folyamatosan
+        var isRunning = false;
+        //Az elhaladó felhőket számolja a pályán és ennekk a változó értékét viszem ki a HTML-re és a játék végén is
+        var cCount = 0;
+        //A felszedett bitcoinoknak a .value paraméterét adom minden felszedéssel hozzá!
+        var bCount = Number(0);
+        //A felhők generálásánál használt egyedi ID generálására szolgáló változó!
+        var customCloudId = 0;
+        //A felhő objektumok tárolására egy tömb!
+        const cloudslist = [];
+        //A bitcoin objektumok tárolására tömb!
+        var bitcoins = [];
+        //Az egyetlen repülő objektum, amit a felhasználó irányít, a start metódusban kap értéket! 
+        var repcsi = null;
+
+
+        //A játékban használt objektumok
         class Cloud {
-            constructor(id, speed, x, y) {
+            constructor(id, speed, x, y, radius) {
                 this.id = id;
                 this.speed = speed;
                 this.x = x;
                 this.y = y;
-
-                this.hitOtherObject = function (otherobj) {
-                    var myleft = this.x;
-                    var myright = this.x + (this.width);
-                    var mytop = this.y;
-                    var mybottom = this.y + (this.height);
-                    var otherleft = otherobj.x - otherobj.radius;
-                    var otherright = otherobj.x + (otherobj.radius);
-                    var othertop = otherobj.y - otherobj.radius;
-                    var otherbottom = otherobj.y + (otherobj.radius);
-                    var crash = true;
-                    if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
-                        crash = false;
-                    }
-                    return crash;
-                }
+                this.radius = radius;
             }
         }
-        var repcsi = null;
-
         class Plane {
-            constructor(id, radius, x, y) {
+            constructor(id, radius, health, x, y) {
                 this.id = id;
                 this.radius = radius;
+                this.health = health;
                 this.x = x;
                 this.y = y;
             }
         }
-
-        
-
-        function move(item) {
-            const rangeElement = document.getElementById(item.id);
-            const plane = document.getElementById("plane");
-            plane.setAttribute("style", `transform: translate(0px, ${rangeElement.value}px)`);
-            repcsi.y = rangeElement.value;
-
-            if(HitObject()) {
-                console.log("Ütközés....")
+        class Bitcoin {
+            constructor(id, radius, x, y, value) {
+                this.id = id;
+                this.radius = radius;
+                this.x = x;
+                this.y = y;
+                this.value = value;
             }
-
         }
 
-        function HitObject() {                              //ütközés vizsgálat
-            for (let i = 0; i < cloudslist.length; i++) {
-                if (cloudslist[i].hitOtherObject(repcsi)) {
-                    document.getElementById(cloudslist[i].id).setAttribute("style", "fill: red;")
-                    return true;
-                }
-            }
-            return false;
+        //A következő két függvény random számokat generál, az első tizedes számokat, a második egész számokat
+        function randomInRange(min, max) {
+            var n = Math.random() * (max - min + 0.1) + min;
+            return n > max ? randomInRange(min, max) : n;
         }
-
-        const cloudslist = [];
         function randomInt(min, max) {
             min = Math.ceil(min);
             max = Math.floor(max);
             return Math.floor(Math.random() * (max - min) + min);
         }
-        function clouds() {
-            var customId = 0;
-            const randomCount = randomInt(5, 10);
-            for (let i = 0; i < randomCount; i++) {
-                const randomSpeed = randomInt(3, 10);
-                const randomY = randomInt(0, 780);
-                const cloud1 = new Cloud(customId, randomSpeed, randomInt(1300, 1500), randomY);
-                cloudslist.push(cloud1);
-                customId++;
+        //A repülő életének kiíratása az oldalra
+        function planeHealth(healthCount) {
+            document.getElementById("healthBarLabel").style.visibility = "visible";
+            let hp = "";
+            for (let i = 0; i < healthCount; i++) {
+                hp += "❤";
+            }
+            document.getElementById("healthBar").style.color = "#8B0000";
+            document.getElementById("healthBar").textContent = hp;
+        }
+
+        //A repülő objektum mozgatására szolgáló függvény!
+        function move(item) {
+            const rangeElement = document.getElementById(item.id);
+            const plane = document.getElementById("plane");
+            if (!wallHitCheck(repcsi)) {
+                plane.setAttribute("style", `transform: translate(${event.clientX}px, ${event.clientY}px) scale(0.2, 0.2)`);
+            }
+            repcsi.y = event.clientY;
+            repcsi.x = event.clientX;
+            HitObject(repcsi, cloudslist);
+            coinPickup(repcsi, bitcoins);
+        }
+
+        //Amikor felszedünk egy bitcoint akkor ez a függvény hívódik meg
+        function coinPickup(obj, list) {
+            for (let c of list) {
+                var x = Math.abs(c.x - obj.x)
+                var y = Math.abs(c.y - obj.y)
+                var distance = Math.sqrt(x * x + y * y)
+                if (distance < c.radius + obj.radius) {
+                    deletePickedCoinElement(c);
+                }
+            }
+            document.getElementById("btcValue").textContent = bCount;
+        }
+        //A bitcoin felszedése után törlöm a pályáról és a "bitcoins" tömbből is!
+        function deletePickedCoinElement(element) {
+            for (let k = 0; k < bitcoins.length; k++) {
+                if (bitcoins[k] != null && bitcoins[k].id == element.id) {
+                    if (document.getElementById(bitcoins[k].id) != null) {
+                        document.getElementById(bitcoins[k].id).remove();
+                        bCount += bitcoins[k].value;
+                        bitcoins.splice(k, 1);
+                    }
+                }
+            }
+            if (bitcoins.length == 0) {
+                if (repcsi.health < 5) {
+                    repcsi.health++;
+                    planeHealth(repcsi.health);
+                }
+                bitcoins = [];
+                btcs();
+                spawnBitcoins();
             }
         }
+        //A falnak való ütközést vizsgálja ez a függvény!
+        function wallHitCheck(element) {
+            let pla = document.getElementById(element.id);
+            if (element.x >= 1300 || element.x <= 0 || element.y >= 840 || element.y <= 0) {
+                return true;
+            }
+            return false;
+        }
+
+        //A felhőknek való ütközést vizsgáljuk itt!
+        function HitObject(obj, list) {
+            if (Array.isArray(list)) {
+                for (let c of list) {
+                    var x = Math.abs(c.x - obj.x)
+                    var y = Math.abs(c.y - obj.y)
+                    var distance = Math.sqrt(x * x + y * y)
+                    if (distance < c.radius + obj.radius) {
+                        if (obj.health == 1) {
+                            document.getElementById("healthBarLabel").style.visibility = "hidden";
+                            endOfGame();
+                        } else {
+                            c.x = randomInt(1300, 1500);
+                            c.y = randomInt(0, 780);
+                            c.speed = randomInt(10, 15);
+                            //document.getElementById(c.id).remove();
+                            obj.health--;
+                            planeHealth(obj.health);
+                        }
+                    }
+                }
+            }
+        }
+
+        //Ha elfogy az életünk, akkor ez a függvény fut le!
+        //Egy Bootstrap 5.0-ás modal ablak jelenik meg a képernyő közepén
+        //ahol az elért eredményt feltüntetjük majd a játék újrakezédésre is van lehetőség!
+        function endOfGame() {
+            var gamestats = document.getElementById("gameStats");
+            var body = document.getElementsByTagName("body");
+            var svgElems = document.getElementById("svgElements");
+            var planeObj = document.getElementById("plane");
+            var gameBox = document.getElementById("canvas");
+            var modal = new bootstrap.Modal(document.getElementById("gameOver"), {
+                backdrop: false,
+                keyboard: true,
+                focus: true
+            });
+            modal.show();
+            if (isRunning) {
+                clearInterval(gameUpdater);
+                isRunning = false;
+            }
+            gameBox.setAttribute("style", "cursor: visible; background-color: gray;");
+            gameBox.removeAttribute("onmousemove");
+            planeObj.setAttribute("style", "visibility: hidden;");
+            svgElems.setAttribute("style", "visibility: hidden;");
+            gameStats.setAttribute("style", "visibility: hidden;")
+            body[0].style.backgroundColor = "gray";
+            document.getElementById("clouds").innerHTML = "";
+            document.getElementById("bitcoins").innerHTML = "";
+            clearArray(cloudslist);
+            clearArray(bitcoins);
+            document.getElementById("btc").textContent = Number(bCount);
+            document.getElementById("skippedCloud").textContent = Number(cCount);
+            cCount = 0;
+            bCount = 0;
+            document.getElementById("cloudCount").textContent = Number(cCount);
+            document.getElementById("btcValue").textContent = Number(bCount);
+        }
+
+        //A A Modal ablakon megjelenő "játék újrakezdése" gomb megnyomásával lefutó függvény, amivel újraindul a játék a 0-ról!
+        function restartGame() {
+            var gamestats = document.getElementById("gameStats");
+            var body = document.getElementsByTagName("body");
+            var svgElems = document.getElementById("svgElements");
+            var planeObj = document.getElementById("plane");
+            var gameBox = document.getElementById("canvas");
+            gameBox.setAttribute("style", "cursor: none;background-color: blue;");
+            gameBox.setAttribute("onmousemove", "move('plane')");
+            planeObj.setAttribute("style", "visibility: visible; transform: scale(0.2, 0.2);");
+            svgElems.setAttribute("style", "visibility: visible;");
+            gameStats.setAttribute("style", "visibility: visible;")
+            body[0].style.backgroundColor = "green";
+            start();
+        }
+        //A játék kezédésénél létrehozom a felőket a pályán minimum 5 maximum 10-et generál véletlenszerűen!
+        function clouds() {
+            var customId = 0;
+            const randomCount = randomInt(5, 11);
+            for (let i = 0; i < randomCount; i++) {
+                const randomSpeed = randomInt(3, 16);
+                const randomY = randomInt(0, 781);
+                const cloud1 = new Cloud(customCloudId, randomSpeed, randomInt(1301, 1501), randomY, 30);
+                cloudslist.push(cloud1);
+                customCloudId++;
+            }
+        }
+        //Felhők lerakása a pályára
         function spawnClouds() {
             for (const c of cloudslist) {
                 document.getElementById("clouds").innerHTML += `
                 <path
                     transform="translate(${c.x}, ${c.y})"
-                    style="position: absolute; fill:lightblue;stroke:#000000;stroke-width:1.2500000;stroke-dasharray:none;stroke-linejoin:round;"
+                    style="position: absolute; fill:lightblue;stroke:black;stroke-width:2;stroke-dasharray:none;stroke-linejoin:round;"
                     d="M 48.996171,37.251271 C 47.958668,32.143973 39.185631,24.658486 33.930828,26.057885 C 27.350244,27.875054 24.319102,33.750906 29.022229,38.180278 C 24.861109,35.364180 14.478948,32.941167 8.8516150,42.752305 C 5.3584330,50.061076 15.250525,54.633620 18.276730,54.093064 C 12.486132,53.396616 -1.7806601,65.306814 4.5717298,71.373662 C 12.398859,77.540434 30.328023,70.871946 31.115271,65.721140 C 29.368597,73.253219 49.289455,74.699245 49.782264,64.230844 C 48.360488,69.138884 62.574082,74.362572 69.331408,72.364112 C 77.800433,70.297826 76.782138,63.322187 75.780037,61.195189 C 82.294178,61.939711 92.493777,63.786015 97.011836,57.091162 C 100.16106,50.764622 98.288765,43.698338 94.234782,41.475620 C 89.817633,39.373843 84.991240,39.483372 79.361925,43.043469 C 83.828729,40.136070 81.073796,30.760619 76.597083,28.701006 C 71.495048,26.361815 65.365281,25.905286 59.859869,27.042626 C 55.323516,27.769206 48.144478,31.594752 48.996171,37.251271 z "
-                    id="${c.id}"/>   
+                    id="${c.id}"/>
                 `;
             }
         }
+
+        //A játék kezédésénél létrehozom a bitcoinokat minimum 5 maximum 15-öt generál véletlenszerűen!
+        function btcs() {
+            var customId = 0;
+            const randomCount = randomInt(5, 16);
+            for (let i = 0; i < randomCount; i++) {
+                const randomX = randomInt(40, 1200);
+                const randomY = randomInt(40, 780);
+                const randomValue = randomInRange(0.1, 1);
+                const btco = new Bitcoin("bitcoin-" + customId, 20, randomX, randomY, randomValue);
+                bitcoins.push(btco);
+                customId++;
+            }
+        }
+        //Bitcoinok lerakása a pályára
+        function spawnBitcoins() {
+            for (const coin of bitcoins) {
+                document.getElementById("bitcoins").innerHTML +=
+                    `
+                <g id="${coin.id}">
+                <path
+                id="${coin.id}"
+                transform="translate(${coin.x}, ${coin.y})"
+                style="position: absolute;" 
+                fill="#f7931a"
+                d="m63.033,39.744c-4.274,17.143-21.637,27.576-38.782,23.301-17.138-4.274-27.571-21.638-23.295-38.78,4.272-17.145,21.635-27.579,38.775-23.305,17.144,4.274,27.576,21.64,23.302,38.784z"/>
+                <path
+                id="${coin.id}"
+                transform="translate(${coin.x}, ${coin.y})"
+                style="position: absolute;"
+                fill="#FFF"
+                d="m46.103,27.444c0.637-4.258-2.605-6.547-7.038-8.074l1.438-5.768-3.511-0.875-1.4,5.616c-0.923-0.23-1.871-0.447-2.813-0.662l1.41-5.653-3.509-0.875-1.439,5.766c-0.764-0.174-1.514-0.346-2.242-0.527l0.004-0.018-4.842-1.209-0.934,3.75s2.605,0.597,2.55,0.634c1.422,0.355,1.679,1.296,1.636,2.042l-1.638,6.571c0.098,0.025,0.225,0.061,0.365,0.117-0.117-0.029-0.242-0.061-0.371-0.092l-2.296,9.205c-0.174,0.432-0.615,1.08-1.609,0.834,0.035,0.051-2.552-0.637-2.552-0.637l-1.743,4.019,4.569,1.139c0.85,0.213,1.683,0.436,2.503,0.646l-1.453,5.834,3.507,0.875,1.439-5.772c0.958,0.26,1.888,0.5,2.798,0.726l-1.434,5.745,3.511,0.875,1.453-5.823c5.987,1.133,10.489,0.676,12.384-4.739,1.527-4.36-0.076-6.875-3.226-8.515,2.294-0.529,4.022-2.038,4.483-5.155zm-8.022,11.249c-1.085,4.36-8.426,2.003-10.806,1.412l1.928-7.729c2.38,0.594,10.012,1.77,8.878,6.317zm1.086-11.312c-0.99,3.966-7.1,1.951-9.082,1.457l1.748-7.01c1.982,0.494,8.365,1.416,7.334,5.553z"/>
+                </g>
+                `
+            }
+        }
+
+        //A felhők mozgatására használt függvény!
         function moveClouds() {
             for (const c of cloudslist) {
                 if (c.x <= 0) {
                     c.x = randomInt(1300, 1500);
                     c.y = randomInt(0, 780);
+                    cCount++;
+                    document.getElementById("cloudCount").textContent = Number(cCount);
                 }
                 document.getElementById(c.id).setAttribute("transform", `translate(${c.x}, ${c.y})`);
                 document.getElementById(c.id).setAttribute("style", "fill:lightblue;");
                 c.x -= c.speed;
             }
+            HitObject(repcsi, cloudslist);
         }
 
+        //Csak egy tömb törlő függvény
+        function clearArray(array) {
+            while (array.length > 0) {
+                array.pop();
+            }
+        }
+
+        //Az oldal betöltésénél egyből indul a játék
         window.onload = function () {
-            repcsi = new Plane("plane", 35, 0, 0);
-            clouds();
-            spawnClouds();
-            setInterval(() => {
-                moveClouds();
-            }, 30);
+            start();
         }
 
+        //A játék kezdésénél lefutó függvény!
+        function start() {
+            repcsi = new Plane("plane", 35, 5, 0, 0);
+            planeHealth(repcsi.health);
+            clouds();
+            btcs();
+            spawnClouds();
+            spawnBitcoins();
+            if (!isRunning) {
+                update();
+                isRunning = true;
+            }
+        }
+        //Minden ami frissítődik az oldalon ide van téve!
+        function update() {
+            gameUpdater = setInterval(moveClouds, 30);
+        }
     </script>
 </head>
 
 <body>
     <div class="row">
         <div class="col">
-            <div id="canvas" style="border: 2px solid black; width: 1400px; height: 900px; margin: 3px;">
-                <svg id="plane" xmlns="http://www.w3.org/2000/svg" width="1400" height="1000">
-                    <path style="transform: scale(0.2, 0.2);"
+            <div onmousemove="move('plane')" id="canvas"
+                style="cursor: none; border: 2px solid black; width: 1400px; height: 900px; margin: 3px;">
+                <svg id="svgElements" xmlns="http://www.w3.org/2000/svg" width="1400" height="900">
+                    <path id="plane" style="transform: scale(0.2, 0.2);"
                         d="M 41,217 24,203 0,159 18,144 94,212 H 111 L 94,86 140,83 244,210 350,216 V 236 H 441 L 500,250 441,264 H 350 V 284 L 244,290 140,417 94,414 111,288 H 94 L 18,356 0,341 24,297 41,283 Z"
-                        stroke="none" fill="#aaa" />
-                    <!--<circle cx="46" cy="50" r="36" stroke="black" stroke-width="0" fill="rgba(255,0,0,0.2)" />-->
+                        fill="#aaa" />
+                    <g id="clouds" width="1400" height="900"></g>
+                    <g id="bitcoins" transform="translate(0.00630876,-0.00301984)"></g>
                 </svg>
-                <svg id="clouds" width="1400" height="1000">
-
-                </svg>
+                <div class="modal fade" id="gameOver" tabindex="-1" aria-labelledby="gameOverLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered ">
+                        <div class="modal-content bg-dark text-light">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="gameOverLabel">A játéknak vége!</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Elért eredményeid:</p>
+                                <p>-Összesen felszedett bitcoinok értéke: <span id="btc"></span></p>
+                                <p>-Összesen kikerült felhők: <span id="skippedCloud"></span></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button onclick="restartGame()" type="button" class="btn btn-secondary bg-success"
+                                    data-bs-dismiss="modal">Játék
+                                    újrakezdés</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col">
-            <input onmousemove="move(this)" type="range" name="XD" id="mozgato" min="0" max="780" value="0">
+        <div id="gameStats" class="col">
+            <span id="healthBarLabel" class="informationFontStyle">Repülő élete(max 5): <span
+                    id="healthBar"></span></span><br>
+            <span class="informationFontStyle">Összeszedett bitcoinok: <span id="btcValue">
+                    0.000000000</span></span><br>
+            <span class="informationFontStyle">Kikerült felhők: <span id="cloudCount">0</span></span><br>
         </div>
     </div>
 </body>
