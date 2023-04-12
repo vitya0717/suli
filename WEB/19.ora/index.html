@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getJson(file) {
+            let object = fetch(file).then(object => object.json());
+            return object;
+        }
+        var weatherList = [];
+        window.onload = function () {
+            const idojaras = getJson("https://api.openweathermap.org/data/2.5/forecast?id=524901&appid=f84589719071764a8a33b46a2cf75044");
+            Promise.all([idojaras]).then(values => {
+                for (let i = 0; i < values.length; i++) {
+                    const element = values[i]['list'];
+                    for (let j = 0; j < element.length; j++) {
+                        weatherList.push(element[i]);
+                    }
+                }
+                console.log(Object.keys(weatherList[0]['weather']['0']));
+                for (let i = 0; i < weatherList.length; i++) {
+                document.getElementById("table").innerHTML += `${weatherList[i]["weather"]['0']['main']}<br>`;
+            }
+            })
+        }
+    </script>
+</head>
+
+<body>
+
+    <div id="table">
+    </div>
+
+</body>
+
+</html>

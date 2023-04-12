@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        var gyumolcs = {
+            gyumolcsok: [{
+                neve: "Alma",
+                mennyiseg: 2,
+                mennyisegegyseg: "kg",
+                egysegar: 120,
+                ar: function () {
+                    return this.mennyiseg * this.egysegar;
+                }
+            },
+            {
+                neve: "Korte",
+                mennyiseg: 10,
+                mennyisegegyseg: "kg",
+                egysegar: 500,
+                ar: function () {
+                    return this.mennyiseg * this.egysegar;
+                }
+            },
+            {
+                neve: "Barack",
+                mennyiseg: 5,
+                mennyisegegyseg: "kg",
+                egysegar: 300,
+                ar: function () {
+                    return this.mennyiseg * this.egysegar;
+                }
+
+            }
+            ],
+            osszesen: function () {
+                var osszeg = 0;
+                for (let i = 0; i < gyumolcs.gyumolcsok.length; i++) {
+                    const element = gyumolcs.gyumolcsok[i];
+                    osszeg += element.ar();
+                }
+                return osszeg;
+            },
+            vaneAlma: function () {
+                for (let i = 0; i < gyumolcs.gyumolcsok.length; i++) {
+                    const element = gyumolcs.gyumolcsok[i];
+                    if (element.neve == "Alma") {
+                        return true;
+                    }
+                }
+                return false;
+            },
+            legdaragabbTetel: function () {
+                var max = gyumolcs.gyumolcsok[0];
+                for (let i = 0; i < gyumolcs.gyumolcsok.length; i++) {
+                    const element = gyumolcs.gyumolcsok[i];
+                    if (element.ar() > max.ar()) {
+                        max = element;
+                    }
+                }
+                return max;
+            },
+
+        }
+        console.log(gyumolcs.vaneAlma() ? "Van alma" : "Nincs alma");
+        console.log(`A legdrágább tétel: ${gyumolcs.legdaragabbTetel()['neve']}`)
+        gyumolcs.gyumolcsok.forEach(gyumi => {
+            console.log(`${gyumi.neve}, fizetendő: ${gyumi.ar()} Ft`);
+        });
+        console.log(`Összesen fizetendő összeg: ${gyumolcs.osszesen()} Ft`);
+
+
+
+
+
+
+
+        //Autó
+        var AutoKereskedo = {
+            cim: "Miskolc",
+            neve: "Mskolci kereskedés XD",
+            telszamok: ["+3620495683", "+36543246872", "+36704352534"],
+            autok: [{
+                marka: "BMW",
+                tipus: "M3",
+                evjarat: "2010",
+                ar: 50000000,
+                hanyeves: function () {
+                    return new Date().getFullYear() - this.evjarat;
+                }
+            },
+            {
+                marka: "Mercedes",
+                tipus: "A3",
+                evjarat: "2015",
+                ar: 120000000,
+                hanyeves: function () {
+                    return new Date().getFullYear() - this.evjarat;
+                }
+            },
+            {
+                marka: "Renault",
+                tipus: "Kango",
+                evjarat: "2000",
+                ar: 2000000,
+                hanyeves: function () {
+                    return new Date().getFullYear() - this.evjarat;
+                }
+            }
+            ],
+            osszesen: function () {
+                var osszeg = 0;
+                for (let i = 0; i < AutoKereskedo.autok.length; i++) {
+                    const element = AutoKereskedo.autok[i];
+                    osszeg += element.ar;
+                }
+                return osszeg;
+            },
+            milyenAutok: function () {
+                var autokLista = [];
+                var car = "";
+                for (let i = 0; i < AutoKereskedo.autok.length; i++) {
+                    const element = AutoKereskedo.autok[i];
+                    if (!autokLista.includes(element)) {
+                        autokLista.push(element);
+                    }
+                }
+                autokLista.forEach(element => {
+                    car += element.marka + " " + element.tipus + ", ";
+                });
+
+                return car = car.substring(0, car.length - 2);
+            },
+            legolcsobbAuto: function () {
+                var min = AutoKereskedo.autok[0];
+                for (let i = 0; i < AutoKereskedo.autok.length; i++) {
+                    const element = AutoKereskedo.autok[i];
+                    if (element.ar < min.ar) {
+                        min = element;
+                    }
+                }
+                return min;
+            },
+
+        }
+        console.log(`A legolcsóbb autó: ${AutoKereskedo.legolcsobbAuto()['marka']}`);
+        console.log(`Összesen fizetendő összeg: ${AutoKereskedo.osszesen()} Ft`);
+        console.log(AutoKereskedo.milyenAutok());
+        console.log(AutoKereskedo.autok[0].hanyeves());
+
+
+
+        
+            gombok: [
+                {
+                    ertek: "Gombnev",
+                    stilus: [
+                        {stilusnev:"background-color", stilusertek:"white"}
+                    ],
+                    esemenyek: [
+                        {esemenytipus:"onclick", esemenyertek:function gombNev(){this.ertek}}
+                    ]
+                }
+            ]
+        window.onload = function(){
+            var gombi = `<input type="button" value="${element.ertek}" style="`;
+            gombok.forEach(element => {
+                gombi += `${element.stilusnev}:${element.stilusertek};`;
+            });
+            gombi += `">`;
+            document.getElementById("buttons").innerHTML += gombi;
+        }
+    
+        
+
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <div id="buttons"></div>
+    <button onclick="hatterSzin()" style="background-color: red">Button</button>
+</body>
+
+</html>
