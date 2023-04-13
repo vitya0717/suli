@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\Eloadas19\Egitestek\bin\Debug\Egitestek.exe.config
+C:\Users\Tanulo\source\repos\Eloadas19\Egitestek\bin\Debug\Egitestek.exe
+C:\Users\Tanulo\source\repos\Eloadas19\Egitestek\bin\Debug\Egitestek.pdb
+C:\Users\Tanulo\source\repos\Eloadas19\Egitestek\obj\Debug\Egitestek.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\Eloadas19\Egitestek\obj\Debug\Egitestek.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\Eloadas19\Egitestek\obj\Debug\Egitestek.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\Eloadas19\Egitestek\obj\Debug\Egitestek.exe
+C:\Users\Tanulo\source\repos\Eloadas19\Egitestek\obj\Debug\Egitestek.pdb

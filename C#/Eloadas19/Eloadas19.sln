@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Egitestek", "Egitestek\Egitestek.csproj", "{2A4455AD-BBF8-43F8-A7B5-35A62E1C03EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A4455AD-BBF8-43F8-A7B5-35A62E1C03EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A4455AD-BBF8-43F8-A7B5-35A62E1C03EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A4455AD-BBF8-43F8-A7B5-35A62E1C03EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A4455AD-BBF8-43F8-A7B5-35A62E1C03EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {959AE979-9BDA-4296-B9DC-D05D9C87890C}
+	EndGlobalSection
+EndGlobal
