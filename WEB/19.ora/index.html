@@ -5,36 +5,132 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 10px;
+        }
+
+        .cardTop {
+            height: fit-content;
+            background-color: lightgray;
+        }
+
+        .card-body {
+            padding: 0px;
+        }
+
+        .cardContent {
+            padding: 10px;
+        }
+
+        p.cardData {
+            margin: 5px;
+            font-weight: bold;
+        }
+    </style>
     <script>
         function getJson(file) {
-            let object = fetch(file).then(object => object.json());
+            let object = fetch(file)
+            .then(object => object.json())
+            .catch(error => console.log("hiba"));
             return object;
         }
-        var weatherList = [];
-        window.onload = function () {
-            const idojaras = getJson("https://api.openweathermap.org/data/2.5/forecast?id=524901&appid=f84589719071764a8a33b46a2cf75044");
-            Promise.all([idojaras]).then(values => {
-                for (let i = 0; i < values.length; i++) {
-                    const element = values[i]['list'];
-                    for (let j = 0; j < element.length; j++) {
-                        weatherList.push(element[i]);
-                    }
-                }
-                console.log(Object.keys(weatherList[0]['weather']['0']));
-                for (let i = 0; i < weatherList.length; i++) {
-                document.getElementById("table").innerHTML += `${weatherList[i]["weather"]['0']['main']}<br>`;
+        var weatherList;
+        var currentValue;
+        function LoadWeather(value) {
+            if (value != currentValue) {
+                currentValue = value;
+                const idojaras = getJson(`https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=f84589719071764a8a33b46a2cf75044&units=metric`);   
+                Promise.all([idojaras]).then(values => {
+                    weatherList = values[0];
+                    console.log(weatherList)
+                    const zone = weatherList['timezone'];
+                    const time = new Date(weatherList['dt'] * 1000).toLocaleString('hu-HU', { zone, });
+                    const sunrisetime = new Date(weatherList['sys']['sunrise'] * 1000).toLocaleString('hu-HU', { zone, });
+                    const sunsettime = new Date(weatherList['sys']['sunset'] * 1000).toLocaleString('hu-HU', { zone, });
+
+                    document.getElementById("City").innerHTML = `${weatherList['name']}`;
+                    document.getElementById("Date").innerHTML = `${new Date().getFullYear()}.${new Date().getMonth() + 1}.${new Date().getDate()}`;
+                    document.getElementById("Time").innerHTML = `${timeFormat(Date.now())}`;
+                    document.getElementById("Rise").innerHTML = `Napfelkelte: ${timeFormat(sunrisetime)}`;
+                    document.getElementById("Set").innerHTML = `Naplemente: ${timeFormat(sunsettime)}`;
+                    document.getElementById("Temperature").innerHTML = ` ${weatherList['main']['temp']} C°`;
+                    document.getElementById("cloudIcon").setAttribute("src", `https://openweathermap.org/img/wn/${weatherList['weather'][0]['icon']}@2x.png`);
+                    document.getElementById("Humidity").innerHTML = `Páratartalom: ${weatherList['main']['humidity']}%`;
+                    document.getElementById("windDir").innerHTML = `Szélirány: ${weatherList['wind']['deg']}°`;
+                    document.getElementById("arrow").setAttribute("style", `transform: rotate(${weatherList['wind']['deg']}deg)`)
+                    document.getElementById("windSpeed").innerHTML = `Szélerősség: ${weatherList['wind']['speed']} m/s`;
+                    document.getElementById("windHit").innerHTML = `Széllökés: ${weatherList['wind']['gust']} m/s`;
+
+                }).catch(error => console.log("hiba"));
             }
-            })
+        }
+        window.onload = function () {
+            LoadWeather("Miskolc");
+        }
+        function timeFormat(time) {
+            var date = new Date(time);
+            return `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
         }
     </script>
 </head>
 
 <body>
-
-    <div id="table">
+    <div class="content">
+        <div style="width: 18rem;">
+            Város neve: <input onkeyup="LoadWeather(this.value)" type="text">
+            <br>
+            <br>
+            <select onclick="LoadWeather(this.value)" class="form-select" aria-label="Default select example">
+                <option value="Miskolc" selected>Miskolc</option>
+                <option value="Budapest">Budapest</option>
+                <option value="London">London</option>
+                <option value="Dubai">Dubai</option>
+            </select>
+            <br>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <div class="cardTop cardContent">
+                    <p class="cardData" id="City">Miskolc</p>
+                    <p class="cardData" id="Date">2023.04.14.</p>
+                    <p class="cardData" id="Time">20:47:54</p>
+                </div>
+                <div class="cardBottom cardContent">
+                    <h1 id="Temperature">8 </h1>
+                    <img id="cloudIcon" src="https://openweathermap.org/img/wn/10d@2x.png" alt="Az időjárás képe"
+                        title="Az időjárás képe" />
+                    <p class="cardData" id="Humidity">20:47:54</p>
+                    <div class="row">
+                        <div class="col">
+                            <p class="cardData" id="windDir">20:47:54</p>
+                        </div>
+                        <div class="col">
+                            <svg id="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="48"
+                                height="48">
+                                <g id="Up-4" data-name="Up">
+                                    <path
+                                        d="M15.707,9.707a1,1,0,0,1-1.414,0L13,8.414V18a1,1,0,0,1-2,0V8.414L9.707,9.707A1,1,0,0,1,8.293,8.293l3-3a1,1,0,0,1,1.416,0l3,3A1,1,0,0,1,15.707,9.707Z"
+                                        style="fill:#f97c4b" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="cardData" id="windSpeed">20:47:54</p>
+                    <p class="cardData" id="windHit">20:47:54</p>
+                    <p class="cardData" id="Rise">5:49:57</p>
+                    <p class="cardData" id="Set">19:24:07</p>
+                </div>
+            </div>
+        </div>
     </div>
-
 </body>
 
 </html>

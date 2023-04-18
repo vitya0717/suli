@@ -153,14 +153,11 @@
         console.log(AutoKereskedo.milyenAutok());
         console.log(AutoKereskedo.autok[0].hanyeves());
 
-
-
-        
             gombok: [
                 {
                     ertek: "Gombnev",
                     stilus: [
-                        {stilusnev:"background-color", stilusertek:"white"}
+                        {stilusnev:"background-color", stilusertek:"red"}
                     ],
                     esemenyek: [
                         {esemenytipus:"onclick", esemenyertek:function gombNev(){this.ertek}}
@@ -168,10 +165,11 @@
                 }
             ]
         window.onload = function(){
-            var gombi = `<input type="button" value="${element.ertek}" style="`;
-            gombok.forEach(element => {
-                gombi += `${element.stilusnev}:${element.stilusertek};`;
-            });
+            console.log(gombok)
+            var gombi = `<input type="button" value="gomb" style="`;
+            for (const gomb of gombok) {
+                gombi += `${gomb.stilusnev}:${gomb.stilusertek};`;
+            }
             gombi += `">`;
             document.getElementById("buttons").innerHTML += gombi;
         }
@@ -188,7 +186,7 @@
 
 <body>
     <div id="buttons"></div>
-    <button onclick="hatterSzin()" style="background-color: red">Button</button>
+    <!--<button onclick="hatterSzin()" style="background-color: red">Button</button>-->
 </body>
 
 </html>
