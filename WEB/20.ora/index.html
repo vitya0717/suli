@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getJson(file) {
+            let object = fetch(file)
+                .then(object => object.json());
+            return object;
+        }
+        var weatherList;
+        var miskolc_data;
+        var currentValue;
+        function LoadWeather() {
+            //const idojaras = getJson(`https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=f84589719071764a8a33b46a2cf75044&units=metric`);
+            const miskolc = getJson('http://api.openweathermap.org/geo/1.0/direct?q=Miskolc&limit=10&appid=ba5a5548de1a20de95acd00f1b0c1fd3&lang=hu');
+
+            miskolc.then(valu => {
+                miskolc_data = valu[0];
+                console.log(miskolc_data.lat);
+                console.log(miskolc_data.lon);
+                const idojaras = getJson(`https://api.openweathermap.org/data/2.5/forecast?lat=${miskolc_data['lat']}&lon=${miskolc_data['lon']}&exclude=daily&appid=ba5a5548de1a20de95acd00f1b0c1fd3&units=metric`);
+                idojaras.then(values => {
+                    weatherList = values[0];
+                    document.getElementById("fday").innerHTML += `
+                    <div class="card" style="width: 12rem;">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>`
+                })
+            });
+
+
+        }
+
+        window.onload = function () {
+            LoadWeather();
+        }
+    </script>
+</head>
+
+<body style="margin: 0px; padding: 0px; height: 100vh;">
+    <div id="fday">
+        
+    </div>
+</body>
+
+</html>
