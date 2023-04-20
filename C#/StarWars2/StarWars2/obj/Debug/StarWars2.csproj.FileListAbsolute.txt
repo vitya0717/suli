@@ -1,0 +1,8 @@
+C:\Users\Tanulo\source\repos\StarWars2\StarWars2\bin\Debug\StarWars2.exe.config
+C:\Users\Tanulo\source\repos\StarWars2\StarWars2\bin\Debug\StarWars2.exe
+C:\Users\Tanulo\source\repos\StarWars2\StarWars2\bin\Debug\StarWars2.pdb
+C:\Users\Tanulo\source\repos\StarWars2\StarWars2\obj\Debug\StarWars2.csproj.AssemblyReference.cache
+C:\Users\Tanulo\source\repos\StarWars2\StarWars2\obj\Debug\StarWars2.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanulo\source\repos\StarWars2\StarWars2\obj\Debug\StarWars2.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\source\repos\StarWars2\StarWars2\obj\Debug\StarWars2.exe
+C:\Users\Tanulo\source\repos\StarWars2\StarWars2\obj\Debug\StarWars2.pdb
