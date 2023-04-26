@@ -74,15 +74,11 @@
         function update() {
             LoadWeather();
             chartLoad();
+            currentTime();
         }
         function currentTime() {
-            var time = new Date();
-            var day = time.getDate();
-            var month = time.getMonth();
-            var year = time.getFullYear();
-            var outTime = `${year}-0${month}-${day}T0${time.getHours()}:${time.getMinutes()}`
-            document.getElementById("dtime").value = outTime;
-            document.getElementById("dt").value = Math.round(time.valueOf() / 1000);
+            var start_time = document.getElementById('dtime_start').value;
+            console.log(start_time.split('-')[0], start_time.split('-')[1], start_time.split('-')[2].split('T')[0]);
         }
     </script>
 </head>
