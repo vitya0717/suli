@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+
+    <script>
+        function Validate() {
+            var Email = document.getElementById("EmailInput").value;
+            console.log(Email);
+            if (!(Email.includes("@") && Email.includes("."))) {
+                document.getElementById("wrongEmail").classList.remove("visually-hidden");
+                document.getElementById("successAlert").classList.add("visually-hidden");
+                return;
+            } else {
+                document.getElementById("wrongEmail").classList.add("visually-hidden");
+            }
+
+            var MSG = document.getElementById("MsgInput").value;
+            console.log(MSG);
+            if (MSG.length < 5) {
+                document.getElementById("wrongText").classList.remove("visually-hidden");
+                document.getElementById("successAlert").classList.add("visually-hidden");
+                return;
+            } else {
+                document.getElementById("wrongEmail").classList.add("visually-hidden");
+            }
+            document.getElementById("successAlert").classList.remove("visually-hidden");
+            document.getElementById("wrongText").classList.add("visually-hidden");
+            document.getElementById("wrongEmail").classList.add("visually-hidden");
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <nav>
+                    <a href="#" class="nav-link">Kapcsolat</a>
+                    <a href="#" class="nav-link">Bekezdés 1</a>
+                    <a href="#" class="nav-link">Bekezdés 2</a>
+                    <a href="#" class="nav-link disabled">Bekezdés 3</a>
+                </nav>
+            </div>
+            <div class="col-10">
+                <div>
+                    <h1>Kapcsolat</h1>
+                    <form>
+                        <div class="mb-3">
+                            <div id="wrongEmail" class="alert alert-danger visually-hidden" role="alert">
+                                Helytelen E-mail formátum!<br>@ vagy . hiányzik!
+                            </div>
+                            
+                            <label for="EmailInput" class="form-label">Email cím</label>
+                            <input type="email" class="form-control" id="EmailInput" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <div id="wrongText" class="alert alert-danger visually-hidden" role="alert">
+                                A szövegnek legalább 5 karakter hosszúnak kell lennie!
+                            </div>
+                            <br>
+                            <label for="MsgInput" class="form-label">Üzenet</label>
+                            <textarea name="" id="MsgInput" class="form-control"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="Validate()">Üzenet küldése</button>
+                    </form>
+                    <br>
+                    <div id="successAlert" class="alert alert-success visually-hidden" role="alert">
+                        <h4 class="alert-heading">Gratulálok</h4>
+                        <p>Sikresen elküldted az üzenetet!</p>
+                    </div>
+                    <p>
+                    <h1>
+                        Bekezdés 1
+                    </h1>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas quibusdam non nesciunt modi esse illo
+                    consequuntur optio harum neque voluptatibus facere eius, illum est error repellendus dignissimos ex
+                    omnis. Explicabo quibusdam ad molestias tempora voluptate hic minus. Nam voluptatibus similique
+                    perspiciatis aspernatur, incidunt eum enim odio a, quos rem consequatur?
+                    </p>
+                    <p>
+                    <h1>
+                        Bekezdés 2
+                    </h1>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas quibusdam non nesciunt modi esse illo
+                    consequuntur optio harum neque voluptatibus facere eius, illum est error repellendus dignissimos ex
+                    omnis. Explicabo quibusdam ad molestias tempora voluptate hic minus. Nam voluptatibus similique
+                    perspiciatis aspernatur, incidunt eum enim odio a, quos rem consequatur?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

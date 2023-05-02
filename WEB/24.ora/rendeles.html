@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .visible {
+        visibility: visible;
+    }
+    .hidden {
+        visibility: hidden;
+    }
+</style>
+<body>
+    <form id="sessionForm" action="">
+        <div id="nameDiv">
+            <label for="name">Add meg a neved: </label>
+            <input name="name" type="text">
+            <br>
+            <label for="email">Add meg az email címedet: </label>
+            <input name="email" type="text">
+        </div>
+        <div id="termekDiv">
+            <label for="termek">Termék darabszáma</label>
+            <input type="number">
+        </div>
+    </form>
+    <button onclick="prevStep()">Előző lépés</button>
+    <button onclick="nextStep()">Következő lépés</button>
+    <script>
+        var currentStep = 0;
+        var maxStep = document.getElementById("sessionForm").childElementCount;
+    
+        window.onload = function () {
+            for (let i = 1; i < maxStep; i++) {
+                const element = document.getElementById("sessionForm").children[i];
+                element.classList.add("hidden");
+            }
+        }
+    
+        function nextStep() {
+            currentStep++;
+            for (let i = currentStep; i > 0; i--) {
+                const element = document.getElementById("sessionForm").children[i];
+                element.classList.add("hidden");
+            }
+            document.getElementById("sessionForm").children[currentStep].classList.remove("hidden");
+            document.getElementById("sessionForm").children[currentStep].classList.add("visible");
+        }
+    
+        function prevStep() {
+            document.getElementById("sessionForm").children[currentStep].classList.remove("visible");
+            document.getElementById("sessionForm").children[currentStep].classList.add("hidden");
+            currentStep--;
+        }
+    
+        function asd() {
+    
+        }
+    </script>
+</body>
+
+</html>

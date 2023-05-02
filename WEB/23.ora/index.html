@@ -27,8 +27,10 @@
         function LoadWeather() {
             if (idoList == null) {
 
-                //const idojaras = getJson(`https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=f84589719071764a8a33b46a2cf75044&units=metric`);
-                const idojaras = getJson(`https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m&daily=sunrise,sunset&start_date=2023-04-26&end_date=2023-04-26&timezone=auto`);
+                const start_time = document.getElementById("dtime_start");
+                const end_time = document.getElementById("dtime_end");
+
+                const idojaras = getJson(`https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m&daily=sunrise,sunset&start_date=${start_time.split('-')[0]}-${start_time.split('-')[1]}-${start_time.split('-')[2].split('T')[0]}&end_date=${end_time.split('-')[0]}-${end_time.split('-')[1]}-${end_time.split('-')[2].split('T')[0]}&timezone=auto`);
                 idojaras.then(values => {
                     localStorage.setItem("ido", JSON.stringify(values));
                 });
@@ -74,11 +76,6 @@
         function update() {
             LoadWeather();
             chartLoad();
-            currentTime();
-        }
-        function currentTime() {
-            var start_time = document.getElementById('dtime_start').value;
-            console.log(start_time.split('-')[0], start_time.split('-')[1], start_time.split('-')[2].split('T')[0]);
         }
     </script>
 </head>
