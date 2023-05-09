@@ -1,0 +1,122 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: scroll;
+            height: 100vh;
+            width: 1000px;
+        }
+
+        img {
+            float: left;
+            background-color: rgba(1, 1, 1, 0.2);
+        }
+
+        #map,
+        #overlay {
+            position: absolute;
+            width: 100%;
+        }
+
+        #content {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 1000%;
+        }
+    </style>
+
+    <script>
+        function getJson(file) {
+            let object = fetch(file)
+                .then(object => object);
+            return object;
+        }
+        var weatherList;
+        var currentValue;
+
+        var baseX = window.innerWidth;
+        var baseY = window.innerHeight;
+
+        var Size = 4;
+        var tileSizing;
+
+        function loadMap() {
+            var map = "";
+
+            for (let i = 0; i < tileSizing; i++) {
+                for (let j = 0; j < tileSizing; j++) {
+                    map += `<img id="map${j}${i}" style="width:${100 / tileSizing}%;height:${100 / tileSizing}%" src="https://cartodb-basemaps-c.global.ssl.fastly.net/light_all/${Size}/${j}/${i}.png" alt="">`;
+                }
+            }
+            document.getElementById("map").innerHTML = map;
+
+        }
+
+        function LoadWeather(value) {
+            if (value == undefined) {
+                return;
+            }
+            console.log(tileSizing);
+            var overlay = "";
+            for (let i = 0; i < tileSizing; i++) {
+                for (let j = 0; j < tileSizing; j++) {
+                    overlay += `<img id="map${j}${i}" style="width:${100 / tileSizing}%;height:${100 / tileSizing}%" src="https://tile.openweathermap.org/map/${value}/${Size}/${j}/${i}.png?appid=f84589719071764a8a33b46a2cf75044" alt="">`;
+                }
+            }
+            document.getElementById("overlay").innerHTML = overlay;
+        }
+
+        function resetMaps() {
+
+            Size = document.getElementById("Zoom").value;
+            console.log(Size);
+            if (Size > 4) {
+                return;
+            }
+            tileSizing = Math.pow(2, Size);
+            loadMap();
+            LoadWeather(document.getElementById("switch").value);
+        }
+
+        window.onload = function () {
+            resetMaps();
+        }
+    </script>
+</head>
+
+<body id="bod">
+
+    <select onchange="LoadWeather(this.value)" name="" id="switch">
+        <option value="clouds_new">cloud</option>
+        <option value="precipitation_new">rain</option>
+        <option value="pressure_new">sea pressure</option>
+        <option value="wind_new">wind</option>
+        <option value="temp_new">temp</option>
+    </select>
+    <input type="number" value=2 name="" id="Zoom" onchange="resetMaps()">
+    <hr>
+    <div id=content>
+        <div id=map>
+
+        </div>
+        <div id=overlay>
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
