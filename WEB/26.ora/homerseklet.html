@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="homer" style="width:100%;max-width:900px"></canvas>
+
+    <script>
+        const xValues = [];
+        const yValues = [];
+        fetch("https://api.open-meteo.com/v1/forecast?latitude=48.10&longitude=20.78&hourly=temperature_2m&start_date=2023-05-21&end_date=2023-05-31&timezone=auto")
+            .then(inf => inf.json())
+            .then(function (data) {
+                for (let i = 0; i < data['hourly'].time.length; i++) {
+                    const label = data['hourly'].time[i];
+                    const dat = data['hourly'].temperature_2m[i];
+                    xValues.push(label);
+                    yValues.push(dat);
+                }
+                new Chart("homer", {
+                    type: "line",
+                    data: {
+                        labels: xValues,
+                        datasets: [{
+                            fill: false,
+                            lineTension: 0.4,
+                            backgroundColor: "#FFC300",
+                            label: "Hőmérséklet diagram",
+                            borderColor: "black",
+                            borderWidth: 1,
+                            data: yValues
+                        }]
+                    },
+                    options: {
+                        legend: { display: true },
+                        scales: {
+                            yAxes: [{ ticks: { min: 0, max: 25 } }],
+                        }
+                    }
+                });
+            });
+    </script>
+</body>
+
+</html>

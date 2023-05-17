@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script>
+        var xValues = ["Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek"];
+        var yValues = [8, 8, 6, 8, 6];
+        var barColors = [
+            "#b91d47",
+            "#00aba9",
+            "#2b5797",
+            "#e8c3b9",
+            "#1e7145"
+        ];
+
+        function oszlop() {
+            var colors = "gray";
+            new Chart("oszlop", {
+                type: "bar",
+                data: {
+                    labels: xValues,
+                    datasets: [{
+                        borderWidth: 1,
+                        label: "Oszlop diagram",
+                        backgroundColor: "gray",
+                        data: yValues
+                    }]
+                },
+                options: {
+                    legend: { display: true },
+                    scales: {
+                        yAxes: [{ ticks: { min: 0, max: 10 } }],
+                    }
+                }
+            });
+        }
+
+        function vonal() {
+            new Chart("vonal", {
+                type: "line",
+                data: {
+                    labels: xValues,
+                    datasets: [{
+                        fill: false,
+                        lineTension: 0.4,
+                        backgroundColor: "#FFC300",
+                        label: "Vonal diagram",
+                        borderColor: "black",
+                        borderWidth: 1,
+                        data: yValues
+                    }]
+                },
+                options: {
+                    legend: { display: true },
+                    scales: {
+                        yAxes: [{ ticks: { min: 0, max: 10 } }],
+                    }
+                }
+            });
+        }
+        var adatok = [];
+        var napok = [0, 1, 2, 3, 4];
+        for (let i = 0; i < 5; i++) {
+            adatok.push({
+                x: napok[i],
+                y: yValues[i],
+                r: yValues[i],
+            });
+        }
+        function buborek() {
+            new Chart("buborek", {
+                type: 'bubble',
+                data: {
+                    datasets: [{
+                        label: 'Buborék diagram',
+                        data: adatok,
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            position: 'bottom'
+                        },
+                        y: {
+                            type: 'linear',
+                            position: 'left'
+                        }
+                    },
+                    scales: {
+                        yAxes: [{ ticks: { min: 0, max: 10 } }],
+                    }
+                }
+            });
+        }
+
+        function gyuru() {
+            var colors = "gray";
+            new Chart("gyuru", {
+                type: "doughnut",
+                data: {
+                    labels: xValues,
+                    datasets: [{
+                        backgroundColor: barColors,
+                        data: yValues
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: "World Wide Wine Production 2018"
+                    }
+                }
+            });
+        }
+        function polar() {
+            new Chart("polar", {
+                type: "polarArea",
+                data: {
+                    labels: xValues,
+                    datasets: [{
+                        data: yValues,
+                        backgroundColor: barColors
+                    }],
+                    
+
+                }
+            });
+        }
+
+        window.onload = function () {
+            oszlop();
+            vonal();
+            buborek();
+            gyuru();
+            polar();
+        }
+
+    </script>
+</head>
+
+<body>
+    <canvas id="oszlop" style="width:100%;max-width:600px"></canvas>
+    <canvas id="vonal" style="width:100%;max-width:600px"></canvas>
+    <canvas id="buborek" style="width:100%;max-width:600px"></canvas>
+    <canvas id="gyuru" style="width:100%;max-width:600px"></canvas>
+    <canvas id="polar" style="width:100%;max-width:600px"></canvas>
+</body>
+
+</html>
