@@ -5,6 +5,8 @@ namespace CarsAPI
 {
     public class Program
     {
+        private static string CorsPolicy = "AllowAllPolicy";
+
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +19,18 @@ namespace CarsAPI
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy(CorsPolicy,
+                policy =>
+                {
+                    policy.WithOrigins("http://172.30.48.1:3000",
+                                        "http://localhost:3000")
+                                        .AllowAnyHeader()
+                                        .AllowAnyMethod();
+                });
+            });
 
             var app = builder.Build();
 
@@ -31,6 +45,7 @@ namespace CarsAPI
 
             app.UseAuthorization();
 
+            app.UseCors(CorsPolicy);
 
             app.MapControllers();
 
