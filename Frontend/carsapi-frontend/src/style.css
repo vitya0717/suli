@@ -21,7 +21,6 @@ code {
   margin: 5px;
 }
 .card {
-  display: flex;
   margin-bottom: 20px;
   background-color:azure;
   box-shadow: 10px 5px 5px gray;
@@ -39,10 +38,6 @@ code {
 .nav-link:hover{
   border: 1px solid #282c34;
 }
-
-.specko {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  color: rgb(228, 210, 7);
+.postLink {
+  cursor: pointer;
 }

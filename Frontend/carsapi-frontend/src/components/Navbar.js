@@ -1,4 +1,6 @@
 import React from "react";
+import PostModal from "./POST_modal";
+//import CreateCar from './components/CreateCar'
 
 export default function Navbar() {
     return (
@@ -12,11 +14,9 @@ export default function Navbar() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Autó felvétele</a>
+                                <a className="nav-link  postLink active" aria-current="page" data-bs-toggle="modal" data-bs-target="#postModal">Autó felvétele</a>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Autó felvétele</a>
-                            </li>
+                            <PostModal />
                         </ul>
                         <form className="d-flex">
                             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
